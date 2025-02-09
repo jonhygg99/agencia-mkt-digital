@@ -1,6 +1,6 @@
 import SEOproblems from "../constants/seo-problems";
 
-export default function Problemas() {
+export default function Problems() {
   return (
     <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1320px]">
       <div className="max-w-[900px] mx-auto">

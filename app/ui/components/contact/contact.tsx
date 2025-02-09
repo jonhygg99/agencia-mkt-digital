@@ -1,7 +1,7 @@
 "use client";
 
 import ContactInfo from "./contact-info";
-import ContactForm from "./form";
+import ContactForm from "./contact-form";
 
 export default function Contact() {
   return (
