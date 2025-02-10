@@ -22,7 +22,7 @@ const personajesSEO = [
     paginaWeb: "https://221b-bakerstreet.com",
     mensaje:
       "Busco servicios de SEO para mejorar la presencia en línea de mi agencia de detectives.\
-Quiero optimización de SEO local para que más personas puedan encontrar mis servicios de resolución de misterios.",
+ Quiero optimización de SEO local para que más personas puedan encontrar mis servicios de resolución de misterios.",
   },
   {
     nombre: "Darth Vader",
