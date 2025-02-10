@@ -15,6 +15,14 @@ export default function RootLayout({
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
+    // Check localStorage on initial load
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+  }, []);
+
+  useEffect(() => {
+    // Update localStorage and document class when darkMode changes
+    localStorage.setItem("darkMode", darkMode.toString());
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
