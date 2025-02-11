@@ -7,9 +7,9 @@ import MigrationIcon from "@/app/ui/icons/migration";
 import PenaltyIcon from "@/app/ui/icons/penalty";
 import UpTrend from "@/app/ui/icons/uptrend";
 import WebIcon from "@/app/ui/icons/web";
-import { FC } from "react";
+import BubbleInfo from "../elements/bubble-info";
 
-export default function Servicios() {
+export default function Services() {
   return (
     <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1320px]">
       <div className="max-w-[900px] mx-auto">
@@ -24,7 +24,7 @@ export default function Servicios() {
           tus objetivos comerciales. ¡Transforma tu presencia digital hoy!
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AuditoriaSEO />
         <SEOLocal />
         <SEOWeb />
@@ -39,25 +39,9 @@ export default function Servicios() {
   );
 }
 
-interface ServicioSEO {
-  Icon: FC;
-  title: string;
-  description: string;
-}
-
-const ServicioSEO: FC<ServicioSEO> = ({ Icon, title, description }) => {
-  return (
-    <div className="background-bubble rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow justify-center items-center">
-      <Icon />
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
-};
-
 function AuditoriaSEO() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={GrowthIcon}
       title="Auditoría SEO"
       description="Evaluamos tu sitio web para identificar fallos y áreas de mejora, implementando soluciones y aprovechando nuevas oportunidades para potenciar tu estrategia SEO."
@@ -67,27 +51,27 @@ function AuditoriaSEO() {
 
 function SEOLocal() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={LocationIcon}
       title="SEO Local"
-      description="Posicionamos tu negocio en las búsquedas geolocalizadas, asegurando que los clientes potenciales te encuentren justo cuando están buscando lo que ofreces."
+      description="Posicionamos tu negocio en las búsquedas geolocalizadas, asegurando que los clientes potenciales te encuentren justo cuando está buscando lo que ofreces."
     />
   );
 }
 
 function SEOWeb() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={WebIcon}
       title="Diseño página Web con SEO"
-      description="Construimos páginas web optimizadas desde cero. Hacemos que tu sitio sea atractivo y funcional, además de estar diseñado para cumplir con las mejores prácticas de SEO."
+      description="Construimos páginas web optimizadas desde cero. Hacemos que tu sitio sea atractivo y funcional, asi como estar diseño para cumplir con las mejores prácticas de SEO."
     />
   );
 }
 
 function PosicionamientoSEO() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={UpTrend}
       title="Posicionamiento SEO"
       description="Potenciamos el rendimiento de tu sitio web ya construido. Realizamos
@@ -99,7 +83,7 @@ function PosicionamientoSEO() {
 
 function SEOInternacional() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={EarthIcon}
       title="SEO Internacional"
       description="Adaptamos tu estrategia para diferentes mercados y audiencias, optimizando
@@ -110,7 +94,7 @@ function SEOInternacional() {
 
 function MarketingContenido() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={ContentIcon}
       title="Marketing de Contenidos"
       description="Creamos contenido de calidad que informa y convierte. Desde blogs a
@@ -122,7 +106,7 @@ function MarketingContenido() {
 
 function LinkBuilding() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={LinkIcon}
       title="Link Building"
       description="Implementamos tácticas efectivas para obtener enlaces de calidad que
@@ -134,7 +118,7 @@ function LinkBuilding() {
 
 function MigracionesSEO() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={MigrationIcon}
       title="Migraciones SEO"
       description="Gestionamos la migración de tu sitio web para preservar tu posicionamiento y
@@ -145,7 +129,7 @@ function MigracionesSEO() {
 
 function Penalizaciones() {
   return (
-    <ServicioSEO
+    <BubbleInfo
       Icon={PenaltyIcon}
       title="Penalizaciones de Google"
       description="Realizamos un diagnóstico completo, identificamos las causas y aplicamos
