@@ -30,6 +30,9 @@ body {
   .background-orange {
     background-color: #ef5d39;
   }
+  .background-orange-hover {
+    background-color: #ff4639;
+  }
 }
 
 .custom-underline {

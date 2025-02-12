@@ -1,6 +1,10 @@
-import timelineSteps from "../constants/timeline-steps";
+import { TimelineSteps } from "../../../constants/timeline/timeline";
 
-export default function Timeline() {
+export default function Timeline({
+  timelineSteps,
+}: {
+  timelineSteps: TimelineSteps[];
+}) {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
       <div className="relative">
@@ -14,7 +18,7 @@ export default function Timeline() {
             </div>
             <div className="flex flex-col pb-8">
               <div className="background-orange text-white px-4 py-1 rounded-md w-fit text-sm font-medium mb-2">
-                {item.step}
+                PASO {index + 1}
               </div>
               <h3 className="text-xl font-bold mb-2">{item.title}</h3>
               <p className="text-gray-with-dark">{item.description}</p>

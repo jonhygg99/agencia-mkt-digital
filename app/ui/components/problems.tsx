@@ -1,4 +1,4 @@
-import SEOproblems from "../constants/seo-problems";
+import SEOproblems from "../../constants/seo-problems";
 
 export default function Problems() {
   return (

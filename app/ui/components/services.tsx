@@ -1,12 +1,12 @@
-import ContentIcon from "@/app/ui/icons/content";
-import EarthIcon from "@/app/ui/icons/earth";
-import GrowthIcon from "@/app/ui/icons/growth";
-import LinkIcon from "@/app/ui/icons/link";
-import LocationIcon from "@/app/ui/icons/location";
-import MigrationIcon from "@/app/ui/icons/migration";
-import PenaltyIcon from "@/app/ui/icons/penalty";
-import UpTrend from "@/app/ui/icons/uptrend";
-import WebIcon from "@/app/ui/icons/web";
+import ContentIcon from "@/app/ui/icons/bubble/content";
+import EarthIcon from "@/app/ui/icons/bubble/earth";
+import GrowthIcon from "@/app/ui/icons/bubble/growth";
+import LinkIcon from "@/app/ui/icons/bubble/link";
+import LocationIcon from "@/app/ui/icons/bubble/location";
+import MigrationIcon from "@/app/ui/icons/bubble/migration";
+import PenaltyIcon from "@/app/ui/icons/bubble/penalty";
+import UpTrend from "@/app/ui/icons/bubble/uptrend";
+import WebIcon from "@/app/ui/icons/bubble/web";
 import BubbleInfo from "../elements/bubble-info";
 
 export default function Services() {

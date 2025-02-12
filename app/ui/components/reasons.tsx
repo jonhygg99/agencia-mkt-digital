@@ -1,8 +1,8 @@
 import BubbleInfo from "../elements/bubble-info";
-import AttractionIcon from "../icons/attraction";
-import TrustIcon from "../icons/trust";
-import UserExperienceIcon from "../icons/user-experience";
-import RoiIcon from "../icons/roi";
+import AttractionIcon from "../icons/bubble/attraction";
+import TrustIcon from "../icons/bubble/trust";
+import UserExperienceIcon from "../icons/bubble/user-experience";
+import RoiIcon from "../icons/bubble/roi";
 
 export default function Reasons() {
   const title = (

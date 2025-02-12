@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import personajesSEO from "../../constants/placeholders-forms";
+import personajesSEO from "../../../constants/placeholders-forms";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -139,7 +139,7 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors"
+          className="w-full background-orange text-white font-semibold py-3 px-6 rounded-lg hover:background-orange-hover transition-colors"
         >
           Enviar
         </button>
