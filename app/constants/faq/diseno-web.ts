@@ -1,8 +1,8 @@
-import { FaqItem } from "./faq-items";
+import { FaqItem } from "./interface";
 
 export const faqItemsDisenoWeb: FaqItem[] = [
   {
-    question: "¿Cuánto tiempo tarda en completarse el Diseño Web con SEO? ",
+    question: "¿Cuánto tiempo tarda en completarse el Diseño Web con SEO?",
     answer:
       "El tiempo **promedio de finalización es de 4-6 semanas**, dependiendo de la complejidad\
  del proyecto. El cronograma típico es:\n\

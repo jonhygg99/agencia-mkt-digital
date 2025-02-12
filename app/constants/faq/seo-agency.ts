@@ -1,4 +1,4 @@
-import { FaqItem } from "./faq-items";
+import { FaqItem } from "./interface";
 
 export const faqItemsSEOAgency: FaqItem[] = [
   {

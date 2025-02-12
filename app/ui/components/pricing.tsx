@@ -1,17 +1,23 @@
 import Link from "next/link";
-import { priceCardsDisenoWeb } from "../../constants/pricing/diseno-web";
 import { TickIcon } from "../icons/pricing/tick";
 import { CrossIcon } from "../icons/pricing/cross";
+import { PriceCard } from "@/app/constants/pricing/interface";
 
-export default function Pricing() {
+export default function Pricing({
+  service,
+  pricingCards,
+}: {
+  service: string;
+  pricingCards: PriceCard[];
+}) {
   return (
     <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1600px]">
       <h2 className="title mb-10 max-w-[750px] mx-auto">
         Precios Competitivos para un{" "}
-        <span className="custom-title">Diseño Web con SEO</span>
+        <span className="custom-title">{service}</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {priceCardsDisenoWeb.map((card, index) => (
+        {pricingCards.map((card, index) => (
           <div
             key={index}
             className="background-bubble rounded-3xl p-8 flex flex-col"

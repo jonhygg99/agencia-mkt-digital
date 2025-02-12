@@ -8,11 +8,11 @@ import Faq from "./ui/components/faq";
 import HeroBig from "./ui/components/hero-big";
 import BannerCta from "./ui/components/banner-cta";
 import TypingAnimation from "./ui/elements/typing-animation";
-import { animatedSEOAgencyTexts } from "./constants/typing-animation";
 import QuestionSection from "./ui/components/question";
+import { animatedSEOAgencyTexts } from "./constants/typing-animation";
+import { timelineStepsSEO } from "./constants/timeline/seo";
+import { faqItemsSEOAgency } from "./constants/faq/seo-agency";
 import { questionSEO } from "./constants/question";
-import { timelineStepsSEO } from "./constants/timeline/timeline-steps-seo";
-import { faqItemsSEOAgency } from "./constants/faq/faq-items-seo-agency";
 
 export default function Home() {
   const HeroTitle = (
@@ -48,7 +48,7 @@ export default function Home() {
       <QuestionSection question={questionSEO} />
       <Services />
       <ParallaxImage
-        imageURL="/background-servicios-seo.webp"
+        imageURL="parallax-image/agencia-seo.webp"
         title="TRANSFORMA CLICS EN CLIENTES"
         text="Hacer SEO es como tener un imán para atraer compradores."
       />
@@ -59,7 +59,11 @@ export default function Home() {
         description={stepsDescription}
         timelineSteps={timelineStepsSEO}
       />
-      <Faq faqItems={faqItemsSEOAgency} posesivo="nuestra" />
+      <Faq
+        faqItems={faqItemsSEOAgency}
+        posesivo="nuestra"
+        service="Agencia SEO"
+      />
       <BannerCta bannerTitle={bannerTitle} bannerText={bannerText} />
     </div>
   );

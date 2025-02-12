@@ -1,5 +1,5 @@
 import Timeline from "./timeline";
-import { TimelineSteps } from "../../../constants/timeline/timeline";
+import { TimelineSteps } from "../../../constants/timeline/interface";
 
 export default function Steps({
   service,

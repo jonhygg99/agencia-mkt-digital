@@ -22,3 +22,12 @@ export const questionDisenoWeb: Question = {
   boldConclusion: "Más atractivo",
   conclusion: "y menos olvidable.",
 };
+
+export const questionPosicionamientoSEO: Question = {
+  question: "¿Por qué invertir en Posicionamiento SEO?",
+  boldAnswer:
+    "Porque el tráfico orgánico no solo es gratuito, sino también sostenible.",
+  answer: "A largo plazo, es la mejor inversión para tu presencia digital.",
+  boldConclusion: "Más clientes",
+  conclusion: ", menos gastos.",
+};

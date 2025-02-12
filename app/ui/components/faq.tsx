@@ -1,7 +1,7 @@
 "use client";
 
 import { JSX, useState } from "react";
-import { FaqItem } from "../../constants/faq/faq-items";
+import { FaqItem } from "../../constants/faq/interface";
 import PlusIcon from "../icons/faq/plus";
 import MinusIcon from "../icons/faq/minus";
 
@@ -75,9 +75,11 @@ const parseAnswer = (answer: string) => {
 export default function Faq({
   faqItems,
   posesivo,
+  service,
 }: {
   faqItems: FaqItem[];
   posesivo: string;
+  service: string;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -89,7 +91,7 @@ export default function Faq({
     <section className="container mx-auto px-6 py-12 md:py-24 max-w-[900px]">
       <p className="text-4xl lg:text-6xl md:text-5xl font-bold mb-12 text-center">
         Respondemos tus dudas sobre {posesivo}{" "}
-        <span className="custom-title">Agencia SEO</span>
+        <span className="custom-title">{service}</span>
       </p>
       <div className="space-y-4">
         {faqItems.map((item, index) => (

@@ -9,3 +9,9 @@ export const animatedWebDesignTexts = [
   "aumentará tu conversión",
   "mejorará la experiencia del usuario",
 ];
+
+export const animatedPosicionamientoSEOTexts = [
+  "atraer tráfico de calidad",
+  "incrementar tu retorno de inversión",
+  "fortalecer tu marca en el entorno digital",
+];

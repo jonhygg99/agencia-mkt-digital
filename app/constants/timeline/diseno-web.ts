@@ -1,4 +1,4 @@
-import { TimelineSteps } from "./timeline";
+import { TimelineSteps } from "./interface";
 
 export const timelineStepsDisenoWeb: TimelineSteps[] = [
   {

@@ -13,8 +13,10 @@ import TypingAnimation from "../ui/elements/typing-animation";
 import { animatedWebDesignTexts } from "../constants/typing-animation";
 import Reasons from "../ui/components/reasons";
 import Pricing from "../ui/components/pricing";
-import { timelineStepsDisenoWeb } from "../constants/timeline/timeline-steps-diseno-web";
-import { faqItemsDisenoWeb } from "../constants/faq/faq-items-diseno-web";
+import { timelineStepsDisenoWeb } from "../constants/timeline/diseno-web";
+import { faqItemsDisenoWeb } from "../constants/faq/diseno-web";
+import { reasonItemsDisenoWeb } from "../constants/reasons/diseno-web";
+import { priceCardsDisenoWeb } from "../constants/pricing/diseno-web";
 
 export default function Page() {
   const HeroTitle = (
@@ -39,27 +41,37 @@ export default function Page() {
  meticuloso y estratégico. Nuestro enfoque único combina diseño web cautivador con\
  optimización SEO avanzada, garantizando no solo una web visualmente impactante, sino\
  también una herramienta efectiva para atraer y convertir clientes. Cada paso de nuestro\
- proceso está diseñado para maximizar tu visibilidad online y potenciar el crecimiento de tu negocio.";
+ proceso está diseño para maximizar tu visibilidad online y potenciar el crecimiento de tu negocio.";
+  const reasonsTitle = (
+    <p>
+      Razones Clave por las que el{" "}
+      <span className="custom-title">Diseño Web es Esencial</span> para Tu Marca
+    </p>
+  );
 
   return (
     <div className="min-h-screen">
       <HeroBig HeroTitle={HeroTitle} titleSEO="Diseño Web" />
       {/* <Hero /> */}
       <QuestionSection question={questionDisenoWeb} />
-      <Reasons />
+      <Reasons title={reasonsTitle} reasonItems={reasonItemsDisenoWeb} />
       <ParallaxImage
-        imageURL="/background-diseno-web.webp"
+        imageURL="parallax-image/diseno-web.webp"
         title="COMUNICA TU MENSAJE SIN PALABRAS"
         text="El diseño es el embajador silencioso que da voz a tu marca."
       />
-      <Pricing />
+      <Pricing service="Diseño Web" pricingCards={priceCardsDisenoWeb} />
       <Contact service="Diseño Web" />
       <Steps
         service="Diseño Web con SEO"
         description={stepsDescription}
         timelineSteps={timelineStepsDisenoWeb}
       />
-      <Faq faqItems={faqItemsDisenoWeb} posesivo="nuestro" />
+      <Faq
+        faqItems={faqItemsDisenoWeb}
+        posesivo="nuestro"
+        service="Diseño Web"
+      />
       <BannerCta bannerTitle={bannerTitle} bannerText={bannerText} />
     </div>
   );
