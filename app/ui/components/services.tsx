@@ -7,6 +7,9 @@ import MigrationIcon from "@/app/ui/icons/bubble/migration";
 import PenaltyIcon from "@/app/ui/icons/bubble/penalty";
 import UpTrend from "@/app/ui/icons/bubble/uptrend";
 import WebIcon from "@/app/ui/icons/bubble/web";
+import ConsultingIcon from "@/app/ui/icons/bubble/consulting";
+import MaintenanceIcon from "@/app/ui/icons/bubble/maintenance";
+import WebSEOIcon from "@/app/ui/icons/bubble/web-seo";
 import BubbleInfo from "../elements/bubble-info";
 
 export default function Services() {
@@ -27,13 +30,15 @@ export default function Services() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AuditoriaSEO />
         <SEOLocal />
-        <SEOWeb />
+        <DisenoWebSEO />
         <PosicionamientoSEO />
-        <SEOInternacional />
+        <ConsultoriaSEO />
+        <MantenimientoWeb />
+        {/* <SEOInternacional />
         <MarketingContenido />
         <LinkBuilding />
         <MigracionesSEO />
-        <Penalizaciones />
+        <Penalizaciones /> */}
       </div>
     </section>
   );
@@ -59,12 +64,12 @@ function SEOLocal() {
   );
 }
 
-function SEOWeb() {
+function DisenoWebSEO() {
   return (
     <BubbleInfo
-      Icon={WebIcon}
-      title="Diseño página Web con SEO"
-      description="Construimos páginas web optimizadas desde cero. Hacemos que tu sitio sea atractivo y funcional, asi como estar diseño para cumplir con las mejores prácticas de SEO."
+      Icon={WebSEOIcon}
+      title="Diseño Web con SEO"
+      description="Creamos sitios web modernos y optimizados para SEO desde su concepción. Diseño responsive, velocidad de carga optimizada y estructura SEO-friendly para maximizar tu visibilidad online."
     />
   );
 }
@@ -134,6 +139,26 @@ function Penalizaciones() {
       title="Penalizaciones de Google"
       description="Realizamos un diagnóstico completo, identificamos las causas y aplicamos
     soluciones efectivas para restaurar tu posicionamiento."
+    />
+  );
+}
+
+function ConsultoriaSEO() {
+  return (
+    <BubbleInfo
+      Icon={ConsultingIcon}
+      title="Consultoría SEO"
+      description="Asesoramiento experto para optimizar tu estrategia SEO. Análisis detallado, recomendaciones personalizadas y plan de acción para mejorar tu posicionamiento web."
+    />
+  );
+}
+
+function MantenimientoWeb() {
+  return (
+    <BubbleInfo
+      Icon={MaintenanceIcon}
+      title="Mantenimiento Web"
+      description="Mantenemos tu sitio web actualizado, seguro y optimizado. Incluye actualizaciones de contenido, copias de seguridad, monitoreo de rendimiento y soporte técnico continuo."
     />
   );
 }

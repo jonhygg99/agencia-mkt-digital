@@ -73,7 +73,6 @@ export default function Page() {
         posesivo="nuestro Servicio de"
         service="Posicionamiento SEO"
       />
-      {/* // TODO: se ve mal en dispositivos lg */}
       <BannerCta bannerTitle={bannerTitle} bannerText={bannerText} />
     </div>
   );
