@@ -3,13 +3,13 @@ import ButtonScroll from "../elements/button-scroll";
 
 interface HeroBigProps {
   HeroTitle: React.ReactNode;
-  titleSEO: string;
+  title: string;
 }
 
-export default function HeroBig({ HeroTitle, titleSEO }: HeroBigProps) {
+export default function HeroBig({ HeroTitle, title }: HeroBigProps) {
   return (
-    <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1320px]">
-      <h1 className="text-center">{titleSEO}</h1>
+    <section className="section-class-1320">
+      <h1 className="text-center">{title}</h1>
       <div className="text-4xl md:text-5xl lg:text-6xl min-h-96 md:min-h-72 lg:min-h-[290px] mx-auto inline-block font-bold text-center pb-12 ">
         {HeroTitle}
       </div>

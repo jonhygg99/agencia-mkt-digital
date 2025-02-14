@@ -14,7 +14,7 @@ import BubbleInfo from "../elements/bubble-info";
 
 export default function Services() {
   return (
-    <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1320px]">
+    <section className="section-class-1320">
       <div className="max-w-[900px] mx-auto">
         <h2 className="title mb-5">
           <span className="custom-title">Servicios SEO</span> que Generan

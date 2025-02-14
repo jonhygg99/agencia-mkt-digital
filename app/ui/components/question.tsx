@@ -2,9 +2,9 @@ import type { Question } from "@/app/constants/question";
 
 export default function QuestionSection({ question }: { question: Question }) {
   return (
-    <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1320px]">
+    <section className="section-class max-w-[1320px]">
       <div className="flex flex-col lg:flex-row gap-12 ">
-        <div className="flex-1 ">
+        <div className="flex-1">
           <h2 className="text-4xl lg:text-6xl md:text-5xl font-bold ">
             {question.question}
           </h2>
@@ -17,7 +17,7 @@ export default function QuestionSection({ question }: { question: Question }) {
           <div>
             <p className="text-4xl font-bold mb-4">Conclusión</p>
             <p className="text-2xl md:text-3xl">
-              <span className="font-bold">{question.boldConclusion}</span>{" "}
+              <span className="font-bold">{question.boldConclusion}</span>
               {question.conclusion}
             </p>
           </div>

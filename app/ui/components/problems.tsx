@@ -2,7 +2,7 @@ import SEOproblems from "../../constants/seo-problems";
 
 export default function Problems() {
   return (
-    <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1320px]">
+    <section className="section-class-1320">
       <div className="max-w-[900px] mx-auto">
         <p className="title mb-5 max-w-[600px] mx-auto">
           Sabemos dar <span className="custom-title">solución</span> a tus
@@ -14,7 +14,7 @@ export default function Problems() {
           tráfico cualificado y el desafío de incrementar las ventas.
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {SEOproblems.map((text, index) => (
           <div
             key={index}

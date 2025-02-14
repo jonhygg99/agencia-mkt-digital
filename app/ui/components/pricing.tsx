@@ -4,19 +4,26 @@ import { CrossIcon } from "../icons/pricing/cross";
 import { PriceCard } from "@/app/constants/pricing/interface";
 
 export default function Pricing({
-  service,
   pricingCards,
+  title,
+  spacing,
 }: {
-  service: string;
   pricingCards: PriceCard[];
+  title: React.ReactNode;
+  spacing: boolean;
 }) {
   return (
-    <section className="container mx-auto px-6 py-12 md:py-24 max-w-[1600px]">
-      <h2 className="title mb-10 max-w-[750px] mx-auto">
-        Precios Competitivos para un{" "}
-        <span className="custom-title">{service}</span>
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section
+      className={`container mx-auto ${
+        spacing ? "px-6 py-12 md:py-24" : ""
+      } max-w-[1320px]`}
+    >
+      {title}
+      <div
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${
+          spacing ? "gap-8" : "gap-2"
+        }`}
+      >
         {pricingCards.map((card, index) => (
           <div
             key={index}
@@ -24,7 +31,7 @@ export default function Pricing({
           >
             <h3 className="text-2xl font-bold mb-4 ">{card.title}</h3>
             <div className="flex items-baseline gap-1 mb-4">
-              <span className="text-4xl font-bold ">€{card.price}</span>
+              <span className="text-4xl font-bold ">{card.price}€</span>
               <span className="text-gray-400">+ IVA</span>
             </div>
             <p className="text-gray-400 mb-8">{card.description}</p>

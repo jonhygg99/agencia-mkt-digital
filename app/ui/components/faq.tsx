@@ -88,7 +88,7 @@ export default function Faq({
   };
 
   return (
-    <section className="container mx-auto px-6 py-12 md:py-24 max-w-[900px]">
+    <section className="section-class-900">
       <p className="text-4xl lg:text-6xl md:text-5xl font-bold mb-12 text-center">
         Respondemos tus dudas sobre {posesivo}{" "}
         <span className="custom-title">{service}</span>
