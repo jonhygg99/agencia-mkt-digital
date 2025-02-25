@@ -46,7 +46,7 @@ export default function Page() {
       />
       <BannerCta
         bannerTitle={Constants.TITLE_BANNER}
-        bannerText={Constants.TEXT_BANNER}
+        bannerText={Constants.TITLE_BANNER}
       />
     </div>
   );

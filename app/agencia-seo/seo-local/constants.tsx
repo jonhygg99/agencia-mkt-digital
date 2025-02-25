@@ -16,7 +16,14 @@ export const TITLE_HERO = (
   <p>
     Nuestra estrategia de <span className="custom-title">{SERVICE}</span> está
     diseñada para llegar a las primeras posiciones relevantes en tu área y{" "}
-    <TypingAnimation texts={animatedSEOLocalTexts} className="custom-title" />
+    <TypingAnimation
+      texts={[
+        "atraer tráfico local de calidad",
+        "aumentar tu retorno de inversión",
+        "fortalecer tu marca en la comunidad",
+      ]}
+      className="custom-title"
+    />
   </p>
 );
 

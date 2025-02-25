@@ -1,6 +1,5 @@
 import { Question } from "@/app/constants/question";
-import { animatedPosicionamientoSEOTexts } from "../../constants/typing-animation";
-import TypingAnimation from "../../ui/elements/typing-animation";
+import TypingAnimation from "@/app/ui/elements/typing-animation";
 import { ReasonItem } from "@/app/constants/reasons/interface";
 import AttractionIcon from "@/app/ui/icons/bubble/attraction";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
@@ -14,10 +13,14 @@ export const SERVICE = "Posicionamiento SEO";
 
 export const TITLE_HERO = (
   <p>
-    La estrategia de <span className="custom-title">Posicionamiento SEO</span>{" "}
-    está diseño para conquistar las primeras posiciones y{" "}
+    La estrategia de <span className="custom-title">{SERVICE}</span> está diseño
+    para conquistar las primeras posiciones y{" "}
     <TypingAnimation
-      texts={animatedPosicionamientoSEOTexts}
+      texts={[
+        "atraer tráfico de calidad",
+        "incrementar tu retorno de inversión",
+        "fortalecer tu marca en el entorno digital",
+      ]}
       className="custom-title"
     />
   </p>

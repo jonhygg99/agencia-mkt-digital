@@ -6,14 +6,6 @@ export interface Question {
   conclusion: string;
 }
 
-export const questionSEO: Question = {
-  question: "¿Por qué invertir en estrategias SEO?",
-  boldAnswer: "Porque los anuncios no son eternos.",
-  answer: "Una buena estrategia de SEO te da visibilidad a largo plazo",
-  boldConclusion: "Más tráfico orgánico",
-  conclusion: " y menos drama.",
-};
-
 export const questionDisenoWeb: Question = {
   question: "¿Por qué invertir en Diseño Web atractivo?",
   boldAnswer: "Porque la primera impresión cuenta.",
@@ -21,13 +13,4 @@ export const questionDisenoWeb: Question = {
     "Un diseño optimizado para SEO asegura que tu sitio sea fácil de encontrar y navegar",
   boldConclusion: "Más atractivo",
   conclusion: " y menos olvidable.",
-};
-
-export const questionPosicionamientoSEO: Question = {
-  question: "¿Por qué invertir en Posicionamiento SEO?",
-  boldAnswer:
-    "Porque el tráfico orgánico no solo es gratuito, sino también sostenible.",
-  answer: "A largo plazo, es la mejor inversión para tu presencia digital.",
-  boldConclusion: "Más clientes",
-  conclusion: ", menos gastos.",
 };
