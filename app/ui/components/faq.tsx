@@ -1,7 +1,7 @@
 "use client";
 
 import { JSX, useState } from "react";
-import { FaqItem } from "../../constants/faq/interface";
+import { FaqItem } from "../../constants/interface/faq";
 import PlusIcon from "../icons/faq/plus";
 import MinusIcon from "../icons/faq/minus";
 

@@ -10,7 +10,7 @@ import BannerCta from "./ui/components/banner-cta";
 import QuestionSection from "./ui/components/question";
 import { timelineStepsSEO } from "./constants/timeline/seo";
 import { faqItemsSEOAgency } from "./constants/faq/seo-agency";
-import { questionSEO } from "./constants/question";
+import { questionSEO } from "./constants/interface/question";
 import {
   BannerText,
   BannerTitle,

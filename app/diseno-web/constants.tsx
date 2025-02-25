@@ -1,9 +1,9 @@
-import { FaqItem } from "@/app/constants/faq/interface";
+import { FaqItem } from "@/app/constants/interface/faq";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
-import { PriceCard } from "@/app/constants/pricing/interface";
-import { TimelineSteps } from "@/app/constants/timeline/interface";
-import { ReasonItem } from "@/app/constants/reasons/interface";
-import { Question } from "@/app/constants/question";
+import { PriceCard } from "@/app/constants/interface/pricing";
+import { TimelineSteps } from "@/app/constants/interface/timeline";
+import { ReasonItem } from "@/app/constants/interface/reason";
+import { Question } from "@/app/constants/interface/question";
 import AttractionIcon from "@/app/ui/icons/bubble/attraction";
 import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";

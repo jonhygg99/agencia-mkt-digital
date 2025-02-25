@@ -1,7 +1,7 @@
-import { FaqItem } from "@/app/constants/faq/interface";
+import { FaqItem } from "@/app/constants/interface/faq";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
-import { TimelineSteps } from "@/app/constants/timeline/interface";
-import { Question } from "@/app/constants/question";
+import { TimelineSteps } from "@/app/constants/interface/timeline";
+import { Question } from "@/app/constants/interface/question";
 
 export const SERVICE = "Agencia SEO";
 
