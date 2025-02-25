@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { TickIcon } from "../icons/pricing/tick";
 import { CrossIcon } from "../icons/pricing/cross";
 import { PriceCard } from "@/app/constants/pricing/interface";
+import ButtonScroll from "../elements/button-scroll";
 
 export default function Pricing({
   pricingCards,
@@ -14,9 +14,9 @@ export default function Pricing({
 }) {
   return (
     <section
-      className={`container mx-auto ${
+      className={`container mx-auto max-w-[1320px]${
         spacing ? "px-6 py-12 md:py-24" : ""
-      } max-w-[1320px]`}
+      }`}
     >
       {title}
       <div
@@ -27,7 +27,9 @@ export default function Pricing({
         {pricingCards.map((card, index) => (
           <div
             key={index}
-            className="background-bubble rounded-3xl p-8 flex flex-col"
+            className={`  flex flex-col ${
+              spacing ? "background-bubble rounded-3xl p-8" : ""
+            }`}
           >
             <h3 className="text-2xl font-bold mb-4 ">{card.title}</h3>
             <div className="flex items-baseline gap-1 mb-4">
@@ -54,12 +56,15 @@ export default function Pricing({
                 </li>
               ))}
             </ul>
-            <Link
-              href="/contacto"
-              className="w-full background-orange text-white py-4 px-6 rounded-xl text-center hover:background-orange-hover transition-colors"
-            >
-              Contactar
-            </Link>
+            {spacing && (
+              <ButtonScroll
+                idElement="contact"
+                buttonText="Contactar"
+                styleButton={
+                  "w-full background-orange text-white py-4 px-6 rounded-xl text-center hover:background-orange-hover transition-colors"
+                }
+              />
+            )}
           </div>
         ))}
       </div>

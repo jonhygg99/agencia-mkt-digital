@@ -17,6 +17,10 @@ import {
   HeroTitle,
   StepsDescription,
 } from "./constants";
+import type { Metadata } from "next";
+import { agenciaSEOMetadata } from "./metadata/agencia-seo";
+
+export const metadata: Metadata = agenciaSEOMetadata;
 
 export default function Home() {
   return (

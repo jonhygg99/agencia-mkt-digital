@@ -14,7 +14,13 @@ export default function HeroBig({ HeroTitle, title }: HeroBigProps) {
         {HeroTitle}
       </div>
       <div className="flex justify-center max-w-[500px] mx-auto pb-12">
-        <ButtonScroll idElement="contact" buttonText="Pedir Presupuesto" />
+        <ButtonScroll
+          idElement="contact"
+          buttonText="Pedir Presupuesto"
+          styleButton={
+            "w-full mx-auto bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity"
+          }
+        />
       </div>
       <Image
         src="/agencia.webp"

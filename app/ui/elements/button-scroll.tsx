@@ -3,9 +3,14 @@
 interface ButtonScrollProps {
   idElement: string;
   buttonText: string;
+  styleButton?: string;
 }
 
-function ButtonScroll({ idElement, buttonText }: ButtonScrollProps) {
+function ButtonScroll({
+  idElement,
+  buttonText,
+  styleButton,
+}: ButtonScrollProps) {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -20,10 +25,7 @@ function ButtonScroll({ idElement, buttonText }: ButtonScrollProps) {
     }
   };
   return (
-    <button
-      onClick={() => scrollToSection(idElement)}
-      className="w-full mx-auto bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity "
-    >
+    <button onClick={() => scrollToSection(idElement)} className={styleButton}>
       {buttonText}
     </button>
   );
