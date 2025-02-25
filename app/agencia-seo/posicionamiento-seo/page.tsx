@@ -1,58 +1,52 @@
-import QuestionSection from "../../ui/components/question";
-import { questionPosicionamientoSEO } from "../../constants/question";
-import ParallaxImage from "../../ui/components/parallax-image";
-import Contact from "../../ui/components/contact/contact";
-import Steps from "../../ui/components/timeline/steps";
-import Faq from "../../ui/components/faq";
-import HeroBig from "../../ui/components/hero-big";
-import BannerCta from "../../ui/components/banner-cta";
-import Reasons from "../../ui/components/reasons";
-import Pricing from "../../ui/components/pricing";
-import { reasonItemsSEO } from "../../constants/reasons/posicionamiento-seo";
-import { priceCardsPosicionamientoSEO } from "../../constants/pricing/posicionamiento-seo";
-import { faqItemsPosicionamientoSEO } from "../../constants/faq/posicionamiento-seo";
-import {
-  BannerText,
-  BannerTitle,
-  HeroTitle,
-  ReasonsTitle,
-  StepsDescription,
-  TitlePricing,
-} from "./constants";
-import { timelineStepsPosicionamientoSEO } from "@/app/constants/timeline/posicionamiento-seo";
+import HeroBig from "@/app/ui/components/hero-big";
+import BannerCta from "@/app/ui/components/banner-cta";
+import Contact from "@/app/ui/components/contact/contact";
+import Faq from "@/app/ui/components/faq";
+import ParallaxImage from "@/app/ui/components/parallax-image";
+import Pricing from "@/app/ui/components/pricing";
+import QuestionSection from "@/app/ui/components/question";
+import Reasons from "@/app/ui/components/reasons";
+import Steps from "@/app/ui/components/timeline/steps";
+import * as Constants from "./constants";
 
 export default function Page() {
   return (
     <div className="min-h-screen">
       <HeroBig
-        HeroTitle={HeroTitle}
+        HeroTitle={Constants.TITLE_HERO}
         title="Posicionamiento Web Profesional con SEO"
       />
-      <QuestionSection question={questionPosicionamientoSEO} />
-      <Reasons title={ReasonsTitle} reasonItems={reasonItemsSEO} />
+      <QuestionSection question={Constants.QUESTION_SERVICE} />
+      <Reasons
+        title={Constants.TITLE_REASONS}
+        reasonItems={Constants.REASON_ITEMS_SERVICE}
+      />
       <ParallaxImage
-        imageURL="../parallax-image/posicionamiento-seo.webp"
-        title="LA VISIBILIDAD ES LA CLAVE DEL ÉXITO DIGITAL"
-        text="No se trata solo de estar en línea, se trata de ser encontrado."
+        imageURL={Constants.IMAGE_PARALLAX_URL}
+        title={Constants.TITLE_PARALLAX}
+        text={Constants.TEXT_PARALLAX}
       />
       <Pricing
-        title={TitlePricing}
-        pricingCards={priceCardsPosicionamientoSEO}
+        title={Constants.TITLE_PRICING}
+        pricingCards={Constants.PRICE_CARD_SERVICE}
         spacing={true}
         mensual={true}
       />
-      <Contact service="Posicionamiento SEO" />
+      <Contact service={Constants.SERVICE} />
       <Steps
-        service="Posicionamiento SEO"
-        description={StepsDescription}
-        timelineSteps={timelineStepsPosicionamientoSEO}
+        service={Constants.SERVICE}
+        description={Constants.DESCRIPTION_TIMELINE}
+        timelineSteps={Constants.TIMELINE_STEPS_SERVICE}
       />
       <Faq
-        faqItems={faqItemsPosicionamientoSEO}
+        faqItems={Constants.FAQ_ITEMS_SERVICE}
         posesivo="nuestro Servicio de"
-        service="Posicionamiento SEO"
+        service={Constants.SERVICE}
       />
-      <BannerCta bannerTitle={BannerTitle} bannerText={BannerText} />
+      <BannerCta
+        bannerTitle={Constants.TITLE_BANNER}
+        bannerText={Constants.TEXT_BANNER}
+      />
     </div>
   );
 }

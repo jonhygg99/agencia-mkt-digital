@@ -86,12 +86,13 @@ export const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
+export const IMAGE_PARALLAX_URL = "../parallax-image/agencia-seo.webp";
+
 export const TITLE_PARALLAX =
   "LA VISIBILIDAD LOCAL ES FUNDAMENTAL PARA EL ÉXITO TU NEGOCIO";
+
 export const TEXT_PARALLAX =
   "No se trata solo de estar en línea, se trata de ser encontrado por tus clientes en tu área.";
-
-export const IMAGE_PARALLAX_URL = "../parallax-image/agencia-seo.webp";
 
 /*
  *
