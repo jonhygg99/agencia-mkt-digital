@@ -1,56 +1,49 @@
-import QuestionSection from "../ui/components/question";
-import { questionDisenoWeb } from "../constants/question";
-import ParallaxImage from "../ui/components/parallax-image";
-import Contact from "../ui/components/contact/contact";
-import Steps from "../ui/components/timeline/steps";
-import Faq from "../ui/components/faq";
-import HeroBig from "../ui/components/hero-big";
-import BannerCta from "../ui/components/banner-cta";
-import Reasons from "../ui/components/reasons";
-import Pricing from "../ui/components/pricing";
-import { timelineStepsDisenoWeb } from "../constants/timeline/diseno-web";
-import { faqItemsDisenoWeb } from "../constants/faq/diseno-web";
-import { reasonItemsDisenoWeb } from "../constants/reasons/diseno-web";
-import { priceCardsDisenoWeb } from "../constants/pricing/diseno-web";
-import {
-  BannerText,
-  BannerTitle,
-  HeroTitle,
-  ReasonsTitle,
-  StepsDescription,
-  TitlePricing,
-} from "./constants";
+import HeroBig from "@/app/ui/components/hero-big";
+import BannerCta from "@/app/ui/components/banner-cta";
+import Contact from "@/app/ui/components/contact/contact";
+import Faq from "@/app/ui/components/faq";
+import ParallaxImage from "@/app/ui/components/parallax-image";
+import Pricing from "@/app/ui/components/pricing";
+import QuestionSection from "@/app/ui/components/question";
+import Reasons from "@/app/ui/components/reasons";
+import Steps from "@/app/ui/components/timeline/steps";
+import * as Constants from "./constants";
 
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <HeroBig HeroTitle={HeroTitle} title="Diseño Web" />
-      {/* <Hero /> */}
-      <QuestionSection question={questionDisenoWeb} />
-      <Reasons title={ReasonsTitle} reasonItems={reasonItemsDisenoWeb} />
+      <HeroBig HeroTitle={Constants.TITLE_HERO} title={Constants.SERVICE} />
+      <QuestionSection question={Constants.QUESTION_SERVICE} />
+      <Reasons
+        title={Constants.TITLE_REASONS}
+        reasonItems={Constants.REASON_ITEMS_SERVICE}
+      />
       <ParallaxImage
-        imageURL="parallax-image/diseno-web.webp"
-        title="COMUNICA TU MENSAJE SIN PALABRAS"
-        text="El diseño es el embajador silencioso que da voz a tu marca."
+        imageURL={Constants.IMAGE_PARALLAX_URL}
+        title={Constants.TITLE_PARALLAX}
+        text={Constants.TEXT_PARALLAX}
       />
       <Pricing
-        title={TitlePricing}
-        pricingCards={priceCardsDisenoWeb}
+        title={Constants.TITLE_PRICING}
+        pricingCards={Constants.PRICE_CARDS_SERVICE}
         spacing={true}
         mensual={false}
       />
-      <Contact service="Diseño Web" />
+      <Contact service={Constants.SERVICE} />
       <Steps
-        service="Diseño Web con SEO"
-        description={StepsDescription}
-        timelineSteps={timelineStepsDisenoWeb}
+        service={`${Constants.SERVICE} con SEO`}
+        description={Constants.DESCRIPTION_TIMELINE}
+        timelineSteps={Constants.TIMELINE_STEPS_SERVICE}
       />
       <Faq
-        faqItems={faqItemsDisenoWeb}
+        faqItems={Constants.FAQ_ITEMS_SERVICE}
         posesivo="nuestro"
-        service="Diseño Web"
+        service={Constants.SERVICE}
       />
-      <BannerCta bannerTitle={BannerTitle} bannerText={BannerText} />
+      <BannerCta
+        bannerTitle={Constants.TITLE_BANNER}
+        bannerText={Constants.TEXT_BANNER}
+      />
     </div>
   );
 }

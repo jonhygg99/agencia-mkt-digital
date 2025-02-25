@@ -1,6 +1,5 @@
 import { FaqItem } from "@/app/constants/faq/interface";
-import { animatedSEOLocalTexts } from "../../constants/typing-animation";
-import TypingAnimation from "../../ui/elements/typing-animation";
+import TypingAnimation from "@/app/ui/elements/typing-animation";
 import { PriceCard } from "@/app/constants/pricing/interface";
 import { TimelineSteps } from "@/app/constants/timeline/interface";
 import { ReasonItem } from "@/app/constants/reasons/interface";
