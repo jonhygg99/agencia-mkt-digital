@@ -1,5 +1,5 @@
-import { animatedPosicionamientoSEOTexts } from "../constants/typing-animation";
-import TypingAnimation from "../ui/elements/typing-animation";
+import { animatedPosicionamientoSEOTexts } from "../../constants/typing-animation";
+import TypingAnimation from "../../ui/elements/typing-animation";
 
 export const HeroTitle = (
   <p>
@@ -29,10 +29,10 @@ export const TitlePricing = (
 
 export const StepsDescription =
   "Transformamos tu visión en una presencia digital poderosa a través de un proceso\
-meticuloso y estratégico. Nuestro enfoque único combina diseño web cautivador con\
-optimización SEO avanzada, garantizando no solo una web visualmente impactante, sino\
-también una herramienta efectiva para atraer y convertir clientes. Cada paso de nuestro\
-proceso está diseño para maximizar tu visibilidad online y potenciar el crecimiento de tu negocio.";
+ meticuloso y estratégico. Nuestro enfoque único combina diseño web cautivador con\
+ optimización SEO avanzada, garantizando no solo una web visualmente impactante, sino\
+ también una herramienta efectiva para atraer y convertir clientes. Cada paso de nuestro\
+ proceso está diseño para maximizar tu visibilidad online y potenciar el crecimiento de tu negocio.";
 
 export const BannerTitle = "IMPULSA TU POTENCIAL";
 

@@ -7,10 +7,12 @@ export default function Pricing({
   pricingCards,
   title,
   spacing,
+  mensual,
 }: {
   pricingCards: PriceCard[];
   title: React.ReactNode;
   spacing: boolean;
+  mensual: boolean;
 }) {
   return (
     <section
@@ -27,14 +29,14 @@ export default function Pricing({
         {pricingCards.map((card, index) => (
           <div
             key={index}
-            className={`  flex flex-col ${
+            className={`flex flex-col ${
               spacing ? "background-bubble rounded-3xl p-8" : ""
             }`}
           >
             <h3 className="text-2xl font-bold mb-4 ">{card.title}</h3>
             <div className="flex items-baseline gap-1 mb-4">
               <span className="text-4xl font-bold ">{card.price}€</span>
-              <span className="text-gray-400">+ IVA</span>
+              <span className="text-gray-400">+ IVA {mensual && "/ mes"}</span>
             </div>
             <p className="text-gray-400 mb-8">{card.description}</p>
             <ul className="space-y-4 mb-8 flex-grow">

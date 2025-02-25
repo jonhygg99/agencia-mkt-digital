@@ -17,7 +17,11 @@ export default function BannerCta({
         </div>
         <div className="flex-1 space-y-8">
           <p> {bannerText} </p>
-          <ButtonScroll idElement="contact" buttonText="Empezar Proyecto" />
+          <ButtonScroll
+            idElement="contact"
+            buttonText="Empezar Proyecto"
+            styleButton="btn"
+          />
         </div>
       </div>
     </section>

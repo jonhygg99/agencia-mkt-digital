@@ -15,7 +15,7 @@ import {
 
 export default function ConsultorSEO() {
   return (
-    <main className="max-w-[1320px] mx-auto">
+    <div className="max-w-[1320px] mx-auto">
       {/* Hero Section with sticky image */}
       <div className="relative min-h-screen px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
@@ -39,11 +39,12 @@ export default function ConsultorSEO() {
                 pricingCards={priceCardsConsultant}
                 title={TitlePricing}
                 spacing={false}
+                mensual={false}
               />
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

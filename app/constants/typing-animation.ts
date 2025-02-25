@@ -15,3 +15,9 @@ export const animatedPosicionamientoSEOTexts = [
   "incrementar tu retorno de inversión",
   "fortalecer tu marca en el entorno digital",
 ];
+
+export const animatedSEOLocalTexts = [
+  "atraer tráfico local de calidad",
+  "aumentar tu retorno de inversión",
+  "fortalecer tu marca en la comunidad",
+];
