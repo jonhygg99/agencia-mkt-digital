@@ -1,7 +1,16 @@
-import { FaqItem } from "@/app/constants/interface/faq";
+import { FaqItem } from "@/app/utils/interface/faq";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
-import { TimelineSteps } from "@/app/constants/interface/timeline";
-import { Question } from "@/app/constants/interface/question";
+import { TimelineSteps } from "@/app/utils/interface/timeline";
+import { Question } from "@/app/utils/interface/question";
+import { ServiceItem } from "../utils/interface/service";
+import {
+  AUDITORIA_SEO,
+  CONSULTORIA_SEO,
+  DISEÑO_WEB,
+  MANTENIMIENTO_WEB,
+  POSICIONAMIENTO_SEO,
+  SEO_LOCAL,
+} from "../utils/constants/service";
 
 export const SERVICE = "Agencia SEO";
 
@@ -36,6 +45,29 @@ export const QUESTION_SERVICE: Question = {
 
 /*
  *
+ *  Services Section
+ *
+ */
+
+export const TITLE_SERVICE = "SEO";
+
+export const DESCRIPTION_SERVICE =
+  "Impulsa tu visibilidad en línea con nuestras estrategias\
+ personalizadas de SEO. Desde la optimización on-page hasta el SEO\
+ off-page, cada acción está diseño para atraer más clientes y alcanzar\
+ tus objetivos comerciales. ¡Transforma tu presencia digital hoy!";
+
+export const SERVICE_LIST: ServiceItem[] = [
+  AUDITORIA_SEO,
+  SEO_LOCAL,
+  DISEÑO_WEB,
+  POSICIONAMIENTO_SEO,
+  CONSULTORIA_SEO,
+  MANTENIMIENTO_WEB,
+];
+
+/*
+ *
  *  Parallax Image Section
  *
  */
@@ -46,6 +78,27 @@ export const TITLE_PARALLAX = "TRANSFORMA CLICS EN CLIENTES";
 
 export const TEXT_PARALLAX =
   "Hacer SEO es como tener un imán para atraer compradores.";
+
+/*
+ *
+ *  Client Problems Section
+ *
+ */
+
+export const CLIENT_PROBLEMS = [
+  '"Lanzamos nuestra web, pero el tráfico es inexistente."',
+  '"Quiero aumentar mis ventas, pero mi sitio web está estancado y no aparece en Google."',
+  '"A pesar de tener buenos productos, no recibo ningún tráfico."',
+  '"Cuando busco mi negocio por palabras claves en Google Maps no aparezco."',
+  '"Mi sitio web no recibe visitas, y estoy desesperado por tener clientes."',
+  '"He tenido experiencias negativas con otras agencias de SEO, pero sigo necesitando este servicio."',
+  '"Mis ventas están estancadas, y no sé cómo mejorar mi visibilidad en línea."',
+  '"He invertido en SEO sin resultados y necesito una solución efectiva."',
+  '"He probado diferentes tácticas, pero sigo sin ver mejoras en mi tráfico web."',
+  '"Mi tienda online no se muestra en los resultados de búsqueda."',
+  '"Mis clientes no me encuentran en las búsquedas locales."',
+  '"Mi negocio tiene mucho potencial, pero no sé cómo atraer tráfico a mi sitio web."',
+];
 
 /*
  *

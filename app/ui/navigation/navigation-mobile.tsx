@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { navigationLinks } from "../../constants/navigation-links";
+import { navigationLinks } from "../../utils/constants/navigation-links";
 
 export const NavigationMobile = ({
   mobileMenuOpen,

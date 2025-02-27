@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import personajesSEO from "../../../constants/placeholders-forms";
+import personajesSEO from "../../../utils/constants/placeholders-forms";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

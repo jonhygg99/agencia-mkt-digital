@@ -1,4 +1,4 @@
-import type { Question } from "@/app/constants/interface/question";
+import type { Question } from "@/app/utils/interface/question";
 
 export default function QuestionSection({ question }: { question: Question }) {
   return (

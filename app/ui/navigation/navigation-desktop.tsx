@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { navigationLinks } from "../../constants/navigation-links";
+import { navigationLinks } from "../../utils/constants/navigation-links";
 import { DropdownIcon } from "../icons/dropdown";
 
 export const NavigationDesktop = ({

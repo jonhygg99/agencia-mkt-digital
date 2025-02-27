@@ -18,13 +18,17 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroBig HeroTitle={Constants.TITLE_HERO} title={Constants.SERVICE} />
       <QuestionSection question={Constants.QUESTION_SERVICE} />
-      <Services />
+      <Services
+        title={Constants.TITLE_SERVICE}
+        description={Constants.DESCRIPTION_SERVICE}
+        service={Constants.SERVICE_LIST}
+      />
       <ParallaxImage
         imageURL={Constants.IMAGE_PARALLAX_URL}
         title={Constants.TITLE_PARALLAX}
         text={Constants.TEXT_PARALLAX}
       />
-      <Problems />
+      <Problems problems={Constants.CLIENT_PROBLEMS} />
       <Contact service="SEO" />
       <Steps
         service="Estrategia SEO"

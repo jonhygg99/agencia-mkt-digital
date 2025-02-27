@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DOMINIO } from "../utils/constants/navigation-links";
 
 export const METADATA_SERVICE: Metadata = {
   title: "Agencia SEO | Expertos en Posicionamiento Web",
@@ -27,5 +28,5 @@ export const METADATA_SERVICE: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: { canonical: "https://your-domain.com" },
+  alternates: { canonical: DOMINIO + "/agencia-seo" },
 };

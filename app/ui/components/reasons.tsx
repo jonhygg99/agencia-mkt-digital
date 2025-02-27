@@ -1,5 +1,5 @@
 import BubbleInfo from "../elements/bubble-info";
-import { ReasonItem } from "@/app/constants/interface/reason";
+import { ReasonItem } from "@/app/utils/interface/reason";
 
 export default function Reasons({
   title,

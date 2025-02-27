@@ -1,4 +1,4 @@
-import { TimelineSteps } from "../../../constants/interface/timeline";
+import { TimelineSteps } from "../../../utils/interface/timeline";
 
 export default function Timeline({
   timelineSteps,

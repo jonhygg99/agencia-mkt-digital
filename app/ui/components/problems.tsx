@@ -1,6 +1,4 @@
-import SEOproblems from "../../constants/seo-problems";
-
-export default function Problems() {
+export default function Problems({ problems }: { problems: string[] }) {
   return (
     <section className="section-class-1320">
       <div className="max-w-[900px] mx-auto">
@@ -15,7 +13,7 @@ export default function Problems() {
         </p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {SEOproblems.map((text, index) => (
+        {problems.map((text, index) => (
           <div
             key={index}
             className="background-bubble text-gray-with-dark flex justify-center items-center text-center rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow"

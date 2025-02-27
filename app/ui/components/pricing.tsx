@@ -1,6 +1,6 @@
 import { TickIcon } from "../icons/pricing/tick";
 import { CrossIcon } from "../icons/pricing/cross";
-import { PriceCard } from "@/app/constants/interface/pricing";
+import { PriceCard } from "@/app/utils/interface/pricing";
 import ButtonScroll from "../elements/button-scroll";
 
 export default function Pricing({

@@ -1,4 +1,4 @@
-import { PriceCard } from "@/app/constants/interface/pricing";
+import { PriceCard } from "@/app/utils/interface/pricing";
 import BubbleInfo from "@/app/ui/elements/bubble-info";
 import ContentStrategyIcon from "@/app/ui/icons/bubble/content-strategy";
 import UIDesignIcon from "@/app/ui/icons/bubble/ui-design";

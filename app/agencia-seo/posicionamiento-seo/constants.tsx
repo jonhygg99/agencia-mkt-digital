@@ -1,13 +1,13 @@
-import { Question } from "@/app/constants/interface/question";
+import { Question } from "@/app/utils/interface/question";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
-import { ReasonItem } from "@/app/constants/interface/reason";
+import { ReasonItem } from "@/app/utils/interface/reason";
 import AttractionIcon from "@/app/ui/icons/bubble/attraction";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
 import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
-import { PriceCard } from "@/app/constants/interface/pricing";
-import { TimelineSteps } from "@/app/constants/interface/timeline";
-import { FaqItem } from "@/app/constants/interface/faq";
+import { PriceCard } from "@/app/utils/interface/pricing";
+import { TimelineSteps } from "@/app/utils/interface/timeline";
+import { FaqItem } from "@/app/utils/interface/faq";
 
 export const SERVICE = "Posicionamiento SEO";
 
