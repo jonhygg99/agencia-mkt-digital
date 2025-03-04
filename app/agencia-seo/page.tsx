@@ -42,7 +42,7 @@ export default function Home() {
       />
       <BannerCta
         bannerTitle={Constants.TITLE_BANNER}
-        bannerText={Constants.TITLE_BANNER}
+        bannerText={Constants.TEXT_BANNER}
       />
     </div>
   );

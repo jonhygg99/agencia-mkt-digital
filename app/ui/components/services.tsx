@@ -20,13 +20,14 @@ export default function Services({
         <p className="text-center mb-16">{description}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {service.map((service) => (
+        {service.map((service, index) => (
           <BubbleInfo
-            key={service.title}
+            key={index}
             Icon={service.Icon}
             title={service.title}
             description={service.description}
             comingSoon={service.comingSoon}
+            url={service.url}
           />
         ))}
       </div>

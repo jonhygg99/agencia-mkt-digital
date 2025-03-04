@@ -15,6 +15,11 @@ import EmailIcon from "@/app/ui/icons/bubble/email";
 import ChatbotIcon from "@/app/ui/icons/bubble/chatbot";
 import BrandingIcon from "@/app/ui/icons/bubble/branding";
 import SocialIcon from "@/app/ui/icons/bubble/social";
+import {
+  URL_DISENO_WEB,
+  URL_POSICIONAMIENTO_SEO,
+  URL_SEO_LOCAL,
+} from "./navigation-links";
 
 export const AUDITORIA_SEO: ServiceItem = {
   Icon: WebSEOIcon,
@@ -22,6 +27,7 @@ export const AUDITORIA_SEO: ServiceItem = {
   description:
     "Evaluamos tu sitio web para identificar fallos y áreas de mejora, implementando soluciones y aprovechando nuevas oportunidades para potenciar tu estrategia SEO.",
   comingSoon: false,
+  url: undefined,
 };
 
 export const SEO_LOCAL: ServiceItem = {
@@ -30,6 +36,7 @@ export const SEO_LOCAL: ServiceItem = {
   description:
     "Posicionamos tu negocio en las búsquedas geolocalizadas, asegurando que los clientes potenciales te encuentren justo cuando está buscando lo que ofreces.",
   comingSoon: false,
+  url: URL_SEO_LOCAL,
 };
 
 export const DISEÑO_WEB: ServiceItem = {
@@ -38,6 +45,7 @@ export const DISEÑO_WEB: ServiceItem = {
   description:
     "Creamos sitios web modernos y optimizados para SEO desde su concepción. Diseño responsive, velocidad de carga optimizada y estructura SEO-friendly para maximizar tu visibilidad online.",
   comingSoon: false,
+  url: URL_DISENO_WEB,
 };
 
 export const POSICIONAMIENTO_SEO: ServiceItem = {
@@ -46,6 +54,7 @@ export const POSICIONAMIENTO_SEO: ServiceItem = {
   description:
     "Potenciamos el rendimiento de tu sitio web ya construido. Realizamos un análisis exhaustivo para identificar áreas de mejora y optimizamos tu contenido, estructura y enlaces.",
   comingSoon: false,
+  url: URL_POSICIONAMIENTO_SEO,
 };
 
 export const CONSULTORIA_SEO: ServiceItem = {
@@ -53,6 +62,8 @@ export const CONSULTORIA_SEO: ServiceItem = {
   title: "Consultoría SEO",
   description:
     "Asesoramiento experto para optimizar tu estrategia SEO. Análisis detallado, recomendaciones personalizadas y plan de acción para mejorar tu posicionamiento web.",
+  comingSoon: false,
+  url: undefined,
 };
 
 export const MANTENIMIENTO_WEB: ServiceItem = {
@@ -61,6 +72,7 @@ export const MANTENIMIENTO_WEB: ServiceItem = {
   description:
     "Mantenemos tu sitio web actualizado, seguro y optimizado. Incluye actualizaciones de contenido, copias de seguridad, monitoreo de rendimiento y soporte técnico continuo.",
   comingSoon: false,
+  url: undefined,
 };
 
 export const SEO_INTERNACIONAL: ServiceItem = {
@@ -69,6 +81,7 @@ export const SEO_INTERNACIONAL: ServiceItem = {
   description:
     "Adaptamos tu estrategia para diferentes mercados y audiencias, optimizando contenido y keywords para maximizar tu visibilidad en múltiples países.",
   comingSoon: false,
+  url: undefined,
 };
 
 export const MARKETING_CONTENIDO: ServiceItem = {
@@ -77,6 +90,7 @@ export const MARKETING_CONTENIDO: ServiceItem = {
   description:
     "Creamos contenido de calidad que informa y convierte. Desde blogs a infografías, nuestras estrategias mejoran tu posicionamiento en buscadores y fortalecen tu marca.",
   comingSoon: false,
+  url: undefined,
 };
 
 export const LINK_BUILDING: ServiceItem = {
@@ -87,6 +101,7 @@ export const LINK_BUILDING: ServiceItem = {
   aumenten tu autoridad y visibilidad en Google, mejorando así tu\
   posicionamiento.",
   comingSoon: false,
+  url: undefined,
 };
 
 export const MIGRACIONES_SEO: ServiceItem = {
@@ -95,6 +110,7 @@ export const MIGRACIONES_SEO: ServiceItem = {
   description:
     "Gestionamos la migración de tu sitio web para preservar tu posicionamiento y tráfico, optimizando redirecciones y contenido para una transición efectiva.",
   comingSoon: false,
+  url: undefined,
 };
 
 export const PENALIZACIONES_GOOGLE: ServiceItem = {
@@ -104,6 +120,7 @@ export const PENALIZACIONES_GOOGLE: ServiceItem = {
     "Realizamos un diagnóstico completo, identificamos las causas y aplicamos\
   soluciones efectivas para restaurar tu posicionamiento.",
   comingSoon: true,
+  url: undefined,
 };
 
 export const PUBLICIDAD_PPC: ServiceItem = {
@@ -112,6 +129,7 @@ export const PUBLICIDAD_PPC: ServiceItem = {
   description:
     "Gestionamos campañas de publicidad paga efectivas en Google Ads y redes sociales, maximizando tu ROI y alcanzando a tu audiencia objetivo de manera precisa.",
   comingSoon: true,
+  url: undefined,
 };
 
 export const EMAIL_MARKETING: ServiceItem = {
@@ -120,6 +138,7 @@ export const EMAIL_MARKETING: ServiceItem = {
   description:
     "Desarrollamos estrategias personalizadas de email marketing para nutrir leads, fidelizar clientes y aumentar las conversiones a través de comunicaciones efectivas.",
   comingSoon: true,
+  url: undefined,
 };
 
 export const CHATBOTS: ServiceItem = {
@@ -128,6 +147,7 @@ export const CHATBOTS: ServiceItem = {
   description:
     "Implementamos soluciones de chatbots inteligentes para mejorar la atención al cliente, automatizar respuestas y aumentar la eficiencia en la comunicación con tus usuarios.",
   comingSoon: true,
+  url: undefined,
 };
 
 export const BRANDING: ServiceItem = {
@@ -136,6 +156,7 @@ export const BRANDING: ServiceItem = {
   description:
     "Creamos y fortalecemos la identidad de tu marca, desarrollando estrategias que conecten con tu audiencia y destaquen tu propuesta de valor en el mercado digital.",
   comingSoon: true,
+  url: undefined,
 };
 
 export const GESTION_REDES_SOCIALES: ServiceItem = {
@@ -144,4 +165,5 @@ export const GESTION_REDES_SOCIALES: ServiceItem = {
   description:
     "Administramos tus redes sociales de manera estratégica, creando contenido relevante, aumentando el engagement y construyendo una comunidad activa alrededor de tu marca.",
   comingSoon: true,
+  url: undefined,
 };

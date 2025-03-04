@@ -19,6 +19,8 @@ export default function Reasons({
               Icon={item.icon}
               title={item.title}
               description={item.description}
+              comingSoon={false}
+              url={undefined}
             />
           ))}
         </div>

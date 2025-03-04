@@ -94,9 +94,14 @@ body {
  *
  */
 
-.link-text {
+.link-text-dark {
   @apply hover:text-white transition-colors;
 }
+
+.link-text {
+  @apply hover:custom-orange  transition-colors;
+}
+
 .bubble {
   @apply background-bubble rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow;
 }

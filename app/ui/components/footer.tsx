@@ -7,6 +7,7 @@ import {
   URL_AGENCIA_SEO,
   TEXTOS_LEGALES,
   URL_CONSULTOR_SEO,
+  DOMINIO,
 } from "@/app/utils/constants/navigation-links";
 import {
   NOMBRE_EMPRESA,
@@ -25,7 +26,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {EMPRESA_FOOTER.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.href} className="link-text">
+                  <Link href={item.href} className="link-text-dark">
                     {item.name}
                   </Link>
                 </li>
@@ -34,12 +35,14 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">
-              Marketing digital
+              <Link href={DOMINIO} className="link-text-dark">
+                Agencia Marketing digital
+              </Link>
             </h3>
             <ul className="space-y-2">
               {AGENCIA_MARKETING_FOOTER.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.href} className="link-text">
+                  <Link href={item.href} className="link-text-dark">
                     {item.name}
                   </Link>
                 </li>
@@ -48,17 +51,14 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">
-              <Link
-                href={URL_AGENCIA_SEO}
-                className="hover:text-gray-300 transition-colors"
-              >
+              <Link href={URL_AGENCIA_SEO} className="link-text-dark">
                 Agencia SEO
               </Link>
             </h3>
             <ul className="space-y-2">
               {AGENCIA_SEO_FOOTER.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.href} className="link-text">
+                  <Link href={item.href} className="link-text-dark">
                     {item.name}
                   </Link>
                 </li>
@@ -76,10 +76,7 @@ export default function Footer() {
               <div className="flex space-x-4 mt-2">
                 {TEXTOS_LEGALES.map((item, index) => (
                   <React.Fragment key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors"
-                    >
+                    <Link href={item.href} className="link-text-dark">
                       {item.name}
                     </Link>
                     {index < TEXTOS_LEGALES.length - 1 && <span>—</span>}
@@ -91,10 +88,7 @@ export default function Footer() {
               <span>Hecho con</span>
               <span className="text-red-500">❤</span>
               <span> por </span>
-              <Link
-                href={URL_CONSULTOR_SEO}
-                className="hover:text-gray-300 transition-colors"
-              >
+              <Link href={URL_CONSULTOR_SEO} className="link-text-dark">
                 Jonathan Gómez
               </Link>
             </div>

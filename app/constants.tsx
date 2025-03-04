@@ -220,10 +220,9 @@ export const FAQ_ITEMS_SERVICE: FaqItem[] = [
  *
  */
 
-export const TITLE_BANNER = "COMPARTIENDO TU VISIÓN";
+export const TITLE_BANNER = "CONECTA CON TU AUDIENCIA";
 
 export const TEXT_BANNER =
-  "No dejes pasar la oportunidad de mejorar tu visibilidad en línea y\
-atraer más clientes. Contáctanos para una consulta gratuita y descubre\
-cómo nuestras estrategias de SEO personalizadas pueden llevar tu negocio\
-al siguiente nivel. ¡El éxito digital te espera!";
+  "No pierdas la oportunidad de potenciar tu presencia en línea y atraer más clientes. Contáctanos para una consulta\
+ gratuita y descubre cómo nuestras estrategias personalizadas de marketing digital, desde diseño web hasta gestión\
+ de redes sociales, pueden transformar tu negocio. ¡El futuro digital de tu marca comienza hoy!";

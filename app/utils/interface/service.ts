@@ -5,4 +5,5 @@ export interface ServiceItem {
   title: string;
   description: string;
   comingSoon: boolean;
+  url?: string;
 }

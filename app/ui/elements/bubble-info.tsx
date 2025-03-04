@@ -1,16 +1,19 @@
+import Link from "next/link";
 import { FC } from "react";
 
 export interface BubbleInfo {
   Icon: FC;
   title: string;
   description: string;
-  comingSoon?: boolean;
+  comingSoon: boolean;
+  url?: string;
 }
 
 export default function BubbleInfo({
   Icon,
   title,
   description,
+  url,
   comingSoon = false,
 }: BubbleInfo) {
   return (
@@ -30,7 +33,13 @@ export default function BubbleInfo({
       <h3
         className={`text-xl font-bold mb-4 ${comingSoon ? "opacity-50" : ""}`}
       >
-        {title}
+        {url ? (
+          <Link href={url} className="link-text">
+            {title}
+          </Link>
+        ) : (
+          title
+        )}
       </h3>
       <p className={comingSoon ? "opacity-50" : ""}>{description}</p>
     </div>
