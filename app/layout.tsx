@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { useState, useEffect } from "react";
 import { NavigationApp } from "./ui/navigation/navigation";
+import Footer from "./ui/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         <NavigationApp darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );
