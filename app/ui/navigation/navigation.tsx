@@ -5,6 +5,7 @@ import { NavigationDesktop } from "./navigation-desktop";
 import { NavigationMobileButtons } from "./navigation-mobile-buttons";
 import { NavigationMobile } from "./navigation-mobile";
 import { useState } from "react";
+import { DOMINIO } from "@/app/utils/constants/navigation-links";
 
 export const NavigationApp = ({
   darkMode,
@@ -20,7 +21,7 @@ export const NavigationApp = ({
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold">
+            <Link href={DOMINIO} className="text-2xl font-bold">
               Logo
             </Link>
           </div>

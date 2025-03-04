@@ -43,7 +43,7 @@ export const navigationLinks: NavLink[] = [
  */
 
 export const EMPRESA_FOOTER = [
-  { name: "Despierta tu web", href: "/sobre-nosotros" },
+  { name: "Sobre nosotros", href: "/sobre-nosotros" },
   { name: "Contacto", href: "/contacto" },
   { name: "Portfolio", href: "/portfolio" },
 ];

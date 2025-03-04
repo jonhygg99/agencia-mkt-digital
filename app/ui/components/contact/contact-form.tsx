@@ -137,10 +137,7 @@ export default function ContactForm() {
             Acepto las Políticas de Privacidad
           </label>
         </div>
-        <button
-          type="submit"
-          className="w-full background-orange text-white font-semibold py-3 px-6 rounded-lg hover:background-orange-hover transition-colors"
-        >
+        <button type="submit" className="btn-rounded-square">
           Enviar
         </button>
       </form>

@@ -2,7 +2,7 @@ import type { Question } from "@/app/utils/interface/question";
 
 export default function QuestionSection({ question }: { question: Question }) {
   return (
-    <section className="section-class max-w-[1320px]">
+    <section className="section-class-1320">
       <div className="flex flex-col lg:flex-row gap-12 ">
         <div className="flex-1">
           <h2 className="text-4xl lg:text-6xl md:text-5xl font-bold ">

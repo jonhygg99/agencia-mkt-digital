@@ -10,7 +10,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-rgb: 17, 24, 39;
+    --background-rgb: 94, 23, 235;
   }
 }
 
@@ -114,6 +114,9 @@ body {
   @apply w-full mx-auto bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity;
 }
 
+.btn-rounded-square {
+  @apply w-full background-orange text-white font-semibold py-3 px-6 rounded-lg hover:background-orange-hover transition-colors;
+}
 /* 
  *
  * Form Styles Class

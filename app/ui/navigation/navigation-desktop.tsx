@@ -45,6 +45,9 @@ export const NavigationDesktop = ({
       >
         {darkMode ? "🌞" : "🌙"}
       </button>
+      <Link href="#contact" className="btn-rounded-square !w-auto !py-3 !px-6">
+        Contactar
+      </Link>
     </div>
   );
 };

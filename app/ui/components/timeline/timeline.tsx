@@ -6,7 +6,7 @@ export default function Timeline({
   timelineSteps: TimelineSteps[];
 }) {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4">
+    <div className="max-w-4xl mx-auto">
       <div className="relative">
         {timelineSteps.map((item, index) => (
           <div key={index} className="mb-8 flex gap-6">

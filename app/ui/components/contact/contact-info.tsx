@@ -1,3 +1,9 @@
+import {
+  EMAIL_EMPRESA,
+  NOMBRE_EMPRESA,
+  TELEFONO_EMPRESA,
+} from "@/app/utils/constants/empresa";
+
 export default function ContactInfo({ service }: { service: string }) {
   return (
     <div>
@@ -6,9 +12,9 @@ export default function ContactInfo({ service }: { service: string }) {
         <h2>Pide Tu Presupuesto de {service} Ahora</h2>
       </div>
       <p className="text-gray-with-dark mb-8">
-        ¿Listo para llevar tu negocio al siguiente nivel? En nuestra agencia de
-        SEO, entendemos que cada empresa es única y tiene sus propios desafíos.
-        Por eso, ofrecemos presupuestos personalizados que se adaptan a tus
+        ¿Listo para llevar tu negocio al siguiente nivel? En {NOMBRE_EMPRESA},
+        entendemos que cada empresa es única y tiene sus propios desafíos. Por
+        eso, ofrecemos presupuestos personalizados que se adaptan a tus
         necesidades específicas. Completa el formulario de contacto y nuestro
         equipo de expertos te brindará una consulta gratuita. No dejes pasar la
         oportunidad de mejorar tu visibilidad en línea y atraer a más clientes.
@@ -17,11 +23,11 @@ export default function ContactInfo({ service }: { service: string }) {
       <div className="grid grid-cols-2">
         <div>
           <p className="font-bold mb-1">Correo electrónico:</p>
-          <p className="text-gray-with-dark">info@emjohogar.com</p>
+          <p className="text-gray-with-dark">{EMAIL_EMPRESA}</p>
         </div>
         <div>
           <p className="font-bold mb-1">Teléfono de contacto:</p>
-          <p className="text-gray-with-dark">+34 659 34 36 25</p>
+          <p className="text-gray-with-dark">{TELEFONO_EMPRESA}</p>
         </div>
       </div>
     </div>
