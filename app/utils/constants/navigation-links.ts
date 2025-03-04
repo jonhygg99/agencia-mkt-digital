@@ -6,6 +6,10 @@ interface NavLink {
 
 export const DOMINIO = "http://localhost:3000";
 
+/*
+ *  AGENCIA SEO
+ */
+
 const SLUG_AGENCIA_SEO = "/agencia-seo";
 export const URL_AGENCIA_SEO = `${DOMINIO}${SLUG_AGENCIA_SEO}`;
 
@@ -59,8 +63,27 @@ export const AGENCIA_SEO_FOOTER = [
   { name: "Mantenimiento Web", href: URL_CONSULTOR_SEO },
 ];
 
+/*
+ *  FOOTER - Textos Legales
+ */
+
+export const URL_TEXTOS_LEGALES = `${DOMINIO}/textos-legales`;
+
+const SLUG_AVISO_LEGAL = "/aviso-legal";
+export const URL_AVISO_LEGAL = `${URL_TEXTOS_LEGALES}${SLUG_AVISO_LEGAL}`;
+
+const SLUG_POLITICA_PRIVACIDAD = "/politica-privacidad";
+export const URL_POLITICA_PRIVACIDAD = `${URL_TEXTOS_LEGALES}${SLUG_POLITICA_PRIVACIDAD}`;
+
+const SLUG_POLITICA_COOKIE = "/politica-cookies";
+export const URL_POLITICA_COOKIE = `${URL_TEXTOS_LEGALES}${SLUG_POLITICA_COOKIE}`;
+
+const SLUG_MAPA_WEB = "/mapa-web";
+export const URL_MAPA_WEB = `${DOMINIO}${SLUG_MAPA_WEB}`;
+
 export const TEXTOS_LEGALES = [
-  { name: "Política de Privacidad", href: "/politica-de-privacidad" },
-  { name: "Aviso Legal", href: "/aviso-legal" },
-  { name: "Mapa Web", href: "/mapa-web" },
+  { name: "Aviso Legal", href: URL_AVISO_LEGAL },
+  { name: "Política de Privacidad", href: URL_POLITICA_PRIVACIDAD },
+  { name: "Política de Cookies", href: URL_POLITICA_COOKIE },
+  { name: "Mapa Web", href: URL_MAPA_WEB },
 ];
