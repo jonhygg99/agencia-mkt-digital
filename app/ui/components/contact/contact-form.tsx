@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import personajesSEO from "../../../utils/constants/placeholders-forms";
+import personajesSEO from "@/app/utils/constants/placeholders-forms";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,11 +12,18 @@ export default function ContactForm() {
     privacyPolicy: false,
   });
 
-  const [placeholders, setPlaceholders] = useState({
-    name: "",
-    email: "",
-    website: "",
+  const [status, setStatus] = useState({
+    submitting: false,
+    success: false,
+    error: false,
     message: "",
+  });
+
+  const [placeholders, setPlaceholders] = useState({
+    name: "Nombre",
+    email: "Correo Electrónico",
+    website: "Página web",
+    message: "Mensaje",
   });
 
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,10 +47,75 @@ export default function ContactForm() {
     return <div>Cargando...</div>;
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+
+    // Evitar múltiples envíos
+    if (status.submitting) return;
+
+    // Reset status
+    setStatus({
+      submitting: true,
+      success: false,
+      error: false,
+      message: "",
+    });
+
+    try {
+      // Obtener la página actual para información adicional
+      const currentPage =
+        typeof window !== "undefined"
+          ? window.location.pathname
+          : "Formulario de contacto";
+
+      // Enviar los datos del formulario a la API
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          website: formData.website || "",
+          message: formData.message,
+          currentPage,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Restablecer el formulario después de un envío exitoso
+        setFormData({
+          name: "",
+          email: "",
+          website: "",
+          message: "",
+          privacyPolicy: false,
+        });
+
+        setStatus({
+          submitting: false,
+          success: true,
+          error: false,
+          message:
+            data.message ||
+            "Mensaje enviado correctamente. ¡Gracias por contactarnos!",
+        });
+      } else {
+        throw new Error(data.message || "Error al enviar el mensaje");
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      setStatus({
+        submitting: false,
+        success: false,
+        error: true,
+        message:
+          error instanceof Error
+            ? error.message
+            : "Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+      });
+    }
   };
 
   const handleChange = (
@@ -137,8 +209,25 @@ export default function ContactForm() {
             Acepto las Políticas de Privacidad
           </label>
         </div>
-        <button type="submit" className="btn-rounded-square">
-          Enviar
+
+        {/* Mensajes de estado (solo se muestran si el componente está montado) */}
+        {status.success && (
+          <div className="p-4 my-3 text-sm text-green-700 bg-green-100 rounded-lg">
+            {status.message}
+          </div>
+        )}
+
+        {status.error && (
+          <div className="p-4 my-3 text-sm text-red-700 bg-red-100 rounded-lg">
+            {status.message}
+          </div>
+        )}
+        <button
+          type="submit"
+          className="btn-rounded-square"
+          disabled={status.submitting}
+        >
+          {status.submitting ? "Enviando..." : "Enviar"}
         </button>
       </form>
     </div>
