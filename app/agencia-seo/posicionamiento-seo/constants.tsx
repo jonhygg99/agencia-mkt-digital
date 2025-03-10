@@ -8,6 +8,13 @@ import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import { PriceCard } from "@/app/utils/interface/pricing";
 import { TimelineSteps } from "@/app/utils/interface/timeline";
 import { FaqItem } from "@/app/utils/interface/faq";
+import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import {
+  CATEGORY_SEO,
+  SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
+  SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
+  SERVICE_TYPE_POSICIONAMIENTO_SEO,
+} from "@/app/utils/constants/schema";
 
 export const SERVICE = "Posicionamiento SEO";
 
@@ -117,7 +124,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "Posicionamiento SEO Esencial",
     price: "150",
     description:
-      "Despierta tu presencia en línea con un impulso inicial hacia el éxito.",
+      "Optimización SEO para sitios web pequeños o de reciente creación",
     features: [
       { text: "Optimización hasta 100 URL", included: true },
       {
@@ -149,7 +156,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "Posicionamiento SEO Avanzado",
     price: "450",
     description:
-      "Eleva tu estrategia con enlaces que construyen autoridad y contenido cautivador.",
+      "Estrategia SEO completa para sitios web establecidos buscando mejorar su posicionamiento",
     features: [
       { text: "Optimización de +100 URL", included: true },
       {
@@ -181,7 +188,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "Posicionamiento SEO Premium",
     price: "850",
     description:
-      "Domina el mercado digital con una potente combinación de enlaces y contenido irresistible.",
+      "Estrategia SEO avanzada para sitios corporativos o e-commerce con alta competencia",
     features: [
       { text: "Optimización de +100 URL", included: true },
       {
@@ -332,3 +339,18 @@ export const TEXT_BANNER =
 destacar en el mundo digital y atraer a tu público objetivo. Contáctanos para una consulta\
 gratuita y descubre cómo nuestras soluciones SEO pueden transformar tu negocio y maximizar\
 tu alcance. ¡El futuro de tu éxito comienza hoy!";
+
+export const SCHEMA: ServiceDetailsSchema = {
+  name: "Posicionamiento Web Profesional con SEO",
+  description:
+    "Servicios de optimización y posicionamiento web para mejorar tu visibilidad en buscadores",
+  category: CATEGORY_SEO,
+  serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
+  slugImage: "/service/seo/Servicio-Posicionamiento-Web-Profesional-SEO.webp",
+  lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
+  highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
+  ratingValue: SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
+  ratingCount: SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
+  expectedDuration: "P30D",
+  faq: FAQ_ITEMS_SERVICE,
+};

@@ -10,12 +10,14 @@ import Services from "@/app/ui/components/services";
 import * as Constants from "./constants";
 import type { Metadata } from "next";
 import { METADATA_SERVICE } from "./metadata";
+import { AgencyServicesSchema } from "./schema";
 
 export const metadata: Metadata = METADATA_SERVICE;
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <AgencyServicesSchema schema={Constants.SCHEMA} />
       <HeroBig HeroTitle={Constants.TITLE_HERO} title={Constants.SERVICE} />
       <QuestionSection question={Constants.QUESTION_SERVICE} />
       <Services

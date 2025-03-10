@@ -1,32 +1,63 @@
 import type { Metadata } from "next";
-import { DOMINIO } from "../utils/constants/navigation-links";
+import {
+  DOMINIO,
+  URL_AGENCIA_SEO,
+} from "@/app/utils/constants/navigation-links";
 
 export const METADATA_SERVICE: Metadata = {
-  title: "Agencia SEO | Expertos en Posicionamiento Web",
+  title: "🥇 Agencia SEO | Consigue más tráfico orgánico",
   description:
-    "Somos una Agencia SEO especializada en incrementar tu tráfico orgánico y maximizar tu rentabilidad. Optimizamos tu presencia en línea para obtener leads calificados.",
-  keywords:
-    "agencia seo, posicionamiento web, seo españa, marketing digital, optimización web",
+    "✓ Agencia SEO líder en España. Aumentamos tu visibilidad online con estrategias SEO\
+ personalizadas. +500 proyectos exitosos. ROI garantizado.",
+  keywords: "agencia seo",
   openGraph: {
-    title: "Agencia SEO | Expertos en Posicionamiento Web",
+    title: "Agencia SEO | ¡Mejora tu Posicionamiento Web! 🚀",
     description:
-      "Somos una Agencia SEO especializada en incrementar tu tráfico orgánico y maximizar tu rentabilidad.",
+      "✓ Expertos en SEO y Marketing Digital. Aumentamos tu visibilidad online con estrategias\
+ personalizadas. +500 proyectos exitosos. ¡Solicita presupuesto sin compromiso!",
+    url: URL_AGENCIA_SEO,
+    siteName: "Agencia SEO - Marketing Digital",
     images: [
-      { url: "/agencia.webp", width: 1200, height: 630, alt: "Agencia SEO" },
+      {
+        url: DOMINIO + "/agencia.webp",
+        width: 1200,
+        height: 630,
+        alt: "Agencia de Marketing Digital | Servicios de SEO y SEM",
+      },
     ],
     locale: "es_ES",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agencia SEO | Expertos en Posicionamiento Web 🚀",
+    description:
+      "✓ Mejora tu visibilidad online con estrategias SEO avanzadas. ROI garantizado. ¡Solicita tu análisis SEO gratuito! #SEO #MarketingDigital",
+    images: [DOMINIO + "/agencia.webp"],
+  },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
-  alternates: { canonical: DOMINIO + "/agencia-seo" },
+  alternates: {
+    canonical: URL_AGENCIA_SEO,
+  },
+  applicationName: "Agencia SEO",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+  },
+
+  other: {
+    "revisit-after": "7 days",
+  },
 };

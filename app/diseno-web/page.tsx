@@ -25,7 +25,7 @@ export default function Page() {
       />
       <Pricing
         title={Constants.TITLE_PRICING}
-        pricingCards={Constants.PRICE_CARDS_SERVICE}
+        pricingCards={Constants.PRICE_CARD_SERVICE}
         spacing={true}
         mensual={false}
       />

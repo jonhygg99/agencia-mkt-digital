@@ -8,14 +8,13 @@ import QuestionSection from "@/app/ui/components/question";
 import Reasons from "@/app/ui/components/reasons";
 import Steps from "@/app/ui/components/timeline/steps";
 import * as Constants from "./constants";
+import { ServiceSchema } from "@/app/utils/schema/service";
 
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <HeroBig
-        HeroTitle={Constants.TITLE_HERO}
-        title="Posicionamiento Web Profesional con SEO"
-      />
+      <ServiceSchema schema={Constants.SCHEMA} />
+      <HeroBig HeroTitle={Constants.TITLE_HERO} title={Constants.SCHEMA.name} />
       <QuestionSection question={Constants.QUESTION_SERVICE} />
       <Reasons
         title={Constants.TITLE_REASONS}

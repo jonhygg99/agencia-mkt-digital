@@ -115,7 +115,7 @@ export const TITLE_PRICING = (
   </h2>
 );
 
-export const PRICE_CARDS_SERVICE: PriceCard[] = [
+export const PRICE_CARD_SERVICE: PriceCard[] = [
   {
     title: "Diseño Web de una Página",
     price: "650",
