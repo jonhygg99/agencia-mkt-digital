@@ -17,10 +17,11 @@ import {
   OneServiceSchema,
 } from "@/app/utils/interface/schema";
 import {
-  CATEGORY_DESCRIPTION_SEO,
+  CATEGORY_SEO_DESCRIPTION,
   CATEGORY_SEO,
   CODE_SEO,
   SERVICE_TYPE_AUDITORIA_SEO,
+  SERVICE_TYPE_CONSULTORIA_SEO,
   SERVICE_TYPE_DISENO_WEB,
   SERVICE_TYPE_MANTENIMIENTO_WEB,
   SERVICE_TYPE_POSICIONAMIENTO_SEO,
@@ -32,6 +33,15 @@ import { PRICE_CARD_SERVICE as PRICE_CARD_SEO_LOCAL } from "@/app/agencia-seo/se
 import { PRICE_CARD_SERVICE as PRICE_CARD_AUDITORIA_SEO } from "@/app/agencia-seo/auditoria-seo/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_DISENO_WEB } from "@/app/diseno-web/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_MANTENIMIENTO_WEB } from "@/app/agencia-seo/mantenimiento-web/constants";
+import { PRICE_CARD_SERVICE as PRICE_CARD_CONSULTORIA_SEO } from "@/app/agencia-seo/consultoria-seo/constants";
+import {
+  URL_AUDITORIA_SEO,
+  URL_DISENO_WEB,
+  URL_POSICIONAMIENTO_SEO,
+  URL_MANTENIMIENTO_WEB,
+  URL_CONSULTORIA_SEO,
+} from "@/app/utils/constants/navigation-links";
+import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
 
 export const SERVICE = "Agencia SEO";
 
@@ -268,108 +278,58 @@ atraer más clientes. Contáctanos para una consulta gratuita y descubre\
 cómo nuestras estrategias de SEO personalizadas pueden llevar tu negocio\
 al siguiente nivel. ¡El éxito digital te espera!";
 
-const createSchemaService = (services: PriceCard[], serviceType: string) => {
-  // Si solo hay un servicio, devuelve el objeto directamente
-  if (services.length === 1) {
-    const service = services[0];
-    const schema: OneServiceSchema = {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-        description: service.description,
-        serviceType: serviceType,
-      },
-      price: service.price,
-      priceCurrency: "EUR",
-    };
-    return schema;
-  } else {
-    // Si hay más de un servicio, devuelve un array de objetos
-    const schema: OneServiceSchema[] = services.map((service) => ({
-      "@type": "Offer", // Asegúrate de incluir el tipo aquí si es necesario
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-        description: service.description,
-        serviceType: serviceType,
-      },
-      price: service.price,
-      priceCurrency: "EUR",
-    }));
-    return schema; // Asegúrate de devolver el esquema combinado
-  }
-};
-
-interface GetSchemaParams {
-  services: PriceCard[];
-  serviceType: string;
-  name: string;
-  description: string;
-}
-
-const getSchema = ({
-  services,
-  serviceType,
-  name,
-  description,
-}: GetSchemaParams): OneServiceSchema | CombinedServiceSchema => {
-  const schemaServices: OneServiceSchema | OneServiceSchema[] =
-    createSchemaService(services, serviceType);
-
-  if (Array.isArray(schemaServices)) {
-    return {
-      "@type": "AggregateOffer",
-      offers: schemaServices,
-      lowPrice: services[0].price,
-      highPrice: services[services.length - 1].price,
-      priceCurrency: "EUR",
-      name: name,
-      description: description,
-    };
-  } else {
-    return schemaServices;
-  }
-};
-
-const schema_seo = getSchema({
+const schema_seo = getSchemaServiceCategory({
   services: PRICE_CARD_SEO,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
   name: "Servicios de Posicionamiento SEO",
   description:
     "Diferentes planes de posicionamiento SEO adaptados a tus necesidades",
+  url: URL_POSICIONAMIENTO_SEO,
 });
 
-const schema_seo_local = getSchema({
+const schema_seo_local = getSchemaServiceCategory({
   services: PRICE_CARD_SEO_LOCAL,
   serviceType: SERVICE_TYPE_SEO_LOCAL,
   name: "Servicios de Posicionamiento SEO Local",
   description:
     "Mejora tu visibilidad en búsquedas locales para atraer clientes de tu zona",
+  url: URL_POSICIONAMIENTO_SEO,
 });
 
-const schema_auditoria_seo = getSchema({
+const schema_auditoria_seo = getSchemaServiceCategory({
   services: PRICE_CARD_AUDITORIA_SEO,
   serviceType: SERVICE_TYPE_AUDITORIA_SEO,
-  name: "Servicios de Auditoría SEO",
+  name: "Servicio de Auditoría SEO",
   description:
     "Análisis completo del estado actual de tu web para identificar oportunidades de mejora",
+  url: URL_AUDITORIA_SEO,
 });
 
-const schema_diseno_web = getSchema({
+const schema_diseno_web = getSchemaServiceCategory({
   services: PRICE_CARD_DISENO_WEB,
   serviceType: SERVICE_TYPE_DISENO_WEB,
   name: "Servicios de Diseño Web",
   description:
     "Creación de sitios web optimizados para SEO y experiencia de usuario",
+  url: URL_DISENO_WEB,
 });
 
-const schema_mantenimiento_web = getSchema({
+const schema_consultoria_seo = getSchemaServiceCategory({
+  services: PRICE_CARD_CONSULTORIA_SEO,
+  serviceType: SERVICE_TYPE_CONSULTORIA_SEO,
+  name: "Servicio de Consultoría SEO",
+  description:
+    "Consultoría SEO para optimizar tu sitio web y mejorar tu visibilidad en línea.",
+  url: URL_CONSULTORIA_SEO,
+});
+
+const schema_mantenimiento_web = getSchemaServiceCategory({
   services: PRICE_CARD_MANTENIMIENTO_WEB,
   serviceType: SERVICE_TYPE_MANTENIMIENTO_WEB,
-  name: "Servicios de Mantenimiento Web",
+  name: "Servicio de Mantenimiento Web",
   description:
     "Mantenimiento y optimización de sitios web para mejorar su rendimiento y experiencia de usuario",
+  url: URL_MANTENIMIENTO_WEB,
 });
 
 const combinedSchemas: Array<OneServiceSchema | CombinedServiceSchema> = [
@@ -377,12 +337,14 @@ const combinedSchemas: Array<OneServiceSchema | CombinedServiceSchema> = [
   schema_seo_local,
   schema_auditoria_seo,
   schema_diseno_web,
+  schema_consultoria_seo,
   schema_mantenimiento_web,
 ];
 
 export const SCHEMA: CategorySchema = {
   category: CATEGORY_SEO,
   codeCategory: CODE_SEO,
-  categoryDescription: CATEGORY_DESCRIPTION_SEO,
+  categoryDescription: CATEGORY_SEO_DESCRIPTION,
   serviceDetailsSchema: combinedSchemas,
+  slogan: "Estrategias SEO que despiertan tu presencia online",
 };

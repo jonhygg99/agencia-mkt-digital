@@ -1,6 +1,5 @@
 import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
 import { DOMINIO } from "@/app/utils/constants/navigation-links";
-import { cleanText } from "@/app/utils/format-text";
 import {
   CATEGORY_DESCRIPTION_DIGITAL_MARKETING,
   CATEGORY_DIGITAL_MARKETING,
@@ -19,10 +18,16 @@ export const AgencyServicesSchema = ({
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": ["Organization", "LocalBusiness"],
           name: NOMBRE_EMPRESA,
           url: DOMINIO,
           logo: DOMINIO + "/logo.webp",
+          // "image": [
+          //   "https://despiertatuweb.com/img/oficina.webp",
+          //   "https://despiertatuweb.com/img/equipo.webp"
+          // ],
+          slogan: schema.slogan,
+          priceRange: "€€",
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: CATEGORY_DESCRIPTION_DIGITAL_MARKETING,

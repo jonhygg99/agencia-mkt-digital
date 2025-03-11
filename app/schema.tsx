@@ -2,8 +2,11 @@ import {
   ADDRESS_LOCALITY,
   COUNTRY_CODE,
   EMAIL_EMPRESA,
+  LATITUDE,
+  LONGITUDE,
   NOMBRE_EMPRESA,
   POSTAL_CODE,
+  REGION,
   STREET_ADDRESS,
   TELEFONO_EMPRESA,
 } from "@/app/utils/constants/empresa";
@@ -27,13 +30,20 @@ export const SchemaMarkup = () => {
             addressLocality: ADDRESS_LOCALITY,
             postalCode: POSTAL_CODE,
             addressCountry: COUNTRY_CODE,
+            addressRegion: REGION,
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: LATITUDE,
+            longitude: LONGITUDE,
           },
           contactPoint: {
             "@type": "ContactPoint",
             telephone: TELEFONO_EMPRESA,
             contactType: "customer service",
             email: EMAIL_EMPRESA,
-            areaServed: COUNTRY_CODE,
+            areaServed: COUNTRY_CODE, // TODO: CAMBIAR SI PASAMOS A INTERNACIONAL
+            availableLanguage: ["Spanish", "Catalan", "English"],
           },
           sameAs: ["https://www.facebook.com/despiertatuweb"],
           openingHoursSpecification: {
@@ -41,6 +51,11 @@ export const SchemaMarkup = () => {
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             opens: "09:00",
             closes: "18:00",
+          },
+          founder: {
+            "@type": "Person",
+            name: "Jonathan Gómez Garvin",
+            jobTitle: "CEO y Fundador",
           },
         }),
       }}

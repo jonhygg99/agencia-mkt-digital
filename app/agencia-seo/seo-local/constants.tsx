@@ -8,6 +8,20 @@ import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
 import { Question } from "@/app/utils/interface/question";
+import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import {
+  CATEGORY_SEO,
+  CATEGORY_SEO_SERVICE_OUTPUT,
+  SERVICE_SEO_LOCAL_RATING_COUNT,
+  SERVICE_SEO_LOCAL_RATING_VALUE,
+  SERVICE_TYPE_SEO_LOCAL,
+} from "@/app/utils/constants/schema";
+import { URL_SEO_LOCAL } from "@/app/utils/constants/navigation-links";
+import {
+  getCombinedServiceSchema,
+  getSingleServiceSchema,
+} from "@/app/utils/schema/utils";
+import { IMAGE_SCHEMA_SEO_LOCAL } from "@/app/utils/constants/image";
 
 export const SERVICE = "SEO Local";
 
@@ -323,3 +337,30 @@ export const TEXT_BANNER =
 Con una estrategia de SEO local efectiva, atraerás a más clientes y aumentarás tus ventas.\
 Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte a destacar en el mundo digital.\
 ¡Tu éxito local comienza aquí!";
+
+/*
+ *
+ *  SCHEMA
+ *
+ */
+
+export const SCHEMA: ServiceDetailsSchema = {
+  name: SERVICE,
+  description:
+    "Servicio de posicionamiento SEO local que optimiza tu presencia en línea para atraer clientes en tu área geográfica específica.",
+  category: CATEGORY_SEO,
+  serviceType: SERVICE_TYPE_SEO_LOCAL,
+  serviceOutput: CATEGORY_SEO_SERVICE_OUTPUT,
+  slugImage: IMAGE_SCHEMA_SEO_LOCAL,
+  url: URL_SEO_LOCAL,
+  service: getCombinedServiceSchema(
+    PRICE_CARD_SERVICE,
+    "Planes de Posicionamiento SEO Local"
+  ),
+  lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
+  highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
+  ratingValue: SERVICE_SEO_LOCAL_RATING_VALUE,
+  ratingCount: SERVICE_SEO_LOCAL_RATING_COUNT,
+  expectedDuration: "P30D",
+  faq: FAQ_ITEMS_SERVICE,
+};

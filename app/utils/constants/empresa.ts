@@ -8,6 +8,7 @@ export const ADDRESS_LOCALITY = "Barcelona";
 export const POSTAL_CODE = "08016";
 export const COUNTRY_CODE = "ES";
 export const COUNTRY = "España";
+export const REGION = "Cataluña";
 export const DIRECCION_EMPRESA = `${STREET_ADDRESS}, ${ADDRESS_LOCALITY} ${POSTAL_CODE} ${COUNTRY}`;
 export const LATITUDE = "41.44066903266001";
 export const LONGITUDE = "2.182710377971193";

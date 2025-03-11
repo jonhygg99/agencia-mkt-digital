@@ -13,11 +13,20 @@ export const DOMINIO = "http://localhost:3000";
 const SLUG_AGENCIA_SEO = "/agencia-seo";
 export const URL_AGENCIA_SEO = `${DOMINIO}${SLUG_AGENCIA_SEO}`;
 
+const SLUG_AUDITORIA_SEO = "/auditoria-seo";
+export const URL_AUDITORIA_SEO = `${URL_AGENCIA_SEO}${SLUG_AUDITORIA_SEO}`;
+
 const SLUG_POSICIONAMIENTO_SEO = "/posicionamiento-seo";
 export const URL_POSICIONAMIENTO_SEO = `${URL_AGENCIA_SEO}${SLUG_POSICIONAMIENTO_SEO}`;
 
 const SLUG_SEO_LOCAL = "/seo-local";
 export const URL_SEO_LOCAL = `${URL_AGENCIA_SEO}${SLUG_SEO_LOCAL}`;
+
+const SLUG_CONSULTORIA_SEO = "/consultoria-seo";
+export const URL_CONSULTORIA_SEO = `${URL_AGENCIA_SEO}${SLUG_CONSULTORIA_SEO}`;
+
+const SLUG_MANTENIMIENTO_WEB = "/mantenimiento-web";
+export const URL_MANTENIMIENTO_WEB = `${URL_AGENCIA_SEO}${SLUG_MANTENIMIENTO_WEB}`;
 
 const SLUG_DISENO_WEB = "/diseno-web";
 export const URL_DISENO_WEB = `${DOMINIO}${SLUG_DISENO_WEB}`;
@@ -30,8 +39,12 @@ export const navigationLinks: NavLink[] = [
     href: URL_AGENCIA_SEO,
     text: "SEO",
     dropdown: [
+      { href: URL_AUDITORIA_SEO, text: "Auditoría SEO" },
       { href: URL_POSICIONAMIENTO_SEO, text: "Posicionamiento SEO" },
-      { href: URL_SEO_LOCAL, text: "SEO Local" },
+      { href: URL_SEO_LOCAL, text: "Posicionamiento SEO Local" },
+      { href: URL_DISENO_WEB, text: "Diseño Web con SEO" },
+      { href: URL_CONSULTORIA_SEO, text: "Consultoría SEO" },
+      { href: URL_MANTENIMIENTO_WEB, text: "Mantenimiento Web" },
     ],
   },
   { href: URL_DISENO_WEB, text: "Diseño Web" },
@@ -44,6 +57,7 @@ export const navigationLinks: NavLink[] = [
 
 export const EMPRESA_FOOTER = [
   { name: "Sobre nosotros", href: "/sobre-nosotros" },
+  { name: "Consultor SEO", href: URL_CONSULTOR_SEO },
   { name: "Contacto", href: "/contacto" },
   { name: "Portfolio", href: "/portfolio" },
 ];
@@ -59,7 +73,7 @@ export const AGENCIA_SEO_FOOTER = [
   { name: "SEO Local", href: URL_SEO_LOCAL },
   { name: "Diseño Web", href: URL_DISENO_WEB },
   { name: "Posicionamiento SEO", href: URL_POSICIONAMIENTO_SEO },
-  { name: "Consultoría SEO", href: URL_CONSULTOR_SEO },
+  { name: "Consultoría SEO", href: URL_CONSULTORIA_SEO },
   { name: "Mantenimiento Web", href: URL_CONSULTOR_SEO },
 ];
 

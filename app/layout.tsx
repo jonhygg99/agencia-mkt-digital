@@ -54,7 +54,7 @@ export default function RootLayout({
           href="/favicon_io/favicon-16x16.png"
         />
         <link rel="shortcut icon" href="/favicon_io/favicon.ico" />
-        <SchemaMarkup />
+        {/* <SchemaMarkup /> */}
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-gray-900 transition-colors duration-300 text-gray-900 dark:text-white`}

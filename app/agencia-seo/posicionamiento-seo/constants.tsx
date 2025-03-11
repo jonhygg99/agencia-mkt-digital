@@ -11,10 +11,14 @@ import { FaqItem } from "@/app/utils/interface/faq";
 import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
+  CATEGORY_SEO_SERVICE_OUTPUT,
   SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
   SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
   SERVICE_TYPE_POSICIONAMIENTO_SEO,
 } from "@/app/utils/constants/schema";
+import { URL_POSICIONAMIENTO_SEO } from "@/app/utils/constants/navigation-links";
+import { getCombinedServiceSchema } from "@/app/utils/schema/utils";
+import { IMAGE_SCHEMA_POSICIONAMIENTO_SEO } from "@/app/utils/constants/image";
 
 export const SERVICE = "Posicionamiento SEO";
 
@@ -44,8 +48,8 @@ export const QUESTION_SERVICE: Question = {
   boldAnswer:
     "Porque el tráfico orgánico no solo es gratuito, sino también sostenible.",
   answer: "A largo plazo, es la mejor inversión para tu presencia digital.",
-  boldConclusion: "Más clientes",
-  conclusion: ", menos gastos.",
+  boldConclusion: "Supera a la competencia",
+  conclusion: ", y destaca en tu sector.",
 };
 
 /*
@@ -57,8 +61,7 @@ export const QUESTION_SERVICE: Question = {
 export const TITLE_REASONS = (
   <p>
     Razones Clave por las que el{" "}
-    <span className="custom-title">Posicionamiento SEO es Esencial</span> para
-    Tu Marca
+    <span className="custom-title">{SERVICE} es Esencial</span> para Tu Marca
   </p>
 );
 
@@ -114,8 +117,7 @@ export const TEXT_PARALLAX =
 
 export const TITLE_PRICING = (
   <h2 className="title-pricing">
-    Precios Competitivos para un{" "}
-    <span className="custom-title">Posicionamiento SEO</span>
+    Precios Competitivos para un <span className="custom-title">{SERVICE}</span>
   </h2>
 );
 
@@ -346,7 +348,13 @@ export const SCHEMA: ServiceDetailsSchema = {
     "Servicios de optimización y posicionamiento web para mejorar tu visibilidad en buscadores",
   category: CATEGORY_SEO,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
-  slugImage: "/service/seo/Servicio-Posicionamiento-Web-Profesional-SEO.webp",
+  slugImage: IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
+  serviceOutput: CATEGORY_SEO_SERVICE_OUTPUT,
+  url: URL_POSICIONAMIENTO_SEO,
+  service: getCombinedServiceSchema(
+    PRICE_CARD_SERVICE,
+    "Planes de Posicionamiento SEO"
+  ),
   lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
   highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
   ratingValue: SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
