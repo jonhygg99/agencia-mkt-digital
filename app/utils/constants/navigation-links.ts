@@ -1,3 +1,5 @@
+import { FooterSectionItem } from "@/app/utils/interface/footer";
+
 interface NavLink {
   href: string;
   text: string;
@@ -55,20 +57,20 @@ export const navigationLinks: NavLink[] = [
  *  FOOTER
  */
 
-export const EMPRESA_FOOTER = [
+export const EMPRESA_FOOTER: FooterSectionItem[] = [
   { name: "Sobre nosotros", href: "/sobre-nosotros" },
   { name: "Consultor SEO", href: URL_CONSULTOR_SEO },
   { name: "Contacto", href: "/contacto" },
   { name: "Portfolio", href: "/portfolio" },
 ];
 
-export const AGENCIA_MARKETING_FOOTER = [
+export const AGENCIA_MARKETING_FOOTER: FooterSectionItem[] = [
   { name: "Agencia de Marketing Digital", href: DOMINIO },
   { name: "Agencia SEO", href: URL_AGENCIA_SEO },
   { name: "Agencia SEM", href: "/agencia-sem" },
 ];
 
-export const AGENCIA_SEO_FOOTER = [
+export const AGENCIA_SEO_FOOTER: FooterSectionItem[] = [
   { name: "Auditoría SEO", href: URL_AGENCIA_SEO },
   { name: "SEO Local", href: URL_SEO_LOCAL },
   { name: "Diseño Web", href: URL_DISENO_WEB },

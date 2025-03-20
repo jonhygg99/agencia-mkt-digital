@@ -9,6 +9,10 @@ import Reasons from "@/app/ui/components/reasons";
 import Steps from "@/app/ui/components/timeline/steps";
 import * as Constants from "./constants";
 import { ServiceSchema } from "@/app/utils/schema/service";
+import { Metadata } from "next";
+import { METADATA } from "./metadata";
+
+export const metadata: Metadata = METADATA;
 
 export default function Page() {
   return (

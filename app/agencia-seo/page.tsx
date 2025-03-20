@@ -9,10 +9,10 @@ import Problems from "@/app/ui/components/problems";
 import Services from "@/app/ui/components/services";
 import * as Constants from "./constants";
 import type { Metadata } from "next";
-import { METADATA_SERVICE } from "./metadata";
+import { METADATA } from "./metadata";
 import { AgencyServicesSchema } from "./schema";
 
-export const metadata: Metadata = METADATA_SERVICE;
+export const metadata: Metadata = METADATA;
 
 export default function Home() {
   return (

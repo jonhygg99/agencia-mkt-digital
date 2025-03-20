@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import {
-  DOMINIO,
-  URL_AGENCIA_SEO,
-} from "@/app/utils/constants/navigation-links";
+import { URL_AGENCIA_SEO } from "@/app/utils/constants/navigation-links";
+import { IMAGE_AGENCIA_SEO } from "@/app/utils/constants/image";
 
-export const METADATA_SERVICE: Metadata = {
+const URL = URL_AGENCIA_SEO;
+const URL_IMAGE = IMAGE_AGENCIA_SEO;
+
+export const METADATA: Metadata = {
   title: "🥇 Agencia SEO | Consigue más tráfico orgánico",
   description:
     "✓ Agencia SEO líder en España. Aumentamos tu visibilidad online con estrategias SEO\
@@ -15,11 +16,11 @@ export const METADATA_SERVICE: Metadata = {
     description:
       "✓ Expertos en SEO y Marketing Digital. Aumentamos tu visibilidad online con estrategias\
  personalizadas. +500 proyectos exitosos. ¡Solicita presupuesto sin compromiso!",
-    url: URL_AGENCIA_SEO,
+    url: URL,
     siteName: "Agencia SEO - Marketing Digital",
     images: [
       {
-        url: DOMINIO + "/agencia.webp",
+        url: URL_IMAGE,
         width: 1200,
         height: 630,
         alt: "Agencia de Marketing Digital | Servicios de SEO y SEM",
@@ -33,7 +34,7 @@ export const METADATA_SERVICE: Metadata = {
     title: "Agencia SEO | Expertos en Posicionamiento Web 🚀",
     description:
       "✓ Mejora tu visibilidad online con estrategias SEO avanzadas. ROI garantizado. ¡Solicita tu análisis SEO gratuito! #SEO #MarketingDigital",
-    images: [DOMINIO + "/agencia.webp"],
+    images: [URL_IMAGE],
   },
   robots: {
     index: true,
@@ -49,15 +50,14 @@ export const METADATA_SERVICE: Metadata = {
     },
   },
   alternates: {
-    canonical: URL_AGENCIA_SEO,
+    canonical: URL,
   },
   applicationName: "Agencia SEO",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
   },
-
-  other: {
-    "revisit-after": "7 days",
-  },
+  // other: {
+  //   "revisit-after": "7 days",
+  // },
 };
