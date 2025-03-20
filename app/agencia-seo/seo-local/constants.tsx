@@ -17,15 +17,13 @@ import {
   SERVICE_TYPE_SEO_LOCAL,
 } from "@/app/utils/constants/schema";
 import { URL_SEO_LOCAL } from "@/app/utils/constants/navigation-links";
-import {
-  getCombinedServiceSchema,
-  getSingleServiceSchema,
-} from "@/app/utils/schema/utils";
+import { getCombinedServiceSchema } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_SEO_LOCAL } from "@/app/utils/constants/image";
+import { PageServiceData } from "@/app/utils/interface/page";
 
 export const SERVICE = "SEO Local";
 
-export const TITLE_HERO = (
+const TITLE_HERO = (
   <p>
     Nuestra estrategia de <span className="custom-title">{SERVICE}</span> está
     diseñada para llegar a las primeras posiciones relevantes en tu área y{" "}
@@ -46,7 +44,7 @@ export const TITLE_HERO = (
  *
  */
 
-export const QUESTION_SERVICE: Question = {
+const QUESTION_SERVICE: Question = {
   question: "¿Por qué invertir en estrategias de SEO Local?",
   boldAnswer:
     "Porque el tráfico orgánico local no solo es gratuito, sino también sostenible.",
@@ -62,14 +60,14 @@ export const QUESTION_SERVICE: Question = {
  *
  */
 
-export const TITLE_REASONS = (
+const TITLE_REASONS = (
   <p>
     Razones Clave por las que el{" "}
     <span className="custom-title">{SERVICE} es Esencial</span> para Tu Marca
   </p>
 );
 
-export const REASON_ITEMS_SERVICE: ReasonItem[] = [
+const REASON_ITEMS_SERVICE: ReasonItem[] = [
   {
     icon: AttractionIcon,
     title: "Tráfico Orgánico Local",
@@ -106,12 +104,12 @@ export const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-export const IMAGE_PARALLAX_URL = "../parallax-image/agencia-seo.webp";
+const IMAGE_PARALLAX_URL = "../parallax-image/agencia-seo.webp";
 
-export const TITLE_PARALLAX =
+const TITLE_PARALLAX =
   "LA VISIBILIDAD LOCAL ES FUNDAMENTAL PARA EL ÉXITO TU NEGOCIO";
 
-export const TEXT_PARALLAX =
+const TEXT_PARALLAX =
   "No se trata solo de estar en línea, se trata de ser encontrado por tus clientes en tu área.";
 
 /*
@@ -120,7 +118,7 @@ export const TEXT_PARALLAX =
  *
  */
 
-export const TITLE_PRICING = (
+const TITLE_PRICING = (
   <h2 className="title-pricing">
     Precios Competitivos para el servicio de{" "}
     <span className="custom-title">{SERVICE}</span>
@@ -223,12 +221,12 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
  *
  */
 
-export const DESCRIPTION_TIMELINE =
+const DESCRIPTION_TIMELINE =
   "Transformamos tu visión en una fuerte presencia digital local a través de un enfoque estratégico\
  y personalizado. Nuestro objetivo es asegurarnos de que tu negocio sea fácilmente encontrado por los\
  clientes en tu área.";
 
-export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
+const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
   {
     title: "Análisis Inicial y Definición de Objetivos",
     description:
@@ -274,7 +272,7 @@ export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
  *
  */
 
-export const FAQ_ITEMS_SERVICE: FaqItem[] = [
+const FAQ_ITEMS_SERVICE: FaqItem[] = [
   {
     question: "¿Qué es el SEO local y cómo puede beneficiar a mi negocio?",
     answer:
@@ -330,9 +328,9 @@ export const FAQ_ITEMS_SERVICE: FaqItem[] = [
  *
  */
 
-export const TITLE_BANNER = "CONQUISTA EL MERCADO LOCAL";
+const TITLE_BANNER = "CONQUISTA EL MERCADO LOCAL";
 
-export const TEXT_BANNER =
+const TEXT_BANNER =
   "Transforma tu presencia en línea y haz que tu negocio sea la primera opción en tu área.\
 Con una estrategia de SEO local efectiva, atraerás a más clientes y aumentarás tus ventas.\
 Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte a destacar en el mundo digital.\
@@ -340,11 +338,11 @@ Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte a dest
 
 /*
  *
- *  SCHEMA
+ *  SCHEMA section
  *
  */
 
-export const SCHEMA: ServiceDetailsSchema = {
+const SCHEMA: ServiceDetailsSchema = {
   name: SERVICE,
   description:
     "Servicio de posicionamiento SEO local que optimiza tu presencia en línea para atraer clientes en tu área geográfica específica.",
@@ -363,4 +361,29 @@ export const SCHEMA: ServiceDetailsSchema = {
   ratingCount: SERVICE_SEO_LOCAL_RATING_COUNT,
   expectedDuration: "P30D",
   faq: FAQ_ITEMS_SERVICE,
+};
+
+/*
+ *
+ *  DATA Section
+ *
+ */
+
+export const DATA: PageServiceData = {
+  SCHEMA: SCHEMA,
+  TITLE_HERO: TITLE_HERO,
+  QUESTION_SERVICE: QUESTION_SERVICE,
+  TITLE_REASONS: TITLE_REASONS,
+  REASON_ITEMS_SERVICE: REASON_ITEMS_SERVICE,
+  IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
+  TITLE_PARALLAX: TITLE_PARALLAX,
+  TEXT_PARALLAX: TEXT_PARALLAX,
+  TITLE_PRICING: TITLE_PRICING,
+  PRICE_CARD_SERVICE: PRICE_CARD_SERVICE,
+  SERVICE: SERVICE,
+  DESCRIPTION_TIMELINE: DESCRIPTION_TIMELINE,
+  TIMELINE_STEPS_SERVICE: TIMELINE_STEPS_SERVICE,
+  FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
+  TITLE_BANNER: TITLE_BANNER,
+  TEXT_BANNER: TEXT_BANNER,
 };

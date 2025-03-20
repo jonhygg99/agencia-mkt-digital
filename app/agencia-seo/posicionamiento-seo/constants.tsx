@@ -19,10 +19,11 @@ import {
 import { URL_POSICIONAMIENTO_SEO } from "@/app/utils/constants/navigation-links";
 import { getCombinedServiceSchema } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_POSICIONAMIENTO_SEO } from "@/app/utils/constants/image";
+import { PageServiceData } from "@/app/utils/interface/page";
 
-export const SERVICE = "Posicionamiento SEO";
+const SERVICE = "Posicionamiento SEO";
 
-export const TITLE_HERO = (
+const TITLE_HERO = (
   <p>
     La estrategia de <span className="custom-title">{SERVICE}</span> está diseño
     para conquistar las primeras posiciones y{" "}
@@ -43,7 +44,7 @@ export const TITLE_HERO = (
  *
  */
 
-export const QUESTION_SERVICE: Question = {
+const QUESTION_SERVICE: Question = {
   question: "¿Por qué invertir en Posicionamiento SEO?",
   boldAnswer:
     "Porque el tráfico orgánico no solo es gratuito, sino también sostenible.",
@@ -58,14 +59,14 @@ export const QUESTION_SERVICE: Question = {
  *
  */
 
-export const TITLE_REASONS = (
+const TITLE_REASONS = (
   <p>
     Razones Clave por las que el{" "}
     <span className="custom-title">{SERVICE} es Esencial</span> para Tu Marca
   </p>
 );
 
-export const REASON_ITEMS_SERVICE: ReasonItem[] = [
+const REASON_ITEMS_SERVICE: ReasonItem[] = [
   {
     icon: AttractionIcon,
     title: "Tráfico Orgánico",
@@ -102,11 +103,11 @@ export const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-export const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
+const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
 
-export const TITLE_PARALLAX = "LA VISIBILIDAD ES LA CLAVE DEL ÉXITO DIGITAL";
+const TITLE_PARALLAX = "LA VISIBILIDAD ES LA CLAVE DEL ÉXITO DIGITAL";
 
-export const TEXT_PARALLAX =
+const TEXT_PARALLAX =
   "No se trata solo de estar en línea, se trata de ser encontrado.";
 
 /*
@@ -115,7 +116,7 @@ export const TEXT_PARALLAX =
  *
  */
 
-export const TITLE_PRICING = (
+const TITLE_PRICING = (
   <h2 className="title-pricing">
     Precios Competitivos para un <span className="custom-title">{SERVICE}</span>
   </h2>
@@ -226,14 +227,14 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
  *
  */
 
-export const DESCRIPTION_TIMELINE =
+const DESCRIPTION_TIMELINE =
   "Transformamos tu visión en una presencia digital poderosa a través de un proceso\
  meticuloso y estratégico. Nuestro enfoque único combina diseño web cautivador con\
  optimización SEO avanzada, garantizando no solo una web visualmente impactante, sino\
  también una herramienta efectiva para atraer y convertir clientes. Cada paso de nuestro\
  proceso está diseño para maximizar tu visibilidad online y potenciar el crecimiento de tu negocio.";
 
-export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
+const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
   {
     title: "Consultoría Inicial",
     description:
@@ -292,7 +293,7 @@ export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
  *
  */
 
-export const FAQ_ITEMS_SERVICE: FaqItem[] = [
+const FAQ_ITEMS_SERVICE: FaqItem[] = [
   {
     question: "¿Qué servicio SEO es el adecuado para mi negocio?",
     answer:
@@ -334,15 +335,21 @@ Sin embargo, en mercados altamente competitivos, puede ser necesario un año o m
  *
  */
 
-export const TITLE_BANNER = "IMPULSA TU POTENCIAL";
+const TITLE_BANNER = "IMPULSA TU POTENCIAL";
 
-export const TEXT_BANNER =
+const TEXT_BANNER =
   "No subestimes el poder de una estrategia bien definida. Aprovecha cada oportunidad para\
 destacar en el mundo digital y atraer a tu público objetivo. Contáctanos para una consulta\
 gratuita y descubre cómo nuestras soluciones SEO pueden transformar tu negocio y maximizar\
 tu alcance. ¡El futuro de tu éxito comienza hoy!";
 
-export const SCHEMA: ServiceDetailsSchema = {
+/*
+ *
+ *  Schema Section
+ *
+ */
+
+const SCHEMA: ServiceDetailsSchema = {
   name: "Posicionamiento Web Profesional con SEO",
   description:
     "Servicios de optimización y posicionamiento web para mejorar tu visibilidad en buscadores",
@@ -361,4 +368,29 @@ export const SCHEMA: ServiceDetailsSchema = {
   ratingCount: SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
   expectedDuration: "P30D",
   faq: FAQ_ITEMS_SERVICE,
+};
+
+/*
+ *
+ *  DATA Section
+ *
+ */
+
+export const DATA: PageServiceData = {
+  SCHEMA: SCHEMA,
+  TITLE_HERO: TITLE_HERO,
+  QUESTION_SERVICE: QUESTION_SERVICE,
+  TITLE_REASONS: TITLE_REASONS,
+  REASON_ITEMS_SERVICE: REASON_ITEMS_SERVICE,
+  IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
+  TITLE_PARALLAX: TITLE_PARALLAX,
+  TEXT_PARALLAX: TEXT_PARALLAX,
+  TITLE_PRICING: TITLE_PRICING,
+  PRICE_CARD_SERVICE: PRICE_CARD_SERVICE,
+  SERVICE: SERVICE,
+  DESCRIPTION_TIMELINE: DESCRIPTION_TIMELINE,
+  TIMELINE_STEPS_SERVICE: TIMELINE_STEPS_SERVICE,
+  FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
+  TITLE_BANNER: TITLE_BANNER,
+  TEXT_BANNER: TEXT_BANNER,
 };

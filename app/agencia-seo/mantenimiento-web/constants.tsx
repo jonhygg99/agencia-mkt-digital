@@ -22,10 +22,11 @@ import {
   SERVICE_TYPE_MANTENIMIENTO_WEB,
 } from "@/app/utils/constants/schema";
 import { IMAGE_SCHEMA_MANTENIMIENTO_WEB } from "@/app/utils/constants/image";
+import { PageServiceData } from "@/app/utils/interface/page";
 
-export const SERVICE = "Mantenimiento Web";
+const SERVICE = "Mantenimiento Web";
 
-export const TITLE_HERO = (
+const TITLE_HERO = (
   <p>
     Nuestro <span className="custom-title">{SERVICE}</span> está diseñado para
     ofrecerte tranquilidad y ayudarte a{" "}
@@ -46,7 +47,7 @@ export const TITLE_HERO = (
  *
  */
 
-export const QUESTION_SERVICE: Question = {
+const QUESTION_SERVICE: Question = {
   question: "¿Por qué invertir en Mantenimiento Web?",
   boldAnswer:
     "Porque asegura el rendimiento y la seguridad de tu sitio en todo momento.",
@@ -62,14 +63,14 @@ export const QUESTION_SERVICE: Question = {
  *
  */
 
-export const TITLE_REASONS = (
+const TITLE_REASONS = (
   <p>
     Razones Clave por las que la{" "}
     <span className="custom-title">{SERVICE} es Esencial</span> para Tu Marca
   </p>
 );
 
-export const REASON_ITEMS_SERVICE: ReasonItem[] = [
+const REASON_ITEMS_SERVICE: ReasonItem[] = [
   {
     icon: AttractionIcon,
     title: "Mantenimiento Proactivo",
@@ -102,20 +103,18 @@ export const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-// TODO: Change the image URL
-export const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
+const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
 
-export const TITLE_PARALLAX = "ASEGURA EL RENDIMIENTO DE TU SITIO";
+const TITLE_PARALLAX = "ASEGURA EL RENDIMIENTO DE TU SITIO";
 
-export const TEXT_PARALLAX =
-  "El mantenimiento proactivo te ayuda a evitar problemas.";
+const TEXT_PARALLAX = "El mantenimiento proactivo te ayuda a evitar problemas.";
 /*
  *
  *  Pricing Section
  *
  */
 
-export const TITLE_PRICING = (
+const TITLE_PRICING = (
   <h2 className="title-pricing">
     Precios Competitivos para un <span className="custom-title">{SERVICE}</span>
   </h2>
@@ -166,13 +165,13 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
  *
  */
 
-export const DESCRIPTION_TIMELINE =
+const DESCRIPTION_TIMELINE =
   "Nuestro proceso de mantenimiento web está diseñado para garantizar el óptimo funcionamiento de tu sitio.\
  A través de un enfoque sistemático y proactivo, nos aseguramos de que tu web esté siempre actualizada, segura\
  y optimizada. Cada etapa de nuestro servicio está enfocada en maximizar la experiencia del usuario y mantener\
  tu presencia digital en su mejor forma.";
 
-export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
+const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
   {
     title: "Consultoría Inicial",
     description:
@@ -217,7 +216,7 @@ export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
  *
  */
 
-export const FAQ_ITEMS_SERVICE: FaqItem[] = [
+const FAQ_ITEMS_SERVICE: FaqItem[] = [
   {
     question: "¿Qué incluye el servicio de mantenimiento web?",
     answer:
@@ -256,18 +255,18 @@ export const FAQ_ITEMS_SERVICE: FaqItem[] = [
  *
  */
 
-export const TITLE_BANNER = "MANTEN TU SITIO EN SU MEJOR FORMA";
-export const TEXT_BANNER =
+const TITLE_BANNER = "MANTEN TU SITIO EN SU MEJOR FORMA";
+const TEXT_BANNER =
   "El mantenimiento web es esencial para asegurar un rendimiento óptimo. Contáctanos para una consulta gratuita y descubre\
  cómo podemos ayudarte a mantener tu presencia digital. ¡No dejes que los problemas te detengan!";
 
 /*
  *
- *  SCHEMA
+ *  SCHEMA section
  *
  */
 
-export const SCHEMA: ServiceDetailsSchema = {
+const SCHEMA: ServiceDetailsSchema = {
   name: SERVICE,
   description:
     "Mantenimiento web integral que incluye actualizaciones, seguridad, optimización y hosting.",
@@ -283,4 +282,29 @@ export const SCHEMA: ServiceDetailsSchema = {
   ratingCount: SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
   expectedDuration: "P30D",
   faq: FAQ_ITEMS_SERVICE,
+};
+
+/*
+ *
+ *  DATA Section
+ *
+ */
+
+export const DATA: PageServiceData = {
+  SCHEMA: SCHEMA,
+  TITLE_HERO: TITLE_HERO,
+  QUESTION_SERVICE: QUESTION_SERVICE,
+  TITLE_REASONS: TITLE_REASONS,
+  REASON_ITEMS_SERVICE: REASON_ITEMS_SERVICE,
+  IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
+  TITLE_PARALLAX: TITLE_PARALLAX,
+  TEXT_PARALLAX: TEXT_PARALLAX,
+  TITLE_PRICING: TITLE_PRICING,
+  PRICE_CARD_SERVICE: PRICE_CARD_SERVICE,
+  SERVICE: SERVICE,
+  DESCRIPTION_TIMELINE: DESCRIPTION_TIMELINE,
+  TIMELINE_STEPS_SERVICE: TIMELINE_STEPS_SERVICE,
+  FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
+  TITLE_BANNER: TITLE_BANNER,
+  TEXT_BANNER: TEXT_BANNER,
 };

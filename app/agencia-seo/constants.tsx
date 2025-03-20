@@ -27,7 +27,6 @@ import {
   SERVICE_TYPE_POSICIONAMIENTO_SEO,
   SERVICE_TYPE_SEO_LOCAL,
 } from "@/app/utils/constants/schema";
-import { PriceCard } from "@/app/utils/interface/pricing";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO } from "@/app/agencia-seo/posicionamiento-seo/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO_LOCAL } from "@/app/agencia-seo/seo-local/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_AUDITORIA_SEO } from "@/app/agencia-seo/auditoria-seo/constants";
@@ -42,10 +41,11 @@ import {
   URL_CONSULTORIA_SEO,
 } from "@/app/utils/constants/navigation-links";
 import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
+import { PageCategoryData } from "../utils/interface/page";
 
-export const SERVICE = "Agencia SEO";
+const SERVICE = "Agencia SEO";
 
-export const TITLE_HERO = (
+const TITLE_HERO = (
   <p>
     Somos una <span className="custom-title">{SERVICE}</span> que impulsa el
     Crecimiento Digital, optimizando tu presencia en línea y{" "}
@@ -66,7 +66,7 @@ export const TITLE_HERO = (
  *
  */
 
-export const QUESTION_SERVICE: Question = {
+const QUESTION_SERVICE: Question = {
   question: "¿Por qué invertir en estrategias SEO?",
   boldAnswer: "Porque los anuncios no son eternos.",
   answer: "Una buena estrategia de SEO te da visibilidad a largo plazo",
@@ -80,15 +80,15 @@ export const QUESTION_SERVICE: Question = {
  *
  */
 
-export const TITLE_SERVICE = "SEO";
+const TITLE_SERVICE = "SEO";
 
-export const DESCRIPTION_SERVICE =
+const DESCRIPTION_SERVICE =
   "Impulsa tu visibilidad en línea con nuestras estrategias\
  personalizadas de SEO. Desde la optimización on-page hasta el SEO\
  off-page, cada acción está diseño para atraer más clientes y alcanzar\
  tus objetivos comerciales. ¡Transforma tu presencia digital hoy!";
 
-export const SERVICE_LIST: ServiceItem[] = [
+const SERVICE_LIST: ServiceItem[] = [
   AUDITORIA_SEO,
   SEO_LOCAL,
   DISEÑO_WEB,
@@ -103,11 +103,11 @@ export const SERVICE_LIST: ServiceItem[] = [
  *
  */
 
-export const IMAGE_PARALLAX_URL = "parallax-image/agencia-seo.webp";
+const IMAGE_PARALLAX_URL = "parallax-image/agencia-seo.webp";
 
-export const TITLE_PARALLAX = "TRANSFORMA CLICS EN CLIENTES";
+const TITLE_PARALLAX = "TRANSFORMA CLICS EN CLIENTES";
 
-export const TEXT_PARALLAX =
+const TEXT_PARALLAX =
   "Hacer SEO es como tener un imán para atraer compradores.";
 
 /*
@@ -116,7 +116,7 @@ export const TEXT_PARALLAX =
  *
  */
 
-export const CLIENT_PROBLEMS = [
+const CLIENT_PROBLEMS = [
   '"Lanzamos nuestra web, pero el tráfico es inexistente."',
   '"Quiero aumentar mis ventas, pero mi sitio web está estancado y no aparece en Google."',
   '"A pesar de tener buenos productos, no recibo ningún tráfico."',
@@ -137,7 +137,7 @@ export const CLIENT_PROBLEMS = [
  *
  */
 
-export const DESCRIPTION_TIMELINE =
+const DESCRIPTION_TIMELINE =
   "Descubre cómo transformamos tu presencia en línea a través de un\
 proceso estructurado y efectivo. Desde la consulta inicial hasta la\
 implementación y optimización continua, cada paso está diseño para\
@@ -147,7 +147,7 @@ estrategias de SEO on-page y off-page, trabajamos contigo para\
 alcanzar tus objetivos y atraer más clientes. ¡Solicita tu consulta\
 gratuita y descubre el potencial de tu negocio!";
 
-export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
+const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
   {
     title: "Consultoría Gratuita",
     description:
@@ -208,7 +208,7 @@ export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
  *
  */
 
-export const FAQ_ITEMS_SERVICE: FaqItem[] = [
+const FAQ_ITEMS_SERVICE: FaqItem[] = [
   {
     question: "¿Qué es el SEO y por qué es importante para mi negocio?",
     answer:
@@ -270,9 +270,9 @@ export const FAQ_ITEMS_SERVICE: FaqItem[] = [
  *
  */
 
-export const TITLE_BANNER = "COMPARTIENDO TU VISIÓN";
+const TITLE_BANNER = "COMPARTIENDO TU VISIÓN";
 
-export const TEXT_BANNER =
+const TEXT_BANNER =
   "No dejes pasar la oportunidad de mejorar tu visibilidad en línea y\
 atraer más clientes. Contáctanos para una consulta gratuita y descubre\
 cómo nuestras estrategias de SEO personalizadas pueden llevar tu negocio\
@@ -341,10 +341,29 @@ const combinedSchemas: Array<OneServiceSchema | CombinedServiceSchema> = [
   schema_mantenimiento_web,
 ];
 
-export const SCHEMA: CategorySchema = {
+const SCHEMA: CategorySchema = {
   category: CATEGORY_SEO,
   codeCategory: CODE_SEO,
   categoryDescription: CATEGORY_SEO_DESCRIPTION,
   serviceDetailsSchema: combinedSchemas,
   slogan: "Estrategias SEO que despiertan tu presencia online",
+};
+
+export const DATA: PageCategoryData = {
+  SCHEMA: SCHEMA,
+  TITLE_HERO: TITLE_HERO,
+  SERVICE: SERVICE,
+  QUESTION_SERVICE: QUESTION_SERVICE,
+  TITLE_SERVICE: TITLE_SERVICE,
+  DESCRIPTION_SERVICE: DESCRIPTION_SERVICE,
+  SERVICE_LIST: SERVICE_LIST,
+  IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
+  TITLE_PARALLAX: TITLE_PARALLAX,
+  TEXT_PARALLAX: TEXT_PARALLAX,
+  CLIENT_PROBLEMS: CLIENT_PROBLEMS,
+  DESCRIPTION_TIMELINE: DESCRIPTION_TIMELINE,
+  TIMELINE_STEPS_SERVICE: TIMELINE_STEPS_SERVICE,
+  FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
+  TITLE_BANNER: TITLE_BANNER,
+  TEXT_BANNER: TEXT_BANNER,
 };

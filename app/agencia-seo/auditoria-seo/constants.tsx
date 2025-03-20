@@ -19,10 +19,11 @@ import {
   SERVICE_TYPE_AUDITORIA_SEO,
 } from "@/app/utils/constants/schema";
 import { IMAGE_SCHEMA_AUDITORIA_SEO } from "@/app/utils/constants/image";
+import { PageServiceData } from "@/app/utils/interface/page";
 
-export const SERVICE = "Auditoría SEO";
+const SERVICE = "Auditoría SEO";
 
-export const TITLE_HERO = (
+const TITLE_HERO = (
   <p>
     Nuestra <span className="custom-title">{SERVICE}</span> está diseñada para
     adaptarse a tus necesidades específicas y ayudarte a{" "}
@@ -42,7 +43,7 @@ export const TITLE_HERO = (
  *
  */
 
-export const QUESTION_SERVICE: Question = {
+const QUESTION_SERVICE: Question = {
   question: "¿Por qué invertir en Auditoría SEO?",
   boldAnswer:
     "Porque te ayuda a identificar debilidades frente a tus competidores.",
@@ -58,14 +59,14 @@ export const QUESTION_SERVICE: Question = {
  *
  */
 
-export const TITLE_REASONS = (
+const TITLE_REASONS = (
   <p>
     Razones Clave por las que la{" "}
     <span className="custom-title">{SERVICE} es Esencial</span> para Tu Marca
   </p>
 );
 
-export const REASON_ITEMS_SERVICE: ReasonItem[] = [
+const REASON_ITEMS_SERVICE: ReasonItem[] = [
   {
     icon: AttractionIcon,
     title: "Identificación de Oportunidades",
@@ -99,13 +100,11 @@ export const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-// TODO: Change the image URL
-export const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
+const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
 
-export const TITLE_PARALLAX =
-  "DESCUBRE OPORTUNIDADES OCULTAS CON UNA AUDITORÍA SEO";
+const TITLE_PARALLAX = "DESCUBRE OPORTUNIDADES OCULTAS CON UNA AUDITORÍA SEO";
 
-export const TEXT_PARALLAX =
+const TEXT_PARALLAX =
   "Identificar áreas de mejora es clave para destacar en un mar de competidores.";
 
 /*
@@ -114,14 +113,13 @@ export const TEXT_PARALLAX =
  *
  */
 
-export const TITLE_PRICING = (
+const TITLE_PRICING = (
   <h2 className="title-pricing">
     Precios Competitivos para una{" "}
     <span className="custom-title">{SERVICE}</span>
   </h2>
 );
 
-// TODO: Change the price card
 export const PRICE_CARD_SERVICE: PriceCard[] = [
   {
     title: "Auditoría SEO",
@@ -176,13 +174,13 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
  *
  */
 
-export const DESCRIPTION_TIMELINE =
+const DESCRIPTION_TIMELINE =
   "Nuestro proceso de auditoría SEO está diseñado para ofrecerte una visión clara y detallada de la\
  salud de tu sitio web. A través de un enfoque metódico y estratégico, identificamos áreas de mejora\
  y te proporcionamos recomendaciones prácticas para optimizar tu presencia digital. Cada etapa de\
  nuestra auditoría está enfocada en maximizar tu visibilidad en línea y potenciar el rendimiento de tu negocio.";
 
-export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
+const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
   {
     title: "Consultoría Inicial",
     description:
@@ -227,7 +225,7 @@ export const TIMELINE_STEPS_SERVICE: TimelineSteps[] = [
  *
  */
 
-export const FAQ_ITEMS_SERVICE: FaqItem[] = [
+const FAQ_ITEMS_SERVICE: FaqItem[] = [
   {
     question: "¿Qué es una auditoría SEO?",
     answer:
@@ -269,14 +267,20 @@ export const FAQ_ITEMS_SERVICE: FaqItem[] = [
  *
  */
 
-export const TITLE_BANNER = "DESCUBRE TU POTENCIAL OCULTO";
+const TITLE_BANNER = "DESCUBRE TU POTENCIAL OCULTO";
 
-export const TEXT_BANNER =
+const TEXT_BANNER =
   "Una auditoría SEO es el primer paso para desbloquear el verdadero potencial de tu sitio web.\
  Contáctanos para una consulta gratuita y descubre cómo nuestras soluciones pueden transformar tu negocio.\
  ¡No esperes más, el futuro es tuyo!";
 
-export const SCHEMA: ServiceDetailsSchema = {
+/*
+ *
+ *  Schema Section
+ *
+ */
+
+const SCHEMA: ServiceDetailsSchema = {
   name: SERVICE,
   description:
     "Auditoría SEO completa que identifica áreas de mejora para optimizar la visibilidad y rendimiento de tu sitio web.",
@@ -292,4 +296,29 @@ export const SCHEMA: ServiceDetailsSchema = {
   ratingCount: SERVICE_AUDITORIA_SEO_RATING_COUNT,
   expectedDuration: "P15D",
   faq: FAQ_ITEMS_SERVICE,
+};
+
+/*
+ *
+ *  DATA Section
+ *
+ */
+
+export const DATA: PageServiceData = {
+  SCHEMA: SCHEMA,
+  TITLE_HERO: TITLE_HERO,
+  QUESTION_SERVICE: QUESTION_SERVICE,
+  TITLE_REASONS: TITLE_REASONS,
+  REASON_ITEMS_SERVICE: REASON_ITEMS_SERVICE,
+  IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
+  TITLE_PARALLAX: TITLE_PARALLAX,
+  TEXT_PARALLAX: TEXT_PARALLAX,
+  TITLE_PRICING: TITLE_PRICING,
+  PRICE_CARD_SERVICE: PRICE_CARD_SERVICE,
+  SERVICE: SERVICE,
+  DESCRIPTION_TIMELINE: DESCRIPTION_TIMELINE,
+  TIMELINE_STEPS_SERVICE: TIMELINE_STEPS_SERVICE,
+  FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
+  TITLE_BANNER: TITLE_BANNER,
+  TEXT_BANNER: TEXT_BANNER,
 };
