@@ -30,8 +30,8 @@ export const URL_CONSULTORIA_SEO = `${URL_AGENCIA_SEO}${SLUG_CONSULTORIA_SEO}`;
 const SLUG_MANTENIMIENTO_WEB = "/mantenimiento-web";
 export const URL_MANTENIMIENTO_WEB = `${URL_AGENCIA_SEO}${SLUG_MANTENIMIENTO_WEB}`;
 
-const SLUG_DISENO_WEB = "/diseno-web";
-export const URL_DISENO_WEB = `${DOMINIO}${SLUG_DISENO_WEB}`;
+const SLUG_DISENO_WEB = "/agencia-diseno-web";
+export const URL_AGENCIA_DISENO_WEB = `${DOMINIO}${SLUG_DISENO_WEB}`;
 
 const SLUG_CONSULTOR_SEO = "/consultor-seo";
 export const URL_CONSULTOR_SEO = `${DOMINIO}${SLUG_CONSULTOR_SEO}`;
@@ -44,12 +44,12 @@ export const navigationLinks: NavLink[] = [
       { href: URL_AUDITORIA_SEO, text: "Auditoría SEO" },
       { href: URL_POSICIONAMIENTO_SEO, text: "Posicionamiento SEO" },
       { href: URL_SEO_LOCAL, text: "Posicionamiento SEO Local" },
-      { href: URL_DISENO_WEB, text: "Diseño Web con SEO" },
+      { href: URL_AGENCIA_DISENO_WEB, text: "Diseño Web con SEO" },
       { href: URL_CONSULTORIA_SEO, text: "Consultoría SEO" },
       { href: URL_MANTENIMIENTO_WEB, text: "Mantenimiento Web" },
     ],
   },
-  { href: URL_DISENO_WEB, text: "Diseño Web" },
+  { href: URL_AGENCIA_DISENO_WEB, text: "Diseño Web" },
   { href: URL_CONSULTOR_SEO, text: "Consultor SEO" },
 ];
 
@@ -67,13 +67,13 @@ export const EMPRESA_FOOTER: FooterSectionItem[] = [
 export const AGENCIA_MARKETING_FOOTER: FooterSectionItem[] = [
   { name: "Agencia de Marketing Digital", href: DOMINIO },
   { name: "Agencia SEO", href: URL_AGENCIA_SEO },
-  { name: "Agencia SEM", href: "/agencia-sem" },
+  { name: "Agencia Diseño Web", href: URL_AGENCIA_DISENO_WEB },
 ];
 
 export const AGENCIA_SEO_FOOTER: FooterSectionItem[] = [
   { name: "Auditoría SEO", href: URL_AGENCIA_SEO },
   { name: "SEO Local", href: URL_SEO_LOCAL },
-  { name: "Diseño Web", href: URL_DISENO_WEB },
+  { name: "Diseño Web", href: URL_AGENCIA_DISENO_WEB },
   { name: "Posicionamiento SEO", href: URL_POSICIONAMIENTO_SEO },
   { name: "Consultoría SEO", href: URL_CONSULTORIA_SEO },
   { name: "Mantenimiento Web", href: URL_CONSULTOR_SEO },

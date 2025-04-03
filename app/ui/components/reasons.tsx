@@ -6,8 +6,9 @@ export default function Reasons({
   reasonItems,
 }: {
   title: React.ReactNode;
-  reasonItems: ReasonItem[];
+  reasonItems?: ReasonItem[];
 }) {
+  if (reasonItems === undefined || reasonItems.length === 0) return null;
   return (
     <section className="section-class-1600">
       <div className="flex flex-col lg:flex-row gap-12 items-center">

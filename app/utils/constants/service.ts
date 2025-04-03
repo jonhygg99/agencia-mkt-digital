@@ -16,7 +16,9 @@ import ChatbotIcon from "@/app/ui/icons/bubble/chatbot";
 import BrandingIcon from "@/app/ui/icons/bubble/branding";
 import SocialIcon from "@/app/ui/icons/bubble/social";
 import {
-  URL_DISENO_WEB,
+  URL_CONSULTORIA_SEO,
+  URL_AGENCIA_DISENO_WEB,
+  URL_MANTENIMIENTO_WEB,
   URL_POSICIONAMIENTO_SEO,
   URL_SEO_LOCAL,
 } from "./navigation-links";
@@ -45,7 +47,7 @@ export const DISEÑO_WEB: ServiceItem = {
   description:
     "Creamos sitios web modernos y optimizados para SEO desde su concepción. Diseño responsive, velocidad de carga optimizada y estructura SEO-friendly para maximizar tu visibilidad online.",
   comingSoon: false,
-  url: URL_DISENO_WEB,
+  url: URL_AGENCIA_DISENO_WEB,
 };
 
 export const POSICIONAMIENTO_SEO: ServiceItem = {
@@ -63,7 +65,7 @@ export const CONSULTORIA_SEO: ServiceItem = {
   description:
     "Asesoramiento experto para optimizar tu estrategia SEO. Análisis detallado, recomendaciones personalizadas y plan de acción para mejorar tu posicionamiento web.",
   comingSoon: false,
-  url: undefined,
+  url: URL_CONSULTORIA_SEO,
 };
 
 export const MANTENIMIENTO_WEB: ServiceItem = {
@@ -72,7 +74,7 @@ export const MANTENIMIENTO_WEB: ServiceItem = {
   description:
     "Mantenemos tu sitio web actualizado, seguro y optimizado. Incluye actualizaciones de contenido, copias de seguridad, monitoreo de rendimiento y soporte técnico continuo.",
   comingSoon: false,
-  url: undefined,
+  url: URL_MANTENIMIENTO_WEB,
 };
 
 export const SEO_INTERNACIONAL: ServiceItem = {

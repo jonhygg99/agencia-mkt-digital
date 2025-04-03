@@ -9,23 +9,31 @@ import Problems from "@/app/ui/components/problems";
 import Services from "@/app/ui/components/services";
 import { AgencyServicesSchema } from "@/app/utils/schema/category";
 import { PageCategoryData } from "@/app/utils/interface/page";
+import Reasons from "../components/reasons";
+import Pricing from "../components/pricing";
 
 export default function PageCategory({
   data,
   contactService,
   stepsService,
   faqPosesivo,
+  mensual,
 }: {
   data: PageCategoryData;
   contactService: string;
   stepsService: string;
   faqPosesivo: string;
+  mensual?: boolean;
 }) {
   return (
     <div className="min-h-screen">
       <AgencyServicesSchema schema={data.SCHEMA} faq={data.FAQ_ITEMS_SERVICE} />
       <HeroBig HeroTitle={data.TITLE_HERO} title={data.SERVICE} />
       <QuestionSection question={data.QUESTION_SERVICE} />
+      <Reasons
+        title={data.TITLE_REASONS}
+        reasonItems={data.REASON_ITEMS_SERVICE}
+      />
       <Services
         title={data.TITLE_SERVICE}
         description={data.DESCRIPTION_SERVICE}
@@ -36,6 +44,13 @@ export default function PageCategory({
         title={data.TITLE_PARALLAX}
         text={data.TEXT_PARALLAX}
       />
+      <Pricing
+        title={data.TITLE_PRICING}
+        pricingCards={data.PRICE_CARD_SERVICE}
+        spacing={true}
+        mensual={mensual == undefined ? true : mensual}
+      />
+
       <Problems problems={data.CLIENT_PROBLEMS} />
       <Contact service={contactService} />
       <Steps

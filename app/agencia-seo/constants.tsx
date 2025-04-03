@@ -30,12 +30,12 @@ import {
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO } from "@/app/agencia-seo/posicionamiento-seo/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO_LOCAL } from "@/app/agencia-seo/seo-local/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_AUDITORIA_SEO } from "@/app/agencia-seo/auditoria-seo/constants";
-import { PRICE_CARD_SERVICE as PRICE_CARD_DISENO_WEB } from "@/app/diseno-web/constants";
+import { PRICE_CARD_SERVICE as PRICE_CARD_DISENO_WEB } from "@/app/agencia-diseno-web/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_MANTENIMIENTO_WEB } from "@/app/agencia-seo/mantenimiento-web/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_CONSULTORIA_SEO } from "@/app/agencia-seo/consultoria-seo/constants";
 import {
   URL_AUDITORIA_SEO,
-  URL_DISENO_WEB,
+  URL_AGENCIA_DISENO_WEB,
   URL_POSICIONAMIENTO_SEO,
   URL_MANTENIMIENTO_WEB,
   URL_CONSULTORIA_SEO,
@@ -317,7 +317,7 @@ const schema_diseno_web = getSchemaServiceCategory({
   name: "Servicios de Diseño Web",
   description:
     "Creación de sitios web optimizados para SEO y experiencia de usuario",
-  url: URL_DISENO_WEB,
+  url: URL_AGENCIA_DISENO_WEB,
 });
 
 const schema_consultoria_seo = getSchemaServiceCategory({
@@ -378,4 +378,8 @@ export const DATA: PageCategoryData = {
   FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
   TITLE_BANNER: TITLE_BANNER,
   TEXT_BANNER: TEXT_BANNER,
+  PRICE_CARD_SERVICE: undefined,
+  TITLE_REASONS: undefined,
+  TITLE_PRICING: undefined,
+  REASON_ITEMS_SERVICE: undefined,
 };

@@ -5,9 +5,10 @@ export default function Page() {
   return (
     <PageCategory
       data={DATA}
-      contactService={DATA.SERVICE}
-      stepsService={`${DATA.SERVICE} con SEO`}
+      contactService="tu Diseño Web a medida"
+      stepsService="Diseño Web con SEO"
       faqPosesivo="nuestro"
+      mensual={false}
     />
   );
 }

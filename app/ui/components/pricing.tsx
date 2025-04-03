@@ -27,7 +27,7 @@ const PriceCardComponent = ({
         </span>
         <span className="text-gray-400">+ IVA {mensual && "/ mes"}</span>
       </div>
-      <p className="text-gray-400 mb-8 justify-center">{card.description}</p>
+      <p className="text-gray-400 mb-8 text-center">{card.description}</p>
       <ul className="space-y-4 mb-8 flex-grow">
         {card.features.map((feature, featureIndex) => (
           <li
@@ -66,11 +66,12 @@ export default function Pricing({
   spacing,
   mensual,
 }: {
-  pricingCards: PriceCard[];
+  pricingCards?: PriceCard[];
   title: React.ReactNode;
   spacing: boolean;
   mensual: boolean;
 }) {
+  if (pricingCards === undefined) return null;
   const isSingleCard = pricingCards.length === 1;
   return (
     <section

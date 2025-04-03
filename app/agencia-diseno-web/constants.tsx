@@ -8,21 +8,16 @@ import AttractionIcon from "@/app/ui/icons/bubble/attraction";
 import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
-import {
-  CategorySchema,
-  CombinedServiceSchema,
-  OneServiceSchema,
-} from "../utils/interface/schema";
+import { CategorySchema } from "../utils/interface/schema";
 import {
   CATEGORY_DESIGN,
   CATEGORY_DESIGN_DESCRIPTION,
-  CATEGORY_SEO,
   CODE_DESING,
   SERVICE_TYPE_DISENO_WEB,
 } from "../utils/constants/schema";
-import { getSchemaServiceCategory } from "../utils/schema/utils";
-import { URL_DISENO_WEB } from "../utils/constants/navigation-links";
-import { PageCategoryData } from "../utils/interface/page";
+import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
+import { URL_AGENCIA_DISENO_WEB } from "@/app/utils/constants/navigation-links";
+import { PageCategoryData } from "@/app/utils/interface/page";
 
 export const SERVICE = "Agencia de Diseño Web a Medida";
 
@@ -147,7 +142,7 @@ const CLIENT_PROBLEMS = [
 export const TITLE_PRICING = (
   <h2 className="title-pricing">
     Precios Competitivos para una página con{" "}
-    <span className="custom-title">{SERVICE}</span>
+    <span className="custom-title">Diseño Web a Medida</span>
   </h2>
 );
 
@@ -156,7 +151,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "Diseño Web de una Página",
     price: "650",
     description:
-      "Despierta tu presencia en línea con un impulso inicial hacia el éxito.",
+      "Crea una presencia en línea efectiva, ideal para mostrar tu negocio de manera clara y concisa.",
     features: [
       { text: "Investigación del Mercado y la Competencia", included: true },
       { text: "Diseño Visual Personalizado", included: true },
@@ -177,7 +172,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "Diseño Web Corporativo",
     price: "1200",
     description:
-      "Despierta tu presencia en línea con un impulso inicial hacia el éxito.",
+      "Sitio web corporativo profesional que refleje la identidad de tu marca y potencie tu presencia en el mercado.",
     features: [
       { text: "Investigación del Mercado y la Competencia", included: true },
       { text: "Diseño Visual Personalizado", included: true },
@@ -198,7 +193,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "Diseño Web para eCommere",
     price: "2000",
     description:
-      "Despierta tu presencia en línea con un impulso inicial hacia el éxito.",
+      "Impulsa tus ventas en línea con un sitio web de eCommerce diseñado para convertir visitantes en clientes, con todas las funcionalidades necesarias para una experiencia de compra fluida.",
     features: [
       { text: "Investigación del Mercado y la Competencia", included: true },
       { text: "Diseño Visual Personalizado", included: true },
@@ -372,7 +367,7 @@ const schema_diseno_web = getSchemaServiceCategory({
   name: "Servicios de Diseño Web",
   description:
     "Diferentes planes de diseño web que incorporan estrategias de SEO adaptadas a tus necesidades, asegurando un sitio atractivo y optimizado para los motores de búsqueda.",
-  url: URL_DISENO_WEB,
+  url: URL_AGENCIA_DISENO_WEB,
 });
 
 const SCHEMA: CategorySchema = {
@@ -397,6 +392,10 @@ export const DATA: PageCategoryData = {
   TITLE_SERVICE: undefined,
   DESCRIPTION_SERVICE: undefined,
   SERVICE_LIST: undefined,
+  PRICE_CARD_SERVICE: PRICE_CARD_SERVICE,
+  TITLE_REASONS: TITLE_REASONS,
+  TITLE_PRICING: TITLE_PRICING,
+  REASON_ITEMS_SERVICE: REASON_ITEMS_SERVICE,
   IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
   TITLE_PARALLAX: TITLE_PARALLAX,
   TEXT_PARALLAX: TEXT_PARALLAX,

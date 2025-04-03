@@ -18,6 +18,10 @@ export interface PageCategoryData {
   TITLE_SERVICE?: string;
   DESCRIPTION_SERVICE?: string;
   SERVICE_LIST?: ServiceItem[];
+  TITLE_REASONS?: ReactNode;
+  REASON_ITEMS_SERVICE?: ReasonItem[];
+  TITLE_PRICING: ReactNode;
+  PRICE_CARD_SERVICE?: PriceCard[];
   IMAGE_PARALLAX_URL: string;
   TITLE_PARALLAX: string;
   TEXT_PARALLAX: string;
