@@ -23,7 +23,7 @@ export default function PageCategory({
 }) {
   return (
     <div className="min-h-screen">
-      <AgencyServicesSchema schema={data.SCHEMA} />
+      <AgencyServicesSchema schema={data.SCHEMA} faq={data.FAQ_ITEMS_SERVICE} />
       <HeroBig HeroTitle={data.TITLE_HERO} title={data.SERVICE} />
       <QuestionSection question={data.QUESTION_SERVICE} />
       <Services

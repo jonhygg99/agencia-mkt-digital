@@ -6,12 +6,21 @@ import {
   CODE_DIGITAL_MARKETING,
 } from "@/app/utils/constants/schema";
 import { CategorySchema } from "@/app/utils/interface/schema";
+import { cleanText } from "../format-text";
+import { FaqItem } from "../interface/faq";
 
 export const AgencyServicesSchema = ({
   schema,
+  faq,
 }: {
   schema: CategorySchema;
+  faq: FaqItem[];
 }) => {
+  const cleanedFAQItems = faq.map((item) => ({
+    question: item.question,
+    answer: cleanText(item.answer),
+  }));
+
   return (
     <script
       type="application/ld+json"
@@ -59,6 +68,17 @@ export const AgencyServicesSchema = ({
                 itemListElement: schema.serviceDetailsSchema,
               },
             ],
+            faq: {
+              "@type": "FAQPage",
+              mainEntity: cleanedFAQItems.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.answer,
+                },
+              })),
+            },
           },
         }),
       }}
