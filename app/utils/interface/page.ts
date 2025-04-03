@@ -15,9 +15,9 @@ export interface PageCategoryData {
   TITLE_HERO: ReactNode;
   SERVICE: string;
   QUESTION_SERVICE: Question;
-  TITLE_SERVICE: string;
-  DESCRIPTION_SERVICE: string;
-  SERVICE_LIST: ServiceItem[];
+  TITLE_SERVICE?: string;
+  DESCRIPTION_SERVICE?: string;
+  SERVICE_LIST?: ServiceItem[];
   IMAGE_PARALLAX_URL: string;
   TITLE_PARALLAX: string;
   TEXT_PARALLAX: string;

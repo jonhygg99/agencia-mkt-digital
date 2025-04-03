@@ -8,13 +8,28 @@ import AttractionIcon from "@/app/ui/icons/bubble/attraction";
 import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
+import {
+  CategorySchema,
+  CombinedServiceSchema,
+  OneServiceSchema,
+} from "../utils/interface/schema";
+import {
+  CATEGORY_DESIGN,
+  CATEGORY_DESIGN_DESCRIPTION,
+  CATEGORY_SEO,
+  CODE_DESING,
+  SERVICE_TYPE_DISENO_WEB,
+} from "../utils/constants/schema";
+import { getSchemaServiceCategory } from "../utils/schema/utils";
+import { URL_DISENO_WEB } from "../utils/constants/navigation-links";
+import { PageCategoryData } from "../utils/interface/page";
 
-export const SERVICE = "Diseño Web";
+export const SERVICE = "Agencia de Diseño Web a Medida";
 
 export const TITLE_HERO = (
   <p>
-    Creamos un <span className="custom-title">{SERVICE}</span> que conecta con
-    tus clientes.
+    Somos una <span className="custom-title">Agencia de Diseño Web</span> que
+    conecta con tus clientes.
     <br />
     Una estrategia que{" "}
     <TypingAnimation
@@ -104,6 +119,27 @@ export const TEXT_PARALLAX =
 
 /*
  *
+ *  Client Problems Section
+ *
+ */
+
+const CLIENT_PROBLEMS = [
+  '"Mi sitio web se ve anticuado y no refleja la imagen de mi marca."',
+  '"Los usuarios se quejan de que mi página es difícil de navegar."',
+  '"No tengo un diseño responsive y mi sitio no se ve bien en dispositivos móviles."',
+  '"Mis tasas de rebote son altas, y no sé cómo retener a los visitantes."',
+  '"El tiempo de carga de mi sitio es demasiado lento, lo que afecta la experiencia del usuario."',
+  '"Quiero actualizar mi sitio, pero no sé por dónde empezar."',
+  '"No tengo un diseño que destaque mis productos o servicios."',
+  '"Mis competidores tienen sitios web más atractivos y funcionales."',
+  '"No sé cómo integrar mi sitio web con mis redes sociales de manera efectiva."',
+  '"Mi sitio web no está diseñado para atraer tráfico, lo que limita mi presencia en línea."',
+  '"He tenido problemas con la usabilidad de mi sitio y no sé cómo solucionarlos."',
+  '"Quiero un diseño que convierta visitantes en clientes, pero no sé cómo lograrlo."',
+];
+
+/*
+ *
  *  Pricing Section
  *
  */
@@ -126,8 +162,8 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
       { text: "Diseño Visual Personalizado", included: true },
       { text: "Diseño Responsive", included: true },
       { text: "Estilos de Tipografía y Color", included: true },
-      { text: "Imágenes optimizadas", included: false },
-      { text: "Revisiones de Diseño", included: false },
+      { text: "Imágenes optimizadas", included: true },
+      { text: "1 Revisión de Diseño", included: true },
       { text: "Estructura web", included: false },
       { text: "Enlazado interno", included: false },
       { text: "Investigación de Palabras Claves", included: true },
@@ -323,3 +359,51 @@ export const TEXT_BANNER =
   "Convierte tu sitio web en una herramienta poderosa que atraiga, convierta\
 y retenga clientes. Contáctanos ahora y da el primer paso hacia una página optimizada\
 para destacar en los motores de búsqueda. ¡Haz que tu éxito online empiece hoy mismo!";
+
+/*
+ *
+ *  Schema Section
+ *
+ */
+
+const schema_diseno_web = getSchemaServiceCategory({
+  services: PRICE_CARD_SERVICE,
+  serviceType: SERVICE_TYPE_DISENO_WEB,
+  name: "Servicios de Diseño Web",
+  description:
+    "Diferentes planes de diseño web que incorporan estrategias de SEO adaptadas a tus necesidades, asegurando un sitio atractivo y optimizado para los motores de búsqueda.",
+  url: URL_DISENO_WEB,
+});
+
+const SCHEMA: CategorySchema = {
+  category: CATEGORY_DESIGN,
+  codeCategory: CODE_DESING,
+  categoryDescription: CATEGORY_DESIGN_DESCRIPTION,
+  serviceDetailsSchema: [schema_diseno_web],
+  slogan: "Conecta, cautiva y convierte con nuestro diseño web.",
+};
+
+/*
+ *
+ *  Data Section
+ *
+ */
+
+export const DATA: PageCategoryData = {
+  SCHEMA: SCHEMA,
+  TITLE_HERO: TITLE_HERO,
+  SERVICE: SERVICE,
+  QUESTION_SERVICE: QUESTION_SERVICE,
+  TITLE_SERVICE: undefined,
+  DESCRIPTION_SERVICE: undefined,
+  SERVICE_LIST: undefined,
+  IMAGE_PARALLAX_URL: IMAGE_PARALLAX_URL,
+  TITLE_PARALLAX: TITLE_PARALLAX,
+  TEXT_PARALLAX: TEXT_PARALLAX,
+  CLIENT_PROBLEMS: CLIENT_PROBLEMS,
+  DESCRIPTION_TIMELINE: DESCRIPTION_TIMELINE,
+  TIMELINE_STEPS_SERVICE: TIMELINE_STEPS_SERVICE,
+  FAQ_ITEMS_SERVICE: FAQ_ITEMS_SERVICE,
+  TITLE_BANNER: TITLE_BANNER,
+  TEXT_BANNER: TEXT_BANNER,
+};

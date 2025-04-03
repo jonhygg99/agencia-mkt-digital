@@ -6,10 +6,12 @@ export default function Services({
   description,
   service,
 }: {
-  title: string;
-  description: string;
-  service: ServiceItem[];
+  title?: string;
+  description?: string;
+  service?: ServiceItem[];
 }) {
+  if (title === undefined || description === undefined || service === undefined)
+    return null;
   return (
     <section className="section-class-1320">
       <div className="max-w-[900px] mx-auto">

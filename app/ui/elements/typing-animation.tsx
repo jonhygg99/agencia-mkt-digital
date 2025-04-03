@@ -6,6 +6,7 @@ interface TypingAnimationProps {
   texts: string[];
   className?: string;
 }
+// TODO: Poner al final un punto blanco
 
 export default function TypingAnimation({
   texts,

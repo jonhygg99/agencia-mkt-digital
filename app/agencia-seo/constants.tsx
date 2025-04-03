@@ -278,6 +278,12 @@ atraer más clientes. Contáctanos para una consulta gratuita y descubre\
 cómo nuestras estrategias de SEO personalizadas pueden llevar tu negocio\
 al siguiente nivel. ¡El éxito digital te espera!";
 
+/*
+ *
+ *  Schema Section
+ *
+ */
+
 const schema_seo = getSchemaServiceCategory({
   services: PRICE_CARD_SEO,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
@@ -348,6 +354,12 @@ const SCHEMA: CategorySchema = {
   serviceDetailsSchema: combinedSchemas,
   slogan: "Estrategias SEO que despiertan tu presencia online",
 };
+
+/*
+ *
+ *  Data Section
+ *
+ */
 
 export const DATA: PageCategoryData = {
   SCHEMA: SCHEMA,

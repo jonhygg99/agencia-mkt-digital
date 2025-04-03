@@ -7,7 +7,7 @@ import QuestionSection from "@/app/ui/components/question";
 import Steps from "@/app/ui/components/timeline/steps";
 import Problems from "@/app/ui/components/problems";
 import Services from "@/app/ui/components/services";
-import { AgencyServicesSchema } from "@/app/agencia-seo/schema";
+import { AgencyServicesSchema } from "@/app/utils/schema/category";
 import { PageCategoryData } from "@/app/utils/interface/page";
 
 export default function PageCategory({
