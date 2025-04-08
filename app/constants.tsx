@@ -171,7 +171,7 @@ export const FAQ_ITEMS_SERVICE: FaqItem[] = [
      invisibilidad en el mundo digital.",
   },
   {
-    question: "¿Cuánto tiempo se tarda en ver resultados con el SEO? ",
+    question: "¿Cuánto tiempo se tarda en ver resultados con el SEO?",
     answer:
       "Los resultados del SEO varían según la competencia y las estrategias utilizadas. Aunque\
      generalmente **se observan mejoras en 3 a 6 meses**, es importante destacar que, con una estrategia\

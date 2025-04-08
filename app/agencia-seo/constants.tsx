@@ -6,7 +6,6 @@ import { ServiceItem } from "@/app/utils/interface/service";
 import {
   AUDITORIA_SEO,
   CONSULTORIA_SEO,
-  DISEÑO_WEB,
   MANTENIMIENTO_WEB,
   POSICIONAMIENTO_SEO,
   SEO_LOCAL,
@@ -19,29 +18,44 @@ import {
 import {
   CATEGORY_SEO_DESCRIPTION,
   CATEGORY_SEO,
-  CODE_SEO,
   SERVICE_TYPE_AUDITORIA_SEO,
   SERVICE_TYPE_CONSULTORIA_SEO,
-  SERVICE_TYPE_DISENO_WEB,
   SERVICE_TYPE_MANTENIMIENTO_WEB,
   SERVICE_TYPE_POSICIONAMIENTO_SEO,
   SERVICE_TYPE_SEO_LOCAL,
+  SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
+  SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
+  SERVICE_SEO_LOCAL_RATING_VALUE,
+  SERVICE_SEO_LOCAL_RATING_COUNT,
+  SERVICE_AUDITORIA_SEO_RATING_VALUE,
+  SERVICE_AUDITORIA_SEO_RATING_COUNT,
+  SERVICE_CONSULTORIA_SEO_RATING_VALUE,
+  SERVICE_CONSULTORIA_SEO_RATING_COUNT,
+  SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
+  SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
 } from "@/app/utils/constants/schema";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO } from "@/app/agencia-seo/posicionamiento-seo/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO_LOCAL } from "@/app/agencia-seo/seo-local/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_AUDITORIA_SEO } from "@/app/agencia-seo/auditoria-seo/constants";
-import { PRICE_CARD_SERVICE as PRICE_CARD_DISENO_WEB } from "@/app/agencia-diseno-web/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_MANTENIMIENTO_WEB } from "@/app/agencia-seo/mantenimiento-web/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_CONSULTORIA_SEO } from "@/app/agencia-seo/consultoria-seo/constants";
 import {
   URL_AUDITORIA_SEO,
-  URL_AGENCIA_DISENO_WEB,
   URL_POSICIONAMIENTO_SEO,
   URL_MANTENIMIENTO_WEB,
   URL_CONSULTORIA_SEO,
+  DOMINIO,
+  URL_AGENCIA_SEO,
 } from "@/app/utils/constants/navigation-links";
 import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
-import { PageCategoryData } from "../utils/interface/page";
+import { PageCategoryData } from "@/app/utils/interface/page";
+import {
+  IMAGE_SCHEMA_AUDITORIA_SEO,
+  IMAGE_SCHEMA_CONSULTORIA_SEO,
+  IMAGE_SCHEMA_MANTENIMIENTO_WEB,
+  IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
+  IMAGE_SCHEMA_SEO_LOCAL,
+} from "@/app/utils/constants/image";
 
 const SERVICE = "Agencia SEO";
 
@@ -91,7 +105,7 @@ const DESCRIPTION_SERVICE =
 const SERVICE_LIST: ServiceItem[] = [
   AUDITORIA_SEO,
   SEO_LOCAL,
-  DISEÑO_WEB,
+  // DISEÑO_WEB,
   POSICIONAMIENTO_SEO,
   CONSULTORIA_SEO,
   MANTENIMIENTO_WEB,
@@ -221,7 +235,7 @@ const FAQ_ITEMS_SERVICE: FaqItem[] = [
      invisibilidad en el mundo digital.",
   },
   {
-    question: "¿Cuánto tiempo se tarda en ver resultados con el SEO? ",
+    question: "¿Cuánto tiempo se tarda en ver resultados con el SEO?",
     answer:
       "Los resultados del SEO varían según la competencia y las estrategias utilizadas. Aunque\
      generalmente **se observan mejoras en 3 a 6 meses**, es importante destacar que, con una estrategia\
@@ -285,74 +299,97 @@ al siguiente nivel. ¡El éxito digital te espera!";
  */
 
 const schema_seo = getSchemaServiceCategory({
+  id: "general-seo",
   services: PRICE_CARD_SEO,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
+  category: CATEGORY_SEO,
   name: "Servicios de Posicionamiento SEO",
   description:
     "Diferentes planes de posicionamiento SEO adaptados a tus necesidades",
   url: URL_POSICIONAMIENTO_SEO,
+  image: IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
+  ratingValue: SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
+  reviewCount: SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
 });
 
 const schema_seo_local = getSchemaServiceCategory({
+  id: "local-seo",
   services: PRICE_CARD_SEO_LOCAL,
   serviceType: SERVICE_TYPE_SEO_LOCAL,
+  category: CATEGORY_SEO,
   name: "Servicios de Posicionamiento SEO Local",
   description:
     "Mejora tu visibilidad en búsquedas locales para atraer clientes de tu zona",
   url: URL_POSICIONAMIENTO_SEO,
+  image: IMAGE_SCHEMA_SEO_LOCAL,
+  ratingValue: SERVICE_SEO_LOCAL_RATING_VALUE,
+  reviewCount: SERVICE_SEO_LOCAL_RATING_COUNT,
 });
 
 const schema_auditoria_seo = getSchemaServiceCategory({
+  id: "auditoria-seo",
   services: PRICE_CARD_AUDITORIA_SEO,
+  category: CATEGORY_SEO,
   serviceType: SERVICE_TYPE_AUDITORIA_SEO,
   name: "Servicio de Auditoría SEO",
   description:
     "Análisis completo del estado actual de tu web para identificar oportunidades de mejora",
   url: URL_AUDITORIA_SEO,
-});
-
-const schema_diseno_web = getSchemaServiceCategory({
-  services: PRICE_CARD_DISENO_WEB,
-  serviceType: SERVICE_TYPE_DISENO_WEB,
-  name: "Servicios de Diseño Web",
-  description:
-    "Creación de sitios web optimizados para SEO y experiencia de usuario",
-  url: URL_AGENCIA_DISENO_WEB,
+  image: IMAGE_SCHEMA_AUDITORIA_SEO,
+  ratingValue: SERVICE_AUDITORIA_SEO_RATING_VALUE,
+  reviewCount: SERVICE_AUDITORIA_SEO_RATING_COUNT,
 });
 
 const schema_consultoria_seo = getSchemaServiceCategory({
+  id: "consultoria-seo",
   services: PRICE_CARD_CONSULTORIA_SEO,
   serviceType: SERVICE_TYPE_CONSULTORIA_SEO,
+  category: CATEGORY_SEO,
   name: "Servicio de Consultoría SEO",
   description:
     "Consultoría SEO para optimizar tu sitio web y mejorar tu visibilidad en línea.",
   url: URL_CONSULTORIA_SEO,
+  image: IMAGE_SCHEMA_CONSULTORIA_SEO,
+  ratingValue: SERVICE_CONSULTORIA_SEO_RATING_VALUE,
+  reviewCount: SERVICE_CONSULTORIA_SEO_RATING_COUNT,
 });
 
 const schema_mantenimiento_web = getSchemaServiceCategory({
+  id: "mantenimiento-web",
   services: PRICE_CARD_MANTENIMIENTO_WEB,
   serviceType: SERVICE_TYPE_MANTENIMIENTO_WEB,
+  category: CATEGORY_SEO,
   name: "Servicio de Mantenimiento Web",
   description:
     "Mantenimiento y optimización de sitios web para mejorar su rendimiento y experiencia de usuario",
   url: URL_MANTENIMIENTO_WEB,
+  image: IMAGE_SCHEMA_MANTENIMIENTO_WEB,
+  ratingValue: SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
+  reviewCount: SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
 });
 
-const combinedSchemas: Array<OneServiceSchema | CombinedServiceSchema> = [
-  schema_seo,
-  schema_seo_local,
-  schema_auditoria_seo,
-  schema_diseno_web,
-  schema_consultoria_seo,
-  schema_mantenimiento_web,
-];
+export const combinedSchemas: Array<OneServiceSchema | CombinedServiceSchema> =
+  [
+    schema_seo,
+    schema_seo_local,
+    schema_auditoria_seo,
+    schema_consultoria_seo,
+    schema_mantenimiento_web,
+  ];
 
 const SCHEMA: CategorySchema = {
   category: CATEGORY_SEO,
-  codeCategory: CODE_SEO,
   categoryDescription: CATEGORY_SEO_DESCRIPTION,
   serviceDetailsSchema: combinedSchemas,
   slogan: "Estrategias SEO que despiertan tu presencia online",
+  breadcrumb: [
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Agencia SEO",
+      item: URL_AGENCIA_SEO,
+    },
+  ],
 };
 
 /*

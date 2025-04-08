@@ -182,7 +182,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     title: "SEO Local en Página Web y Mapas Premium",
     price: "850",
     description:
-      "Eleva tu estrategia con enlaces que construyen autoridad y contenido cautivador.",
+      "Optimiza tu visibilidad local con enlaces estratégicos y contenido diseñado para destacar en tu zona.",
     features: [
       { text: "Optimización de Google My Business", included: true },
       { text: "Investigación de Palabras Clave Locales", included: true },

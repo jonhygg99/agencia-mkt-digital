@@ -2,6 +2,8 @@ import {
   ADDRESS_LOCALITY,
   COUNTRY_CODE,
   EMAIL_EMPRESA,
+  FOUNDER_JOB_TITLE,
+  FOUNDER_NAME,
   LATITUDE,
   LONGITUDE,
   NOMBRE_EMPRESA,
@@ -54,8 +56,8 @@ export const SchemaMarkup = () => {
           },
           founder: {
             "@type": "Person",
-            name: "Jonathan Gómez Garvin",
-            jobTitle: "CEO y Fundador",
+            name: FOUNDER_NAME,
+            jobTitle: FOUNDER_JOB_TITLE,
           },
         }),
       }}

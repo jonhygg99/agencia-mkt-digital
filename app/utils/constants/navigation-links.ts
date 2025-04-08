@@ -44,7 +44,7 @@ export const navigationLinks: NavLink[] = [
       { href: URL_AUDITORIA_SEO, text: "Auditoría SEO" },
       { href: URL_POSICIONAMIENTO_SEO, text: "Posicionamiento SEO" },
       { href: URL_SEO_LOCAL, text: "Posicionamiento SEO Local" },
-      { href: URL_AGENCIA_DISENO_WEB, text: "Diseño Web con SEO" },
+      // { href: URL_AGENCIA_DISENO_WEB, text: "Diseño Web con SEO" },
       { href: URL_CONSULTORIA_SEO, text: "Consultoría SEO" },
       { href: URL_MANTENIMIENTO_WEB, text: "Mantenimiento Web" },
     ],

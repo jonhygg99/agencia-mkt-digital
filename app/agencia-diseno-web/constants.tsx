@@ -8,16 +8,18 @@ import AttractionIcon from "@/app/ui/icons/bubble/attraction";
 import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
-import { CategorySchema } from "../utils/interface/schema";
+import { CategorySchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_DESIGN,
   CATEGORY_DESIGN_DESCRIPTION,
-  CODE_DESING,
+  SERVICE_DISENO_WEB_RATING_COUNT,
+  SERVICE_DISENO_WEB_RATING_VALUE,
   SERVICE_TYPE_DISENO_WEB,
-} from "../utils/constants/schema";
+} from "@/app/utils/constants/schema";
 import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
 import { URL_AGENCIA_DISENO_WEB } from "@/app/utils/constants/navigation-links";
 import { PageCategoryData } from "@/app/utils/interface/page";
+import { IMAGE_SCHEMA_DISEÑO_WEB } from "@/app/utils/constants/image";
 
 export const SERVICE = "Agencia de Diseño Web a Medida";
 
@@ -190,7 +192,7 @@ export const PRICE_CARD_SERVICE: PriceCard[] = [
     ],
   },
   {
-    title: "Diseño Web para eCommere",
+    title: "Diseño Web para eCommerce",
     price: "2000",
     description:
       "Impulsa tus ventas en línea con un sitio web de eCommerce diseñado para convertir visitantes en clientes, con todas las funcionalidades necesarias para una experiencia de compra fluida.",
@@ -361,21 +363,33 @@ para destacar en los motores de búsqueda. ¡Haz que tu éxito online empiece ho
  *
  */
 
-const schema_diseno_web = getSchemaServiceCategory({
+export const schema_diseno_web = getSchemaServiceCategory({
   services: PRICE_CARD_SERVICE,
+  id: "web-design",
+  category: CATEGORY_DESIGN,
   serviceType: SERVICE_TYPE_DISENO_WEB,
   name: "Servicios de Diseño Web",
   description:
     "Diferentes planes de diseño web que incorporan estrategias de SEO adaptadas a tus necesidades, asegurando un sitio atractivo y optimizado para los motores de búsqueda.",
   url: URL_AGENCIA_DISENO_WEB,
+  image: IMAGE_SCHEMA_DISEÑO_WEB,
+  ratingValue: SERVICE_DISENO_WEB_RATING_VALUE,
+  reviewCount: SERVICE_DISENO_WEB_RATING_COUNT,
 });
 
 const SCHEMA: CategorySchema = {
   category: CATEGORY_DESIGN,
-  codeCategory: CODE_DESING,
   categoryDescription: CATEGORY_DESIGN_DESCRIPTION,
   serviceDetailsSchema: [schema_diseno_web],
   slogan: "Conecta, cautiva y convierte con nuestro diseño web.",
+  breadcrumb: [
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Agencia SEO",
+      item: URL_AGENCIA_DISENO_WEB,
+    },
+  ],
 };
 
 /*

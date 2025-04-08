@@ -1,4 +1,8 @@
-import { COUNTRY, NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
+import {
+  NOMBRE_EMPRESA,
+  AREA_SERVED,
+  AUDIENCE,
+} from "@/app/utils/constants/empresa";
 import { DOMINIO } from "@/app/utils/constants/navigation-links";
 import { cleanText } from "@/app/utils/format-text";
 import {
@@ -54,15 +58,8 @@ export const ServiceSchema = ({ schema }: { schema: ServiceDetailsSchema }) => {
             url: DOMINIO,
             logo: DOMINIO + "/logo.webp",
           },
-          areaServed: {
-            "@type": "Country",
-            name: COUNTRY, // TODO: cambiar si pasamos a internacional
-          },
-          audience: {
-            "@type": "Audience",
-            audienceType:
-              "Pequeñas y medianas empresas que buscan aumentar su presencia online",
-          },
+          ...AREA_SERVED,
+          ...AUDIENCE,
           image: DOMINIO + schema.slugImage,
           url: schema.url,
           ...schema.service,

@@ -9,10 +9,12 @@ import BannerCta from "@/app/ui/components/banner-cta";
 import QuestionSection from "@/app/ui/components/question";
 import * as Constants from "./constants";
 import type { Metadata } from "next";
+import { MainSchema } from "./utils/schema/main";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <MainSchema faq={Constants.FAQ_ITEMS_SERVICE} />
       <HeroBig HeroTitle={Constants.TITLE_HERO} title={Constants.SERVICE} />
       <QuestionSection question={Constants.QUESTION_SERVICE} />
       <Services
@@ -20,7 +22,6 @@ export default function Home() {
         description={Constants.DESCRIPTION_SERVICE}
         service={Constants.SERVICE_LIST}
       />
-      {/* TODO: Cambiar imagen */}
       <ParallaxImage
         imageURL={Constants.IMAGE_PARALLAX_URL}
         title={Constants.TITLE_PARALLAX}

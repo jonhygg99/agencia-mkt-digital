@@ -32,7 +32,6 @@ export interface PageCategoryData {
   TITLE_BANNER: string;
   TEXT_BANNER: string;
 }
-
 export interface PageServiceData {
   SCHEMA: ServiceDetailsSchema;
   TITLE_HERO: React.ReactNode;

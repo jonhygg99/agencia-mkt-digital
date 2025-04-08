@@ -14,6 +14,7 @@ import {
   DIRECCION_EMPRESA,
   TELEFONO_EMPRESA,
   EMAIL_EMPRESA,
+  FOUNDER_NAME,
 } from "@/app/utils/constants/empresa";
 import { FooterSectionItem } from "@/app/utils/interface/footer";
 
@@ -96,7 +97,7 @@ export default function Footer() {
               <span className="text-red-500">❤</span>
               <span> por </span>
               <Link href={URL_CONSULTOR_SEO} className="link-text-dark">
-                Jonathan Gómez
+                ${FOUNDER_NAME}
               </Link>
             </div>
           </div>
