@@ -4,6 +4,8 @@ import { FaqItem } from "./faq";
 export interface SingleService {
   offers: {
     "@type": "Offer";
+    name: string;
+    description: string;
     price: string;
     priceCurrency: string;
     itemOffered: {
@@ -23,7 +25,7 @@ export interface CombinedServiceService {
 }
 
 export interface CombinedService {
-  hasOfferCatalog: {
+  mainEntityOfPage: {
     "@type": "OfferCatalog";
     name: string;
     itemListElement: CombinedServiceService[];
@@ -58,40 +60,90 @@ export interface ServiceDetailsSchemaCategory {
 }
 
 export interface OneServiceSchema {
+  "@type": "Service";
+  name: string;
+  serviceType: string;
+  serviceOutput: string;
+  expectedDuration: string;
+  category: string;
+  description: string;
+  "@id": string;
+  provider: {
+    "@id": string;
+  };
+  url: string;
+  image: string;
+  offers: {
+    "@type": "Offer";
+    name: string;
+    description: string;
+    price: string;
+    priceCurrency: string;
+    availability: "https://schema.org/InStock";
+    inLanguage: string;
+    itemOffered: {
+      "@type": "Service";
+      name: string;
+      description: string;
+      provider: {
+        "@id": string;
+      };
+      aggregateRating: {
+        "@type": "AggregateRating";
+        ratingValue: string;
+        reviewCount: string;
+        bestRating: "5";
+        worstRating: "1";
+      };
+    };
+  };
+}
+
+export interface CombienedOffer {
   "@type": "Offer";
+  url: string;
+  price: string;
+  priceCurrency: string;
   availability: "https://schema.org/InStock";
   inLanguage: string;
-  "@id"?: string;
   itemOffered: {
     "@type": "Service";
     name: string;
     description: string;
     serviceType: string;
     category: string;
-    url: string;
-    provider: { "@id": string };
+    provider: {
+      "@id": string;
+    };
     image: string;
     aggregateRating: {
       "@type": "AggregateRating";
       ratingValue: string;
       reviewCount: string;
-      bestRating: "5";
-      worstRating: "1";
+      bestRating: string;
+      worstRating: string;
     };
   };
-  price: string;
+}
+
+export interface CombinedAgregatedOffer {
+  "@type": "AggregateOffer";
+  highPrice: string;
+  lowPrice: string;
   priceCurrency: string;
+  offers: Array<CombienedOffer>;
 }
 
 export interface CombinedServiceSchema {
-  "@type": "AggregateOffer";
+  "@type": "Service";
   "@id": string;
-  offers: OneServiceSchema[];
-  lowPrice: string;
-  highPrice: string;
-  priceCurrency: string;
   name: string;
   description: string;
+  serviceType: string;
+  serviceOutput: string;
+  expectedDuration: string;
+  category: string;
+  offers: OneServiceSchema[];
 }
 
 export interface CategorySchema {

@@ -8,6 +8,15 @@ interface NavLink {
 
 export const DOMINIO = "http://localhost:3000";
 
+export const SCHEMA_URL_WEBPAGE_ID = `${DOMINIO}/#webpage`;
+export const SCHEMA_URL_WEBSITE_ID = `${DOMINIO}/#website`;
+export const SCHEMA_URL_ORGANIZATION_ID = `${DOMINIO}/#organization`;
+export const SCHEMA_URL_SERVICE_ID = `${DOMINIO}/#service`;
+export const SCHEMA_URL_BREADCRUMB_ID = `${DOMINIO}/#breadcrumb`;
+export const SCHEMA_URL_OFFERING_ID = `${DOMINIO}/#offering`;
+export const SCHEMA_URL_LOGO_ID = `${DOMINIO}/#logo`;
+export const SCHEMA_SLUG_CATALOG_ID = "/#catalog";
+
 /*
  *  AGENCIA SEO
  */

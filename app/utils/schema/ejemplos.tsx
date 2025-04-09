@@ -1,3 +1,5 @@
+import { SCHEMA_URL_ORGANIZATION_ID } from "../constants/navigation-links";
+
 const SIMPLE_SERVICE_SCHEMA = {
   serviceCatalog: {
     "@type": "OfferCatalog",
@@ -9,7 +11,7 @@ const SIMPLE_SERVICE_SCHEMA = {
         name: "SEO y Posicionamiento Web",
         description:
           "Optimización SEO para mejorar la visibilidad en buscadores y aumentar el tráfico orgánico.",
-        provider: { "@id": "http://localhost:3000/#organization" },
+        provider: { "@id": SCHEMA_URL_ORGANIZATION_ID },
         serviceType: "SEO",
         category: "SEO Services",
       },
@@ -19,7 +21,7 @@ const SIMPLE_SERVICE_SCHEMA = {
         name: "Diseño Web con SEO",
         description:
           "Diseño de sitios web optimizados para SEO, con velocidad y experiencia de usuario mejorada.",
-        provider: { "@id": "http://localhost:3000/#organization" },
+        provider: { "@id": SCHEMA_URL_ORGANIZATION_ID },
         serviceType: "Web Design",
         category: "Web Design Services",
       },
@@ -29,7 +31,7 @@ const SIMPLE_SERVICE_SCHEMA = {
         name: "Auditoría SEO",
         description:
           "Análisis detallado de tu sitio web para identificar oportunidades de mejora en SEO.",
-        provider: { "@id": "http://localhost:3000/#organization" },
+        provider: { "@id": SCHEMA_URL_ORGANIZATION_ID },
         serviceType: "SEO Audit",
         category: "SEO Services",
       },

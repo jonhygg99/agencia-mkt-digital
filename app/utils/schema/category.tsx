@@ -1,14 +1,20 @@
-import { SCHEMA_ORGANIZATION } from "@/app/utils/constants/empresa";
+import {
+  NOMBRE_EMPRESA,
+  SCHEMA_ORGANIZATION,
+  SCHEMA_WEBSITE,
+} from "@/app/utils/constants/empresa";
 import {
   CATEGORY_DESCRIPTION_DIGITAL_MARKETING,
   CATEGORY_DIGITAL_MARKETING,
-  CODE_DIGITAL_MARKETING,
   DATE_PUBLISHED,
 } from "@/app/utils/constants/schema";
 import { CategorySchema } from "@/app/utils/interface/schema";
 import { cleanText } from "../format-text";
 import { FaqItem } from "../interface/faq";
-import { DOMINIO } from "../constants/navigation-links";
+import {
+  DOMINIO,
+  SCHEMA_URL_BREADCRUMB_ID,
+} from "@/app/utils/constants/navigation-links";
 
 export const AgencyServicesSchema = ({
   schema,
@@ -22,78 +28,68 @@ export const AgencyServicesSchema = ({
     answer: cleanText(item.answer),
   }));
 
+  const breadcrumbStructure = {
+    "@type": "BreadcrumbList",
+    "@id": SCHEMA_URL_BREADCRUMB_ID,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Agencia de Marketing Digital",
+        item: DOMINIO,
+      },
+      ...schema.breadcrumb,
+    ],
+  };
+
+  const localBusinessStrucure = {
+    "@type": "LocalBusiness",
+    ...SCHEMA_ORGANIZATION,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: CATEGORY_DESCRIPTION_DIGITAL_MARKETING,
+      category: CATEGORY_DIGITAL_MARKETING,
+      itemListElement: [
+        {
+          "@type": "OfferCatalog",
+          name: schema.categoryDescription,
+          category: schema.category,
+          itemListElement: schema.serviceDetailsSchema,
+        },
+      ],
+    },
+  };
+
+  const faqPageStructure =
+    cleanedFAQItems.length > 0
+      ? {
+          "@type": "FAQPage",
+          mainEntity: cleanedFAQItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      localBusinessStrucure,
+      SCHEMA_WEBSITE,
+      breadcrumbStructure,
+      faqPageStructure,
+    ],
+  };
+
   return (
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": ["Organization", "LocalBusiness"],
-          ...SCHEMA_ORGANIZATION,
-          slogan: schema.slogan, // Todo: ??Diferente para cada categoría
-          // description: schema.description, // TODO: Description
-          mainEntity: {
-            "@type": "WebPage",
-            "@id": `${DOMINIO}/#webpage`,
-            url: DOMINIO,
-            name: "Agencia de Marketing Digital en Barcelona | Especialistas en SEO y Diseño Web",
-            isPartOf: {
-              "@id": `${DOMINIO}/#website`,
-              url: DOMINIO,
-              name: "Despierta tu web",
-              description:
-                "Agencia de marketing digital especializada en posicionamiento SEO y diseño web",
-              publisher: {
-                "@id": DOMINIO + "/#organization",
-              },
-              inLanguage: "es",
-              about: {
-                "@id": `${DOMINIO}/#organization`,
-              },
-              // TODO: Cambiar fecha
-              datePublished: DATE_PUBLISHED,
-              dateModified: "2025-03-15T14:30:00+01:00",
-            },
-          },
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: CATEGORY_DESCRIPTION_DIGITAL_MARKETING,
-            category: CATEGORY_DIGITAL_MARKETING,
-            itemListElement: [
-              {
-                "@type": "OfferCatalog",
-                name: schema.categoryDescription,
-                category: schema.category,
-                itemListElement: schema.serviceDetailsSchema,
-              },
-            ],
-          },
-          breadcrumb: {
-            "@type": "BreadcrumbList",
-            "@id": `${DOMINIO}/#breadcrumb`,
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Agencia de Marketing Digital",
-                item: DOMINIO,
-              },
-              ...schema.breadcrumb,
-            ],
-          },
-
-          faq: {
-            "@type": "FAQPage",
-            mainEntity: cleanedFAQItems.map((item) => ({
-              "@type": "Question",
-              name: item.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
-              },
-            })),
-          },
-        }),
+        __html: JSON.stringify(structuredData),
       }}
     />
   );

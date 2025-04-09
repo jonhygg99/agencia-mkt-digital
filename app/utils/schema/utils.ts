@@ -1,6 +1,11 @@
 import { PriceCard } from "@/app/utils/interface/pricing";
-import { DOMINIO } from "@/app/utils/constants/navigation-links";
 import {
+  DOMINIO,
+  SCHEMA_URL_ORGANIZATION_ID,
+} from "@/app/utils/constants/navigation-links";
+import {
+  CombienedOffer,
+  CombinedAgregatedOffer,
   CombinedServiceSchema,
   OneServiceSchema,
   SingleService,
@@ -10,75 +15,90 @@ import {
   CombinedServiceService,
 } from "@/app/utils/interface/schema";
 
-const createSchemaService = (
-  services: PriceCard[],
-  serviceType: string,
-  category: string,
-  url: string,
-  image: string,
-  ratingValue: string | string[],
-  reviewCount: string | string[]
-) => {
+const createSchemaService = (params: GetSchemaParams) => {
   // Si solo hay un servicio, devuelve el objeto directamente
-  if (services.length === 1) {
-    const service = services[0];
+  if (params.services.length === 1) {
+    const service = params.services[0];
     const schema: OneServiceSchema = {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      inLanguage: "es",
-      "@id": `${url}/#offer`,
-      itemOffered: {
-        "@type": "Service",
+      "@type": "Service",
+      name: service.title,
+      serviceType: params.serviceType,
+      serviceOutput: params.serviceOutput,
+      expectedDuration: params.expectedDuration,
+      category: params.category,
+      description: params.description,
+      "@id": `${params.url}/#service-${params.id}`,
+      provider: {
+        "@id": SCHEMA_URL_ORGANIZATION_ID,
+      },
+      url: params.url,
+      image: params.image,
+      offers: {
+        "@type": "Offer",
         name: service.title,
         description: service.description,
-        serviceType: serviceType,
-        category: category,
-        url: url,
-        provider: { "@id": DOMINIO + "/#organization" },
-        image: image,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          // Nunca debería ser un array si solo hay un servicio, por lo que se asegura, no debería usarse nunca join
-          ratingValue: Array.isArray(ratingValue)
-            ? ratingValue.join(", ")
-            : ratingValue,
-          reviewCount: Array.isArray(reviewCount)
-            ? reviewCount.join(", ")
-            : reviewCount,
-          bestRating: "5",
-          worstRating: "1",
+        price: service.price,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        inLanguage: "es",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+          provider: {
+            "@id": SCHEMA_URL_ORGANIZATION_ID,
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: Array.isArray(params.ratingValue)
+              ? params.ratingValue.join(", ")
+              : params.ratingValue,
+            reviewCount: Array.isArray(params.reviewCount)
+              ? params.reviewCount.join(", ")
+              : params.reviewCount,
+            bestRating: "5",
+            worstRating: "1",
+          },
         },
       },
-      price: service.price,
-      priceCurrency: "EUR",
     };
     return schema;
   } else {
     // Si hay más de un servicio, devuelve un array de objetos
-    const schema: OneServiceSchema[] = services.map((service, index) => ({
+    const offers: CombienedOffer[] = params.services.map((service, index) => ({
       "@type": "Offer",
+      url: params.url,
+      price: service.price,
+      priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       inLanguage: "es",
       itemOffered: {
         "@type": "Service",
         name: service.title,
         description: service.description,
-        serviceType: serviceType,
-        category: category,
-        provider: { "@id": DOMINIO + "/#organization" },
-        image: image,
+        serviceType: params.serviceType,
+        category: params.category,
+        provider: {
+          "@id": SCHEMA_URL_ORGANIZATION_ID,
+        },
+        image: params.image,
         aggregateRating: {
           "@type": "AggregateRating",
-          ratingValue: ratingValue[index],
-          reviewCount: reviewCount[index],
+          ratingValue: params.ratingValue[index],
+          reviewCount: params.reviewCount[index],
           bestRating: "5",
           worstRating: "1",
         },
-        url: url,
       },
-      price: service.price,
-      priceCurrency: "EUR",
     }));
+    const schema: CombinedAgregatedOffer = {
+      "@type": "AggregateOffer",
+      highPrice: params.services[params.services.length - 1].price,
+      lowPrice: params.services[0].price,
+      priceCurrency: "EUR",
+      offers: offers,
+    };
+
     return schema; // Asegúrate de devolver el esquema combinado
   }
 };
@@ -87,6 +107,8 @@ interface GetSchemaParams {
   id: string;
   services: PriceCard[];
   serviceType: string;
+  serviceOutput: string;
+  expectedDuration: string;
   category: string;
   name: string;
   description: string;
@@ -96,45 +118,46 @@ interface GetSchemaParams {
   reviewCount: string | string[];
 }
 
-export const getSchemaServiceCategory = ({
-  id,
-  services,
-  serviceType,
-  category,
-  name,
-  description,
-  url,
-  image,
-  ratingValue,
-  reviewCount,
-}: GetSchemaParams): OneServiceSchema | CombinedServiceSchema => {
-  const schemaServices: OneServiceSchema | OneServiceSchema[] =
-    createSchemaService(
-      services,
-      serviceType,
-      category,
-      url,
-      image,
-      ratingValue,
-      reviewCount
-    );
+export const getSchemaServiceCategory = (
+  params: GetSchemaParams
+): OneServiceSchema | CombinedServiceSchema => {
+  const {
+    id,
+    services,
+    serviceType,
+    serviceOutput,
+    expectedDuration,
+    category,
+    name,
+    description,
+    url,
+    image,
+    ratingValue,
+    reviewCount,
+  } = params;
 
-  if (Array.isArray(schemaServices)) {
+  const schemaServices: OneServiceSchema | CombinedAgregatedOffer =
+    createSchemaService(params);
+
+  if (params.services.length === 1) {
+    return schemaServices;
+  } else {
     return {
-      "@type": "AggregateOffer",
-      "@id": `${url}/#aggregateoffer-${id}`,
-      offers: schemaServices,
-      lowPrice: services[0].price,
-      highPrice: services[services.length - 1].price,
-      priceCurrency: "EUR",
+      "@type": "Service",
+      "@id": `${url}/#service-${id}`,
       name: name,
       description: description,
+      serviceType: serviceType,
+      serviceOutput: serviceOutput,
+      expectedDuration: expectedDuration,
+      category: category,
+      offers: schemaServices,
     };
-  } else {
-    return schemaServices;
   }
-};
 
+  // Si no se cumple ninguna de las condiciones, puedes lanzar un error o retornar null
+  throw new Error("Invalid schemaServices type");
+};
 export const getCombinedServiceSchema = (
   services: PriceCard[],
   name: string
@@ -147,7 +170,7 @@ export const getCombinedServiceSchema = (
     priceCurrency: "EUR",
   }));
   const schema: CombinedService = {
-    hasOfferCatalog: {
+    mainEntityOfPage: {
       "@type": "OfferCatalog",
       name: name,
       itemListElement: schemaServices,
@@ -161,6 +184,8 @@ export const getSingleServiceSchema = (service: PriceCard): SingleService => {
   const schema: SingleService = {
     offers: {
       "@type": "Offer",
+      name: service.title,
+      description: service.description,
       price: service.price + ".00",
       priceCurrency: "EUR",
       itemOffered: {

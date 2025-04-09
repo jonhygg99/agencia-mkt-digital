@@ -1,4 +1,9 @@
-import { DOMINIO } from "@/app/utils/constants/navigation-links";
+import {
+  DOMINIO,
+  SCHEMA_URL_LOGO_ID,
+  SCHEMA_URL_ORGANIZATION_ID,
+  SCHEMA_URL_WEBSITE_ID,
+} from "@/app/utils/constants/navigation-links";
 
 export const NOMBRE_EMPRESA = "Despierta tu Web";
 export const TELEFONO_EMPRESA = "+34 659 34 36 25";
@@ -46,13 +51,21 @@ export const FOUNDER_NAME = "Jonathan Gómez";
 export const FOUNDER_JOB_TITLE = "CEO y Fundador";
 
 export const SCHEMA_ORGANIZATION = {
+  "@id": SCHEMA_URL_ORGANIZATION_ID,
   name: NOMBRE_EMPRESA,
-  "@id": "http://localhost:3000/#organization",
+  description:
+    "Agencia de marketing digital especializada en SEO y diseño web. Potenciamos tu negocio con estrategias personalizadas que aumentan tu visibilidad online y generan más ventas.",
+  slogan: "Estrategias digitales que despiertan tu negocio online",
   url: DOMINIO,
+  mainEntityOfPage: {
+    "@id": SCHEMA_URL_WEBSITE_ID,
+  },
   logo: {
     "@type": "ImageObject",
-    "@id": DOMINIO + "/#logo",
+    "@id": SCHEMA_URL_LOGO_ID,
     url: DOMINIO + "/logo.webp",
+    width: "500",
+    height: "500",
     contentUrl: DOMINIO + "/logo.webp",
     caption: "Logo de Despierta tu web",
     representativeOfPage: true,
@@ -63,7 +76,7 @@ export const SCHEMA_ORGANIZATION = {
   // ],
   // slogan: schema.slogan, // Todo: ??Diferente para cada categoría
   priceRange: "€€",
-  paymentAccepted: "Transferencia Bancaria",
+  paymentAccepted: ["BankTransfer"],
   currenciesAccepted: "EUR",
   telephone: TELEFONO_EMPRESA,
   email: EMAIL_EMPRESA,
@@ -103,4 +116,20 @@ export const SCHEMA_ORGANIZATION = {
   //     "Premio SEO Barcelona 2023",
   //     "Mejor Agencia Digital Emergente 2022",
   //   ],
+};
+
+export const SCHEMA_WEBSITE = {
+  "@type": "WebSite",
+  "@id": SCHEMA_URL_WEBSITE_ID,
+  url: DOMINIO,
+  name: NOMBRE_EMPRESA,
+  description:
+    "Agencia de Marketing Digital en Barcelona | Especialistas en SEO y Diseño Web",
+  inLanguage: "es",
+  publisher: {
+    "@id": SCHEMA_URL_ORGANIZATION_ID,
+  },
+  about: {
+    "@id": SCHEMA_URL_ORGANIZATION_ID,
+  },
 };

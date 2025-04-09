@@ -12,8 +12,13 @@ import { CategorySchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_DESIGN,
   CATEGORY_DESIGN_DESCRIPTION,
+  SERVICE_DESCRIPTION_DISENO_WEB,
   SERVICE_DISENO_WEB_RATING_COUNT,
   SERVICE_DISENO_WEB_RATING_VALUE,
+  SERVICE_EXPECTED_DURATION_DISENO_WEB,
+  SERVICE_ID_DISENO_WEB,
+  SERVICE_NAME_DISENO_WEB,
+  SERVICE_OUTPUT_DISENO_WEB,
   SERVICE_TYPE_DISENO_WEB,
 } from "@/app/utils/constants/schema";
 import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
@@ -364,13 +369,14 @@ para destacar en los motores de búsqueda. ¡Haz que tu éxito online empiece ho
  */
 
 export const schema_diseno_web = getSchemaServiceCategory({
+  id: SERVICE_ID_DISENO_WEB,
   services: PRICE_CARD_SERVICE,
-  id: "web-design",
   category: CATEGORY_DESIGN,
   serviceType: SERVICE_TYPE_DISENO_WEB,
-  name: "Servicios de Diseño Web",
-  description:
-    "Diferentes planes de diseño web que incorporan estrategias de SEO adaptadas a tus necesidades, asegurando un sitio atractivo y optimizado para los motores de búsqueda.",
+  serviceOutput: SERVICE_OUTPUT_DISENO_WEB,
+  expectedDuration: SERVICE_EXPECTED_DURATION_DISENO_WEB,
+  name: SERVICE_NAME_DISENO_WEB,
+  description: SERVICE_DESCRIPTION_DISENO_WEB,
   url: URL_AGENCIA_DISENO_WEB,
   image: IMAGE_SCHEMA_DISEÑO_WEB,
   ratingValue: SERVICE_DISENO_WEB_RATING_VALUE,

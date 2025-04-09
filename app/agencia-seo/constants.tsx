@@ -33,6 +33,31 @@ import {
   SERVICE_CONSULTORIA_SEO_RATING_COUNT,
   SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
   SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
+  SERVICE_OUTPUT_POSICIONAMIENTO_SEO,
+  SERVICE_ID_POSICIONAMIENTO_SEO,
+  SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
+  SERVICE_NAME_POSICIONAMIENTO_SEO,
+  SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
+  SERVICE_ID_SEO_LOCAL,
+  SERVICE_NAME_SEO_LOCAL,
+  SERVICE_DESCRIPTION_SEO_LOCAL,
+  SERVICE_OUTPUT_SEO_LOCAL,
+  SERVICE_EXPECTED_DURATION_SEO_LOCAL,
+  SERVICE_ID_AUDITORIA_SEO,
+  SERVICE_OUTPUT_AUDITORIA_SEO,
+  SERVICE_EXPECTED_DURATION_AUDITORIA_SEO,
+  SERVICE_NAME_AUDITORIA_SEO,
+  SERVICE_DESCRIPTION_AUDITORIA_SEO,
+  SERVICE_DESCRIPTION_CONSULTORIA_SEO,
+  SERVICE_NAME_CONSULTORIA_SEO,
+  SERVICE_ID_CONSULTORIA_SEO,
+  SERVICE_OUTPUT_CONSULTORIA_SEO,
+  SERVICE_EXPECTED_DURATION_CONSULTORIA_SEO,
+  SERVICE_NAME_MANTENIMIENTO_WEB,
+  SERVICE_ID_MANTENIMIENTO_WEB,
+  SERVICE_DESCRIPTION_MANTENIMIENTO_WEB,
+  SERVICE_OUTPUT_MANTENIMIENTO_WEB,
+  SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB,
 } from "@/app/utils/constants/schema";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO } from "@/app/agencia-seo/posicionamiento-seo/constants";
 import { PRICE_CARD_SERVICE as PRICE_CARD_SEO_LOCAL } from "@/app/agencia-seo/seo-local/constants";
@@ -299,13 +324,14 @@ al siguiente nivel. ¡El éxito digital te espera!";
  */
 
 const schema_seo = getSchemaServiceCategory({
-  id: "general-seo",
+  id: SERVICE_ID_POSICIONAMIENTO_SEO,
   services: PRICE_CARD_SEO,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
+  serviceOutput: SERVICE_OUTPUT_POSICIONAMIENTO_SEO,
+  expectedDuration: SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
   category: CATEGORY_SEO,
-  name: "Servicios de Posicionamiento SEO",
-  description:
-    "Diferentes planes de posicionamiento SEO adaptados a tus necesidades",
+  name: SERVICE_NAME_POSICIONAMIENTO_SEO,
+  description: SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
   url: URL_POSICIONAMIENTO_SEO,
   image: IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
   ratingValue: SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
@@ -313,13 +339,14 @@ const schema_seo = getSchemaServiceCategory({
 });
 
 const schema_seo_local = getSchemaServiceCategory({
-  id: "local-seo",
+  id: SERVICE_ID_SEO_LOCAL,
   services: PRICE_CARD_SEO_LOCAL,
   serviceType: SERVICE_TYPE_SEO_LOCAL,
+  serviceOutput: SERVICE_OUTPUT_SEO_LOCAL,
+  expectedDuration: SERVICE_EXPECTED_DURATION_SEO_LOCAL,
   category: CATEGORY_SEO,
-  name: "Servicios de Posicionamiento SEO Local",
-  description:
-    "Mejora tu visibilidad en búsquedas locales para atraer clientes de tu zona",
+  name: SERVICE_NAME_SEO_LOCAL,
+  description: SERVICE_DESCRIPTION_SEO_LOCAL,
   url: URL_POSICIONAMIENTO_SEO,
   image: IMAGE_SCHEMA_SEO_LOCAL,
   ratingValue: SERVICE_SEO_LOCAL_RATING_VALUE,
@@ -327,13 +354,14 @@ const schema_seo_local = getSchemaServiceCategory({
 });
 
 const schema_auditoria_seo = getSchemaServiceCategory({
-  id: "auditoria-seo",
+  id: SERVICE_ID_AUDITORIA_SEO,
   services: PRICE_CARD_AUDITORIA_SEO,
   category: CATEGORY_SEO,
   serviceType: SERVICE_TYPE_AUDITORIA_SEO,
-  name: "Servicio de Auditoría SEO",
-  description:
-    "Análisis completo del estado actual de tu web para identificar oportunidades de mejora",
+  serviceOutput: SERVICE_OUTPUT_AUDITORIA_SEO,
+  expectedDuration: SERVICE_EXPECTED_DURATION_AUDITORIA_SEO,
+  name: SERVICE_NAME_AUDITORIA_SEO,
+  description: SERVICE_DESCRIPTION_AUDITORIA_SEO,
   url: URL_AUDITORIA_SEO,
   image: IMAGE_SCHEMA_AUDITORIA_SEO,
   ratingValue: SERVICE_AUDITORIA_SEO_RATING_VALUE,
@@ -341,13 +369,14 @@ const schema_auditoria_seo = getSchemaServiceCategory({
 });
 
 const schema_consultoria_seo = getSchemaServiceCategory({
-  id: "consultoria-seo",
+  id: SERVICE_ID_CONSULTORIA_SEO,
   services: PRICE_CARD_CONSULTORIA_SEO,
   serviceType: SERVICE_TYPE_CONSULTORIA_SEO,
+  serviceOutput: SERVICE_OUTPUT_CONSULTORIA_SEO,
+  expectedDuration: SERVICE_EXPECTED_DURATION_CONSULTORIA_SEO,
   category: CATEGORY_SEO,
-  name: "Servicio de Consultoría SEO",
-  description:
-    "Consultoría SEO para optimizar tu sitio web y mejorar tu visibilidad en línea.",
+  name: SERVICE_NAME_CONSULTORIA_SEO,
+  description: SERVICE_DESCRIPTION_CONSULTORIA_SEO,
   url: URL_CONSULTORIA_SEO,
   image: IMAGE_SCHEMA_CONSULTORIA_SEO,
   ratingValue: SERVICE_CONSULTORIA_SEO_RATING_VALUE,
@@ -355,13 +384,14 @@ const schema_consultoria_seo = getSchemaServiceCategory({
 });
 
 const schema_mantenimiento_web = getSchemaServiceCategory({
-  id: "mantenimiento-web",
+  id: SERVICE_ID_MANTENIMIENTO_WEB,
   services: PRICE_CARD_MANTENIMIENTO_WEB,
   serviceType: SERVICE_TYPE_MANTENIMIENTO_WEB,
+  serviceOutput: SERVICE_OUTPUT_MANTENIMIENTO_WEB,
+  expectedDuration: SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB,
   category: CATEGORY_SEO,
-  name: "Servicio de Mantenimiento Web",
-  description:
-    "Mantenimiento y optimización de sitios web para mejorar su rendimiento y experiencia de usuario",
+  name: SERVICE_NAME_MANTENIMIENTO_WEB,
+  description: SERVICE_DESCRIPTION_MANTENIMIENTO_WEB,
   url: URL_MANTENIMIENTO_WEB,
   image: IMAGE_SCHEMA_MANTENIMIENTO_WEB,
   ratingValue: SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
