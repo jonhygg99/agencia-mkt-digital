@@ -8,16 +8,28 @@ import TrustIcon from "@/app/ui/icons/bubble/trust";
 import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import RoiIcon from "@/app/ui/icons/bubble/roi";
 import { Question } from "@/app/utils/interface/question";
-import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
   CATEGORY_SEO_SERVICE_OUTPUT,
+  SERVICE_DESCRIPTION_SEO_LOCAL,
+  SERVICE_EXPECTED_DURATION_SEO_LOCAL,
+  SERVICE_ID_SEO_LOCAL,
+  SERVICE_NAME_SEO_LOCAL,
+  SERVICE_OUTPUT_SEO_LOCAL,
   SERVICE_SEO_LOCAL_RATING_COUNT,
   SERVICE_SEO_LOCAL_RATING_VALUE,
   SERVICE_TYPE_SEO_LOCAL,
 } from "@/app/utils/constants/schema";
-import { URL_SEO_LOCAL } from "@/app/utils/constants/navigation-links";
-import { getCombinedServiceSchema } from "@/app/utils/schema/utils";
+import {
+  URL_AGENCIA_SEO,
+  URL_POSICIONAMIENTO_SEO,
+  URL_SEO_LOCAL,
+} from "@/app/utils/constants/navigation-links";
+import {
+  getCombinedServiceSchema,
+  getSchemaService,
+} from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_SEO_LOCAL } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
@@ -342,24 +354,39 @@ Contáctanos para una consulta gratuita y descubre cómo podemos ayudarte a dest
  *
  */
 
-const SCHEMA: ServiceDetailsSchema = {
-  name: SERVICE,
-  description:
-    "Servicio de posicionamiento SEO local que optimiza tu presencia en línea para atraer clientes en tu área geográfica específica.",
-  category: CATEGORY_SEO,
+const breadcrumb: BreadCrumb[] = [
+  {
+    "@type": "ListItem",
+    position: 2,
+    name: "Agencia SEO",
+    item: URL_AGENCIA_SEO,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
+    name: SERVICE,
+    item: URL_SEO_LOCAL,
+  },
+];
+
+const serviceSchema = getSchemaService({
+  id: SERVICE_ID_SEO_LOCAL,
+  services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_SEO_LOCAL,
-  serviceOutput: CATEGORY_SEO_SERVICE_OUTPUT,
-  slugImage: IMAGE_SCHEMA_SEO_LOCAL,
+  serviceOutput: SERVICE_OUTPUT_SEO_LOCAL,
+  expectedDuration: SERVICE_EXPECTED_DURATION_SEO_LOCAL,
+  category: CATEGORY_SEO,
+  name: SERVICE_NAME_SEO_LOCAL,
+  description: SERVICE_DESCRIPTION_SEO_LOCAL,
   url: URL_SEO_LOCAL,
-  service: getCombinedServiceSchema(
-    PRICE_CARD_SERVICE,
-    "Planes de Posicionamiento SEO Local"
-  ),
-  lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
-  highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
+  image: IMAGE_SCHEMA_SEO_LOCAL,
   ratingValue: SERVICE_SEO_LOCAL_RATING_VALUE,
-  ratingCount: SERVICE_SEO_LOCAL_RATING_COUNT,
-  expectedDuration: "P30D",
+  reviewCount: SERVICE_SEO_LOCAL_RATING_COUNT,
+});
+
+const SCHEMA: ServiceDetailsSchema = {
+  serviceSchema: serviceSchema,
+  breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
 };
 

@@ -1,6 +1,13 @@
 import { FaqItem } from "./faq";
+import { PriceCard } from "./pricing";
 
-// Schema for the page of Service
+export interface BreadCrumb {
+  "@type": "ListItem";
+  position: number;
+  name: string;
+  item: string;
+}
+
 export interface SingleService {
   offers: {
     "@type": "Offer";
@@ -34,20 +41,42 @@ export interface CombinedService {
 
 // Schema for the Category (Main Category -> Category -> Service)
 
-export interface ServiceDetailsSchema {
-  name: string;
-  description: string;
-  category: string;
+// export interface ServiceDetailsSchema {
+//   name: string;
+//   description: string;
+//   category: string;
+//   serviceType: string;
+//   serviceOutput: string;
+//   url: string;
+//   image: string;
+//   service: SingleService | CombinedService;
+//   lowPrice: string;
+//   highPrice: string;
+//   ratingValue: string | Array<string>;
+//   ratingCount: string | Array<string>;
+//   expectedDuration: string;
+//   faq: FaqItem[];
+//   breadcrumb: Array<BreadCrumb>;
+// }
+
+export interface SchemaParams {
+  id: string;
+  services: PriceCard[];
   serviceType: string;
   serviceOutput: string;
-  url: string;
-  slugImage: string;
-  service: SingleService | CombinedService;
-  lowPrice: string;
-  highPrice: string;
-  ratingValue: string;
-  ratingCount: string;
   expectedDuration: string;
+  category: string;
+  name: string;
+  description: string;
+  url: string;
+  image: string;
+  ratingValue: string | string[];
+  reviewCount: string | string[];
+}
+
+export interface ServiceDetailsSchema {
+  serviceSchema: OneServiceSchema | CombinedServiceSchema;
+  breadcrumb: Array<BreadCrumb>;
   faq: FaqItem[];
 }
 
@@ -151,10 +180,5 @@ export interface CategorySchema {
   categoryDescription: string;
   serviceDetailsSchema: Array<OneServiceSchema | CombinedServiceSchema>;
   slogan: string;
-  breadcrumb: Array<{
-    "@type": "ListItem";
-    position: number;
-    name: string;
-    item: string;
-  }>;
+  breadcrumb: Array<BreadCrumb>;
 }

@@ -8,16 +8,26 @@ import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import { PriceCard } from "@/app/utils/interface/pricing";
 import { TimelineSteps } from "@/app/utils/interface/timeline";
 import { FaqItem } from "@/app/utils/interface/faq";
-import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
   CATEGORY_SEO_SERVICE_OUTPUT,
+  SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
+  SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
+  SERVICE_ID_POSICIONAMIENTO_SEO,
+  SERVICE_OUTPUT_POSICIONAMIENTO_SEO,
   SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
   SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
   SERVICE_TYPE_POSICIONAMIENTO_SEO,
 } from "@/app/utils/constants/schema";
-import { URL_POSICIONAMIENTO_SEO } from "@/app/utils/constants/navigation-links";
-import { getCombinedServiceSchema } from "@/app/utils/schema/utils";
+import {
+  URL_AGENCIA_SEO,
+  URL_POSICIONAMIENTO_SEO,
+} from "@/app/utils/constants/navigation-links";
+import {
+  getCombinedServiceSchema,
+  getSchemaService,
+} from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_POSICIONAMIENTO_SEO } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
@@ -349,24 +359,39 @@ tu alcance. ¡El futuro de tu éxito comienza hoy!";
  *
  */
 
-const SCHEMA: ServiceDetailsSchema = {
-  name: "Posicionamiento Web Profesional con SEO",
-  description:
-    "Servicios de optimización y posicionamiento web para mejorar tu visibilidad en buscadores",
-  category: CATEGORY_SEO,
+const breadcrumb: BreadCrumb[] = [
+  {
+    "@type": "ListItem",
+    position: 2,
+    name: "Agencia SEO",
+    item: URL_AGENCIA_SEO,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
+    name: SERVICE,
+    item: URL_POSICIONAMIENTO_SEO,
+  },
+];
+
+const serviceSchema = getSchemaService({
+  id: SERVICE_ID_POSICIONAMIENTO_SEO,
+  services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
-  slugImage: IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
-  serviceOutput: CATEGORY_SEO_SERVICE_OUTPUT,
+  serviceOutput: SERVICE_OUTPUT_POSICIONAMIENTO_SEO,
+  expectedDuration: SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
+  category: CATEGORY_SEO,
+  name: "Posicionamiento Web Profesional con SEO",
+  description: SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
   url: URL_POSICIONAMIENTO_SEO,
-  service: getCombinedServiceSchema(
-    PRICE_CARD_SERVICE,
-    "Planes de Posicionamiento SEO"
-  ),
-  lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
-  highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
+  image: IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
   ratingValue: SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
-  ratingCount: SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
-  expectedDuration: "P30D",
+  reviewCount: SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
+});
+
+const SCHEMA: ServiceDetailsSchema = {
+  serviceSchema: serviceSchema,
+  breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
 };
 

@@ -1,8 +1,8 @@
 import {
-  URL_AUDITORIA_SEO,
+  URL_AGENCIA_SEO,
   URL_MANTENIMIENTO_WEB,
 } from "@/app/utils/constants/navigation-links";
-import { getSingleServiceSchema } from "@/app/utils/schema/utils";
+import { getSchemaService } from "@/app/utils/schema/utils";
 import { Question } from "@/app/utils/interface/question";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
 import { ReasonItem } from "@/app/utils/interface/reason";
@@ -13,12 +13,17 @@ import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import { PriceCard } from "@/app/utils/interface/pricing";
 import { TimelineSteps } from "@/app/utils/interface/timeline";
 import { FaqItem } from "@/app/utils/interface/faq";
-import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
   CATEGORY_SEO_SERVICE_OUTPUT,
+  SERVICE_DESCRIPTION_MANTENIMIENTO_WEB,
+  SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB,
+  SERVICE_ID_MANTENIMIENTO_WEB,
   SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
   SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
+  SERVICE_NAME_MANTENIMIENTO_WEB,
+  SERVICE_OUTPUT_MANTENIMIENTO_WEB,
   SERVICE_TYPE_MANTENIMIENTO_WEB,
 } from "@/app/utils/constants/schema";
 import { IMAGE_SCHEMA_MANTENIMIENTO_WEB } from "@/app/utils/constants/image";
@@ -266,21 +271,39 @@ const TEXT_BANNER =
  *
  */
 
-const SCHEMA: ServiceDetailsSchema = {
-  name: SERVICE,
-  description:
-    "Mantenimiento web integral que incluye actualizaciones, seguridad, optimización y hosting.",
-  category: CATEGORY_SEO,
+const breadcrumb: BreadCrumb[] = [
+  {
+    "@type": "ListItem",
+    position: 2,
+    name: "Agencia SEO",
+    item: URL_AGENCIA_SEO,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
+    name: SERVICE,
+    item: URL_MANTENIMIENTO_WEB,
+  },
+];
+
+const serviceSchema = getSchemaService({
+  id: SERVICE_ID_MANTENIMIENTO_WEB,
+  services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_MANTENIMIENTO_WEB,
-  serviceOutput: CATEGORY_SEO_SERVICE_OUTPUT,
-  slugImage: IMAGE_SCHEMA_MANTENIMIENTO_WEB,
+  serviceOutput: SERVICE_OUTPUT_MANTENIMIENTO_WEB,
+  expectedDuration: SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB,
+  category: CATEGORY_SEO,
+  name: SERVICE_NAME_MANTENIMIENTO_WEB,
+  description: SERVICE_DESCRIPTION_MANTENIMIENTO_WEB,
   url: URL_MANTENIMIENTO_WEB,
-  service: getSingleServiceSchema(PRICE_CARD_SERVICE[0]),
-  lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
-  highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
+  image: IMAGE_SCHEMA_MANTENIMIENTO_WEB,
   ratingValue: SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
-  ratingCount: SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
-  expectedDuration: "P30D",
+  reviewCount: SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
+});
+
+const SCHEMA: ServiceDetailsSchema = {
+  serviceSchema: serviceSchema,
+  breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
 };
 

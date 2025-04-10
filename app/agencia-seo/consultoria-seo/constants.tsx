@@ -1,5 +1,11 @@
-import { URL_CONSULTORIA_SEO } from "@/app/utils/constants/navigation-links";
-import { getSingleServiceSchema } from "@/app/utils/schema/utils";
+import {
+  URL_AGENCIA_SEO,
+  URL_CONSULTORIA_SEO,
+} from "@/app/utils/constants/navigation-links";
+import {
+  getSchemaService,
+  getSingleServiceSchema,
+} from "@/app/utils/schema/utils";
 import { Question } from "@/app/utils/interface/question";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
 import { ReasonItem } from "@/app/utils/interface/reason";
@@ -10,12 +16,17 @@ import UserExperienceIcon from "@/app/ui/icons/bubble/user-experience";
 import { PriceCard } from "@/app/utils/interface/pricing";
 import { TimelineSteps } from "@/app/utils/interface/timeline";
 import { FaqItem } from "@/app/utils/interface/faq";
-import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
   CATEGORY_SEO_SERVICE_OUTPUT,
   SERVICE_CONSULTORIA_SEO_RATING_COUNT,
   SERVICE_CONSULTORIA_SEO_RATING_VALUE,
+  SERVICE_DESCRIPTION_CONSULTORIA_SEO,
+  SERVICE_EXPECTED_DURATION_CONSULTORIA_SEO,
+  SERVICE_ID_CONSULTORIA_SEO,
+  SERVICE_NAME_CONSULTORIA_SEO,
+  SERVICE_OUTPUT_CONSULTORIA_SEO,
   SERVICE_TYPE_CONSULTORIA_SEO,
 } from "@/app/utils/constants/schema";
 import { IMAGE_SCHEMA_CONSULTORIA_SEO } from "@/app/utils/constants/image";
@@ -261,21 +272,39 @@ const TEXT_BANNER =
   "La consultoría SEO te ayuda a identificar áreas de mejora y a maximizar tu rendimiento en línea. Contáctanos para una consulta\
  gratuita y descubre cómo podemos impulsar tu negocio. ¡El futuro es tuyo!";
 
-const SCHEMA: ServiceDetailsSchema = {
-  name: SERVICE,
-  description:
-    "Consultoría SEO para optimizar tu sitio web y mejorar tu visibilidad en línea.",
-  category: CATEGORY_SEO,
+const breadcrumb: BreadCrumb[] = [
+  {
+    "@type": "ListItem",
+    position: 2,
+    name: "Agencia SEO",
+    item: URL_AGENCIA_SEO,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
+    name: SERVICE,
+    item: URL_CONSULTORIA_SEO,
+  },
+];
+
+const serviceSchema = getSchemaService({
+  id: SERVICE_ID_CONSULTORIA_SEO,
+  services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_CONSULTORIA_SEO,
-  serviceOutput: CATEGORY_SEO_SERVICE_OUTPUT,
-  slugImage: IMAGE_SCHEMA_CONSULTORIA_SEO,
+  serviceOutput: SERVICE_OUTPUT_CONSULTORIA_SEO,
+  expectedDuration: SERVICE_EXPECTED_DURATION_CONSULTORIA_SEO,
+  category: CATEGORY_SEO,
+  name: SERVICE_NAME_CONSULTORIA_SEO,
+  description: SERVICE_DESCRIPTION_CONSULTORIA_SEO,
   url: URL_CONSULTORIA_SEO,
-  service: getSingleServiceSchema(PRICE_CARD_SERVICE[0]),
-  lowPrice: PRICE_CARD_SERVICE[0].price + ".00",
-  highPrice: PRICE_CARD_SERVICE[PRICE_CARD_SERVICE.length - 1].price + ".00",
+  image: IMAGE_SCHEMA_CONSULTORIA_SEO,
   ratingValue: SERVICE_CONSULTORIA_SEO_RATING_VALUE,
-  ratingCount: SERVICE_CONSULTORIA_SEO_RATING_COUNT,
-  expectedDuration: "P1D",
+  reviewCount: SERVICE_CONSULTORIA_SEO_RATING_COUNT,
+});
+
+const SCHEMA: ServiceDetailsSchema = {
+  serviceSchema: serviceSchema,
+  breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
 };
 

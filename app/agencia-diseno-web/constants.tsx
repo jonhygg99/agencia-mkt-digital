@@ -21,7 +21,7 @@ import {
   SERVICE_OUTPUT_DISENO_WEB,
   SERVICE_TYPE_DISENO_WEB,
 } from "@/app/utils/constants/schema";
-import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
+import { getSchemaService } from "@/app/utils/schema/utils";
 import { URL_AGENCIA_DISENO_WEB } from "@/app/utils/constants/navigation-links";
 import { PageCategoryData } from "@/app/utils/interface/page";
 import { IMAGE_SCHEMA_DISEÑO_WEB } from "@/app/utils/constants/image";
@@ -368,7 +368,7 @@ para destacar en los motores de búsqueda. ¡Haz que tu éxito online empiece ho
  *
  */
 
-export const schema_diseno_web = getSchemaServiceCategory({
+export const schema_diseno_web = getSchemaService({
   id: SERVICE_ID_DISENO_WEB,
   services: PRICE_CARD_SERVICE,
   category: CATEGORY_DESIGN,

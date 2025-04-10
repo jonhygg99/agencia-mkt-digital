@@ -64,6 +64,7 @@ export const AgencyServicesSchema = ({
     cleanedFAQItems.length > 0
       ? {
           "@type": "FAQPage",
+          inLanguage: "es",
           mainEntity: cleanedFAQItems.map((item) => ({
             "@type": "Question",
             name: item.question,

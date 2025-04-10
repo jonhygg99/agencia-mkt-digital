@@ -11,6 +11,7 @@ import {
   SEO_LOCAL,
 } from "@/app/utils/constants/service";
 import {
+  BreadCrumb,
   CategorySchema,
   CombinedServiceSchema,
   OneServiceSchema,
@@ -69,10 +70,9 @@ import {
   URL_POSICIONAMIENTO_SEO,
   URL_MANTENIMIENTO_WEB,
   URL_CONSULTORIA_SEO,
-  DOMINIO,
   URL_AGENCIA_SEO,
 } from "@/app/utils/constants/navigation-links";
-import { getSchemaServiceCategory } from "@/app/utils/schema/utils";
+import { getSchemaService } from "@/app/utils/schema/utils";
 import { PageCategoryData } from "@/app/utils/interface/page";
 import {
   IMAGE_SCHEMA_AUDITORIA_SEO,
@@ -323,7 +323,7 @@ al siguiente nivel. ¡El éxito digital te espera!";
  *
  */
 
-const schema_seo = getSchemaServiceCategory({
+const schema_seo = getSchemaService({
   id: SERVICE_ID_POSICIONAMIENTO_SEO,
   services: PRICE_CARD_SEO,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,
@@ -338,7 +338,7 @@ const schema_seo = getSchemaServiceCategory({
   reviewCount: SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
 });
 
-const schema_seo_local = getSchemaServiceCategory({
+const schema_seo_local = getSchemaService({
   id: SERVICE_ID_SEO_LOCAL,
   services: PRICE_CARD_SEO_LOCAL,
   serviceType: SERVICE_TYPE_SEO_LOCAL,
@@ -353,7 +353,7 @@ const schema_seo_local = getSchemaServiceCategory({
   reviewCount: SERVICE_SEO_LOCAL_RATING_COUNT,
 });
 
-const schema_auditoria_seo = getSchemaServiceCategory({
+const schema_auditoria_seo = getSchemaService({
   id: SERVICE_ID_AUDITORIA_SEO,
   services: PRICE_CARD_AUDITORIA_SEO,
   category: CATEGORY_SEO,
@@ -368,7 +368,7 @@ const schema_auditoria_seo = getSchemaServiceCategory({
   reviewCount: SERVICE_AUDITORIA_SEO_RATING_COUNT,
 });
 
-const schema_consultoria_seo = getSchemaServiceCategory({
+const schema_consultoria_seo = getSchemaService({
   id: SERVICE_ID_CONSULTORIA_SEO,
   services: PRICE_CARD_CONSULTORIA_SEO,
   serviceType: SERVICE_TYPE_CONSULTORIA_SEO,
@@ -383,7 +383,7 @@ const schema_consultoria_seo = getSchemaServiceCategory({
   reviewCount: SERVICE_CONSULTORIA_SEO_RATING_COUNT,
 });
 
-const schema_mantenimiento_web = getSchemaServiceCategory({
+const schema_mantenimiento_web = getSchemaService({
   id: SERVICE_ID_MANTENIMIENTO_WEB,
   services: PRICE_CARD_MANTENIMIENTO_WEB,
   serviceType: SERVICE_TYPE_MANTENIMIENTO_WEB,
@@ -407,19 +407,21 @@ export const combinedSchemas: Array<OneServiceSchema | CombinedServiceSchema> =
     schema_mantenimiento_web,
   ];
 
+export const breadcrumb: BreadCrumb[] = [
+  {
+    "@type": "ListItem",
+    position: 2,
+    name: "Agencia SEO",
+    item: URL_AGENCIA_SEO,
+  },
+];
+
 const SCHEMA: CategorySchema = {
   category: CATEGORY_SEO,
   categoryDescription: CATEGORY_SEO_DESCRIPTION,
   serviceDetailsSchema: combinedSchemas,
   slogan: "Estrategias SEO que despiertan tu presencia online",
-  breadcrumb: [
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Agencia SEO",
-      item: URL_AGENCIA_SEO,
-    },
-  ],
+  breadcrumb: breadcrumb,
 };
 
 /*

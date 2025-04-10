@@ -1,12 +1,15 @@
 import { PriceCard } from "@/app/utils/interface/pricing";
 import {
   DOMINIO,
+  SCHEMA_URL_BREADCRUMB_ID,
   SCHEMA_URL_ORGANIZATION_ID,
+  SCHEMA_URL_WEBSITE_ID,
 } from "@/app/utils/constants/navigation-links";
 import {
   CombienedOffer,
   CombinedAgregatedOffer,
   CombinedServiceSchema,
+  SchemaParams,
   OneServiceSchema,
   SingleService,
 } from "@/app/utils/interface/schema";
@@ -15,7 +18,7 @@ import {
   CombinedServiceService,
 } from "@/app/utils/interface/schema";
 
-const createSchemaService = (params: GetSchemaParams) => {
+export const createSchemaService = (params: SchemaParams) => {
   // Si solo hay un servicio, devuelve el objeto directamente
   if (params.services.length === 1) {
     const service = params.services[0];
@@ -103,23 +106,8 @@ const createSchemaService = (params: GetSchemaParams) => {
   }
 };
 
-interface GetSchemaParams {
-  id: string;
-  services: PriceCard[];
-  serviceType: string;
-  serviceOutput: string;
-  expectedDuration: string;
-  category: string;
-  name: string;
-  description: string;
-  url: string;
-  image: string;
-  ratingValue: string | string[];
-  reviewCount: string | string[];
-}
-
-export const getSchemaServiceCategory = (
-  params: GetSchemaParams
+export const getSchemaService = (
+  params: SchemaParams
 ): OneServiceSchema | CombinedServiceSchema => {
   const {
     id,
@@ -196,4 +184,27 @@ export const getSingleServiceSchema = (service: PriceCard): SingleService => {
     },
   };
   return schema;
+};
+
+export const getServicePageSchema = (
+  url: string,
+  name: string,
+  description: string
+) => {
+  return {
+    "@type": "ServicePage",
+    "@id": url + "/#webpage",
+    name: name,
+    url: url,
+    description: description,
+    isPartOf: {
+      "@id": SCHEMA_URL_WEBSITE_ID,
+    },
+    about: {
+      "@id": SCHEMA_URL_ORGANIZATION_ID,
+    },
+    breadcrumb: {
+      "@id": SCHEMA_URL_BREADCRUMB_ID,
+    },
+  };
 };
