@@ -7,7 +7,7 @@ import QuestionSection from "@/app/ui/components/question";
 import Steps from "@/app/ui/components/timeline/steps";
 import Problems from "@/app/ui/components/problems";
 import Services from "@/app/ui/components/services";
-import { AgencyServicesSchema } from "@/app/utils/schema/category";
+import { CreateCategorySchema } from "@/app/utils/schema/category";
 import { PageCategoryData } from "@/app/utils/interface/page";
 import Reasons from "../components/reasons";
 import Pricing from "../components/pricing";
@@ -27,7 +27,7 @@ export default function PageCategory({
 }) {
   return (
     <div className="min-h-screen">
-      <AgencyServicesSchema schema={data.SCHEMA} faq={data.FAQ_ITEMS_SERVICE} />
+      <CreateCategorySchema schema={data.SCHEMA} faq={data.FAQ_ITEMS_SERVICE} />
       <HeroBig HeroTitle={data.TITLE_HERO} title={data.SERVICE} />
       <QuestionSection question={data.QUESTION_SERVICE} />
       <Reasons

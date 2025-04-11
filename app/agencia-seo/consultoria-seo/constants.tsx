@@ -2,10 +2,7 @@ import {
   URL_AGENCIA_SEO,
   URL_CONSULTORIA_SEO,
 } from "@/app/utils/constants/navigation-links";
-import {
-  getSchemaService,
-  getSingleServiceSchema,
-} from "@/app/utils/schema/utils";
+import { getSchemaService } from "@/app/utils/schema/utils";
 import { Question } from "@/app/utils/interface/question";
 import TypingAnimation from "@/app/ui/elements/typing-animation";
 import { ReasonItem } from "@/app/utils/interface/reason";
@@ -19,7 +16,6 @@ import { FaqItem } from "@/app/utils/interface/faq";
 import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
-  CATEGORY_SEO_SERVICE_OUTPUT,
   SERVICE_CONSULTORIA_SEO_RATING_COUNT,
   SERVICE_CONSULTORIA_SEO_RATING_VALUE,
   SERVICE_DESCRIPTION_CONSULTORIA_SEO,
@@ -287,7 +283,7 @@ const breadcrumb: BreadCrumb[] = [
   },
 ];
 
-const serviceSchema = getSchemaService({
+export const serviceSchema = getSchemaService({
   id: SERVICE_ID_CONSULTORIA_SEO,
   services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_CONSULTORIA_SEO,

@@ -1,21 +1,14 @@
-import { PriceCard } from "@/app/utils/interface/pricing";
 import {
-  DOMINIO,
   SCHEMA_URL_BREADCRUMB_ID,
   SCHEMA_URL_ORGANIZATION_ID,
   SCHEMA_URL_WEBSITE_ID,
 } from "@/app/utils/constants/navigation-links";
 import {
-  CombienedOffer,
+  CombinedOffer,
   CombinedAgregatedOffer,
-  CombinedServiceSchema,
   SchemaParams,
   OneServiceSchema,
-  SingleService,
-} from "@/app/utils/interface/schema";
-import {
-  CombinedService,
-  CombinedServiceService,
+  CategorySchema,
 } from "@/app/utils/interface/schema";
 
 export const createSchemaService = (params: SchemaParams) => {
@@ -39,6 +32,7 @@ export const createSchemaService = (params: SchemaParams) => {
       offers: {
         "@type": "Offer",
         name: service.title,
+        url: params.url,
         description: service.description,
         price: service.price,
         priceCurrency: "EUR",
@@ -48,6 +42,9 @@ export const createSchemaService = (params: SchemaParams) => {
           "@type": "Service",
           name: service.title,
           description: service.description,
+          category: params.category,
+          serviceType: params.serviceType,
+          image: params.image,
           provider: {
             "@id": SCHEMA_URL_ORGANIZATION_ID,
           },
@@ -68,8 +65,10 @@ export const createSchemaService = (params: SchemaParams) => {
     return schema;
   } else {
     // Si hay más de un servicio, devuelve un array de objetos
-    const offers: CombienedOffer[] = params.services.map((service, index) => ({
+    const offers: CombinedOffer[] = params.services.map((service, index) => ({
       "@type": "Offer",
+      name: service.title,
+      description: service.description,
       url: params.url,
       price: service.price,
       priceCurrency: "EUR",
@@ -108,7 +107,7 @@ export const createSchemaService = (params: SchemaParams) => {
 
 export const getSchemaService = (
   params: SchemaParams
-): OneServiceSchema | CombinedServiceSchema => {
+): OneServiceSchema | CombinedAgregatedOffer => {
   const {
     id,
     services,
@@ -127,6 +126,7 @@ export const getSchemaService = (
   const schemaServices: OneServiceSchema | CombinedAgregatedOffer =
     createSchemaService(params);
 
+  // TODO: errores
   if (params.services.length === 1) {
     return schemaServices;
   } else {
@@ -139,51 +139,17 @@ export const getSchemaService = (
       serviceOutput: serviceOutput,
       expectedDuration: expectedDuration,
       category: category,
-      offers: schemaServices,
+      image: image,
+      url: url,
+      provider: {
+        "@id": SCHEMA_URL_ORGANIZATION_ID,
+      },
+      offers:
+        params.services.length > 1 && "offers" in schemaServices
+          ? schemaServices.offers
+          : [],
     };
   }
-
-  // Si no se cumple ninguna de las condiciones, puedes lanzar un error o retornar null
-  throw new Error("Invalid schemaServices type");
-};
-export const getCombinedServiceSchema = (
-  services: PriceCard[],
-  name: string
-): CombinedService => {
-  const schemaServices: CombinedServiceService[] = services.map((service) => ({
-    "@type": "Offer",
-    name: service.title,
-    description: service.description,
-    price: service.price,
-    priceCurrency: "EUR",
-  }));
-  const schema: CombinedService = {
-    mainEntityOfPage: {
-      "@type": "OfferCatalog",
-      name: name,
-      itemListElement: schemaServices,
-    },
-  };
-
-  return schema;
-};
-
-export const getSingleServiceSchema = (service: PriceCard): SingleService => {
-  const schema: SingleService = {
-    offers: {
-      "@type": "Offer",
-      name: service.title,
-      description: service.description,
-      price: service.price + ".00",
-      priceCurrency: "EUR",
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-        description: service.description,
-      },
-    },
-  };
-  return schema;
 };
 
 export const getServicePageSchema = (
@@ -208,3 +174,85 @@ export const getServicePageSchema = (
     },
   };
 };
+
+export const getCategoryPageSchema = (
+  url: string,
+  name: string,
+  servicesID: Array<string>
+) => {
+  return {
+    "@type": "ServicePage",
+    "@id": url + "/#webpage",
+    name: name,
+    url: url,
+    isPartOf: {
+      "@id": SCHEMA_URL_WEBSITE_ID,
+    },
+    about: {
+      "@id": SCHEMA_URL_ORGANIZATION_ID,
+    },
+    breadcrumb: {
+      "@id": SCHEMA_URL_BREADCRUMB_ID,
+    },
+    mainEntity: {
+      "@type": "OfferCatalog",
+      name: name,
+      itemListElement: servicesID.map((id) => ({
+        "@type": "Service",
+        "@id": id,
+      })),
+    },
+  };
+};
+
+export function getServiceIds(categorySchema: CategorySchema): string[] {
+  const serviceIds: string[] = [];
+
+  categorySchema.serviceDetailsSchema.forEach((service) => {
+    // Verificar si el servicio tiene un @id
+    if ("@id" in service) {
+      serviceIds.push(service["@id"]);
+    }
+    // Verificar si el servicio es un CombinedAgregatedOffer
+    else if ("offers" in service) {
+      const offers = service.offers;
+
+      // Verificar si offers es un array
+      if (Array.isArray(offers)) {
+        offers.forEach((offer) => {
+          // Verificar que offer tenga itemOffered
+          if ("itemOffered" in offer) {
+            const itemOffered = offer.itemOffered;
+
+            // Verificar que itemOffered tenga un @id
+            if (
+              typeof itemOffered === "object" &&
+              itemOffered !== null &&
+              "@id" in itemOffered
+            ) {
+              serviceIds.push(itemOffered["@id"] as string); // Aseguramos que sea un string
+            }
+          }
+        });
+      }
+      // Si offers es un solo objeto
+      else if (
+        typeof offers === "object" &&
+        offers !== null &&
+        "itemOffered" in offers
+      ) {
+        const itemOffered = offers.itemOffered;
+
+        // Verificar que itemOffered tenga un @id
+        if (
+          typeof itemOffered === "object" &&
+          itemOffered !== null &&
+          "@id" in itemOffered
+        ) {
+          serviceIds.push(itemOffered["@id"] as string); // Aseguramos que sea un string
+        }
+      }
+    }
+  });
+  return serviceIds;
+}

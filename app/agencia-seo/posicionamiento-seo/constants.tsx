@@ -24,10 +24,7 @@ import {
   URL_AGENCIA_SEO,
   URL_POSICIONAMIENTO_SEO,
 } from "@/app/utils/constants/navigation-links";
-import {
-  getCombinedServiceSchema,
-  getSchemaService,
-} from "@/app/utils/schema/utils";
+import { getSchemaService } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_POSICIONAMIENTO_SEO } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
@@ -374,7 +371,7 @@ const breadcrumb: BreadCrumb[] = [
   },
 ];
 
-const serviceSchema = getSchemaService({
+export const serviceSchema = getSchemaService({
   id: SERVICE_ID_POSICIONAMIENTO_SEO,
   services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_POSICIONAMIENTO_SEO,

@@ -9,7 +9,7 @@ export const CATEGORY_DESCRIPTION_DIGITAL_MARKETING =
 
 export const CATEGORY_SEO = "SEO Services";
 export const CODE_SEO = "seo-services";
-export const CATEGORY_SEO_DESCRIPTION = "Servicios de SEO";
+export const CATEGORY_SEO_DESCRIPTION = "Servicios SEO";
 export const CATEGORY_SEO_SERVICE_OUTPUT =
   "Mayor visibilidad en motores de búsqueda y aumento de tráfico orgánico";
 
@@ -89,8 +89,8 @@ export const SERVICE_EXPECTED_DURATION_DISENO_WEB = "P6W";
 export const SERVICE_OUTPUT_DISENO_WEB =
   "Página web moderna, rápida y optimizada desde el inicio para el posicionamiento en buscadores.";
 export const SERVICE_TYPE_DISENO_WEB = "Web Design";
-export const SERVICE_DISENO_WEB_RATING_VALUE = "4.8";
-export const SERVICE_DISENO_WEB_RATING_COUNT = "95";
+export const SERVICE_DISENO_WEB_RATING_VALUE = ["4.8", "4.9", "4.7"];
+export const SERVICE_DISENO_WEB_RATING_COUNT = ["95", "100", "90"];
 
 export const LAST_REVIEWED = "2025-03-10";
 

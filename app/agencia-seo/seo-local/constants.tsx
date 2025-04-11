@@ -11,7 +11,6 @@ import { Question } from "@/app/utils/interface/question";
 import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
-  CATEGORY_SEO_SERVICE_OUTPUT,
   SERVICE_DESCRIPTION_SEO_LOCAL,
   SERVICE_EXPECTED_DURATION_SEO_LOCAL,
   SERVICE_ID_SEO_LOCAL,
@@ -26,10 +25,7 @@ import {
   URL_POSICIONAMIENTO_SEO,
   URL_SEO_LOCAL,
 } from "@/app/utils/constants/navigation-links";
-import {
-  getCombinedServiceSchema,
-  getSchemaService,
-} from "@/app/utils/schema/utils";
+import { getSchemaService } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_SEO_LOCAL } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
@@ -369,7 +365,7 @@ const breadcrumb: BreadCrumb[] = [
   },
 ];
 
-const serviceSchema = getSchemaService({
+export const serviceSchema = getSchemaService({
   id: SERVICE_ID_SEO_LOCAL,
   services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_SEO_LOCAL,

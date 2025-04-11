@@ -286,7 +286,7 @@ const breadcrumb: BreadCrumb[] = [
   },
 ];
 
-const serviceSchema = getSchemaService({
+export const serviceSchema = getSchemaService({
   id: SERVICE_ID_MANTENIMIENTO_WEB,
   services: PRICE_CARD_SERVICE,
   serviceType: SERVICE_TYPE_MANTENIMIENTO_WEB,

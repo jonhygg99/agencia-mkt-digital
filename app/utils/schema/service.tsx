@@ -4,7 +4,10 @@ import {
   SCHEMA_URL_BREADCRUMB_ID,
 } from "@/app/utils/constants/navigation-links";
 import { cleanText } from "@/app/utils/format-text";
-import { ServiceDetailsSchema } from "@/app/utils/interface/schema";
+import {
+  CombinedOffer,
+  ServiceDetailsSchema,
+} from "@/app/utils/interface/schema";
 import { getServicePageSchema } from "./utils";
 
 export const ServiceSchema = ({ schema }: { schema: ServiceDetailsSchema }) => {
@@ -93,11 +96,28 @@ export const ServiceSchema = ({ schema }: { schema: ServiceDetailsSchema }) => {
   // };
 
   const url =
-    "offers" in schema
-      ? schema.serviceSchemaoffers[0].url
-      : schema.serviceSchema.url;
-  const name = schema.serviceSchema.name;
-  const description = schema.serviceSchema.description;
+    "url" in schema.serviceSchema
+      ? schema.serviceSchema.url
+      : Array.isArray(schema.serviceSchema.offers)
+      ? schema.serviceSchema.offers[0].itemOffered.provider["@id"] // Accediendo al ID del proveedor
+      : (schema.serviceSchema.offers as CombinedOffer).itemOffered.provider[
+          "@id"
+        ]; // Accediendo al ID del proveedor
+  console.log(url);
+
+  const name =
+    "name" in schema.serviceSchema
+      ? schema.serviceSchema.name
+      : Array.isArray(schema.serviceSchema.offers)
+      ? schema.serviceSchema.offers[0].itemOffered.name // Accediendo al nombre del primer offer
+      : (schema.serviceSchema.offers as CombinedOffer).itemOffered.name; // Accediendo al nombre si es un solo CombinedOffer
+
+  const description =
+    "description" in schema.serviceSchema
+      ? schema.serviceSchema.description
+      : Array.isArray(schema.serviceSchema.offers)
+      ? schema.serviceSchema.offers[0].itemOffered.description // Accediendo a la descripción del primer offer
+      : (schema.serviceSchema.offers as CombinedOffer).itemOffered.description; // Accediendo a la descripción si es un solo CombinedOffer
   const servicePage = getServicePageSchema(url, name, description);
 
   const breadcrumbStructure = {

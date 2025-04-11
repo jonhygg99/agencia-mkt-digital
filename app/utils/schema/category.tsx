@@ -1,5 +1,4 @@
 import {
-  NOMBRE_EMPRESA,
   SCHEMA_ORGANIZATION,
   SCHEMA_WEBSITE,
 } from "@/app/utils/constants/empresa";
@@ -15,8 +14,9 @@ import {
   DOMINIO,
   SCHEMA_URL_BREADCRUMB_ID,
 } from "@/app/utils/constants/navigation-links";
+import { getCategoryPageSchema, getServiceIds } from "./utils";
 
-export const AgencyServicesSchema = ({
+export const CreateCategorySchema = ({
   schema,
   faq,
 }: {
@@ -76,6 +76,11 @@ export const AgencyServicesSchema = ({
         }
       : null;
 
+  const url = schema.breadcrumb[schema.breadcrumb.length - 1].item;
+  const name = schema.categoryDescription;
+  const serviceIds = getServiceIds(schema);
+  const servicePage = getCategoryPageSchema(url, name, serviceIds);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -83,9 +88,9 @@ export const AgencyServicesSchema = ({
       SCHEMA_WEBSITE,
       breadcrumbStructure,
       faqPageStructure,
+      servicePage,
     ],
   };
-
   return (
     <script
       type="application/ld+json"
