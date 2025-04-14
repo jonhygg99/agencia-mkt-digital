@@ -8,7 +8,7 @@ import Steps from "@/app/ui/components/timeline/steps";
 import Problems from "@/app/ui/components/problems";
 import Services from "@/app/ui/components/services";
 import { CreateCategorySchema } from "@/app/utils/schema/category";
-import { PageCategoryData } from "@/app/utils/interface/page";
+import { PageCategoryData } from "@/app/utils/interface/page-data";
 import Reasons from "../components/reasons";
 import Pricing from "../components/pricing";
 

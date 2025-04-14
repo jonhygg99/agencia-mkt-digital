@@ -26,7 +26,7 @@ import {
   SERVICE_TYPE_AUDITORIA_SEO,
 } from "@/app/utils/constants/schema";
 import { IMAGE_SCHEMA_AUDITORIA_SEO } from "@/app/utils/constants/image";
-import { PageServiceData } from "@/app/utils/interface/page";
+import { PageServiceData } from "@/app/utils/interface/page-data";
 
 const SERVICE = "Auditoría SEO";
 const KEYWORD_PRINCIPAL = SERVICE;

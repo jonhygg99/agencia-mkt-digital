@@ -26,7 +26,7 @@ import { serviceSchema as SERVICE_SCHEMA_AUDITORIA_SEO } from "@/app/agencia-seo
 import { serviceSchema as SERVICE_SCHEMA_MANTENIMIENTO_WEB } from "@/app/agencia-seo/mantenimiento-web/constants";
 import { serviceSchema as SERVICE_SCHEMA_CONSULTORIA_SEO } from "@/app/agencia-seo/consultoria-seo/constants";
 import { URL_AGENCIA_SEO } from "@/app/utils/constants/navigation-links";
-import { PageCategoryData } from "@/app/utils/interface/page";
+import { PageCategoryData } from "@/app/utils/interface/page-data";
 
 const SERVICE = "Agencia SEO";
 const KEYWORD_PRINCIPAL = SERVICE;

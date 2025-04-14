@@ -1,5 +1,4 @@
 import {
-  NOMBRE_EMPRESA,
   SCHEMA_ORGANIZATION,
   SCHEMA_WEBSITE,
 } from "@/app/utils/constants/empresa";
@@ -10,7 +9,6 @@ import {
   SCHEMA_URL_OFFERING_ID,
   SCHEMA_URL_ORGANIZATION_ID,
   SCHEMA_URL_SERVICE_ID,
-  SCHEMA_URL_WEBPAGE_ID,
   URL_AGENCIA_DISENO_WEB,
   URL_AGENCIA_SEO,
 } from "@/app/utils/constants/navigation-links";

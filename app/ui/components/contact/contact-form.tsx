@@ -43,7 +43,7 @@ export default function ContactForm() {
       });
       setIsLoaded(true);
     }
-  }, [personajesSEO]);
+  }, []);
 
   if (!isLoaded) {
     return <div>Cargando...</div>;

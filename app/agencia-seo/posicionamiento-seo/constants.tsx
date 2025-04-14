@@ -11,7 +11,6 @@ import { FaqItem } from "@/app/utils/interface/faq";
 import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
-  CATEGORY_SEO_SERVICE_OUTPUT,
   SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
   SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
   SERVICE_ID_POSICIONAMIENTO_SEO,
@@ -26,7 +25,7 @@ import {
 } from "@/app/utils/constants/navigation-links";
 import { getSchemaService } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_POSICIONAMIENTO_SEO } from "@/app/utils/constants/image";
-import { PageServiceData } from "@/app/utils/interface/page";
+import { PageServiceData } from "@/app/utils/interface/page-data";
 
 const KEYWORD_PRINCIPAL = "Posicionamiento Web Profesional con SEO";
 const SERVICE = "Posicionamiento SEO";

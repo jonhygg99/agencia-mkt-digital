@@ -77,6 +77,7 @@ export const SERVICE_WEB_DESIGNER = (
     title="Desarrollador Web"
     description="Desarrollo de sitios web optimizados para SEO desde su base, asegurando una estructura técnica
  sólida y rendimiento óptimo."
+    comingSoon={false}
   />
 );
 
@@ -86,6 +87,7 @@ export const SERVICE_UI_DESIGNER = (
     title="Diseñador UI/UX"
     description="Creación de interfaces intuitivas y experiencias de usuario que mejoran la interacción y reducen
  el rebote."
+    comingSoon={false}
   />
 );
 
@@ -95,6 +97,7 @@ export const SERVICE_SEO = (
     title="Optimización SEO"
     description="Implementación de estrategias SEO avanzadas para mejorar el posicionamiento y la visibilidad en
  buscadores."
+    comingSoon={false}
   />
 );
 
@@ -104,6 +107,7 @@ export const SERVICE_CONTENT = (
     title="Estrategia de Contenidos"
     description="Desarrollo de contenido relevante y optimizado que conecta con tu audiencia y mejora el
  posicionamiento."
+    comingSoon={false}
   />
 );
 

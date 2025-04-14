@@ -5,7 +5,6 @@ import "./globals.css";
 import { useState, useEffect } from "react";
 import { NavigationApp } from "./ui/navigation/navigation";
 import Footer from "./ui/components/footer";
-import { SchemaMarkup } from "./schema";
 
 const inter = Inter({ subsets: ["latin"] });
 

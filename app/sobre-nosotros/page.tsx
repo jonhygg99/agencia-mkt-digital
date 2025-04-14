@@ -47,12 +47,13 @@ export default function SobreNosotros() {
           <p className="text-center mb-16">
             Desde su fundación, {NOMBRE_EMPRESA} ha enfrentado desafíos, pero
             cada uno de ellos ha sido una oportunidad para crecer y mejorar. He
-            aprendido que el mercado está lleno de "profesionales" que no
-            siempre cumplen con las expectativas, y eso me ha motivado a ofrecer
-            un servicio que realmente marque la diferencia. Hoy, la agencia se
-            posiciona como un referente en soluciones personalizadas, y aunque
-            actualmente soy el único miembro del equipo, estoy comprometido a
-            expandir y construir un equipo talentoso que comparta esta visión.
+            aprendido que el mercado está lleno de &quot;profesionales&quot; que
+            no siempre cumplen con las expectativas, y eso me ha motivado a
+            ofrecer un servicio que realmente marque la diferencia. Hoy, la
+            agencia se posiciona como un referente en soluciones personalizadas,
+            y aunque actualmente soy el único miembro del equipo, estoy
+            comprometido a expandir y construir un equipo talentoso que comparta
+            esta visión.
           </p>
         </div>
         <div className="max-w-[900px] mx-auto">

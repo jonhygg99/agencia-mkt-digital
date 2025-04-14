@@ -8,7 +8,7 @@ import Steps from "@/app/ui/components/timeline/steps";
 import { ServiceSchema } from "@/app/utils/schema/service";
 import Reasons from "@/app/ui/components/reasons";
 import Pricing from "@/app/ui/components/pricing";
-import { PageServiceData } from "@/app/utils/interface/page";
+import { PageServiceData } from "@/app/utils/interface/page-data";
 
 export default function PageService({
   data,

@@ -93,19 +93,3 @@ export const SERVICE_DISENO_WEB_RATING_VALUE = ["4.8", "4.9", "4.7"];
 export const SERVICE_DISENO_WEB_RATING_COUNT = ["95", "100", "90"];
 
 export const LAST_REVIEWED = "2025-03-10";
-
-// Otros service Output
-const SERVICE_OUTPUT_SEO_TECNICO =
-  "Sitio web libre de errores técnicos, rastreable por Google y con mayor velocidad de carga.";
-const SERVICE_OUTPUT_SEO_ONPAGE =
-  "Contenido optimizado, etiquetas correctamente estructuradas y arquitectura web mejorada para el posicionamiento.";
-const SERVICE_OUTPUT_SEO_OFFPAGE =
-  "Autoridad de dominio aumentada mediante enlaces de calidad desde sitios relevantes.";
-const SERVICE_OUTPUT_SEO_INTERNACIONAL =
-  "Presencia efectiva en buscadores de diferentes países e idiomas, atrayendo tráfico global.";
-const SERVICE_OUTPUT_SEO_ECOMMERCE =
-  "Aumento de visitas cualificadas y ventas gracias a la optimización de productos y categorías.";
-const SERVICE_OUTPUT_REDISENO_WEB_SEO =
-  "Mejora estética y técnica de un sitio existente para lograr una mayor visibilidad y conversiones.";
-const SERVICE_OUTPUT_LANDING_PAGES_SEO =
-  "Páginas de aterrizaje enfocadas en la conversión, con alto rendimiento SEO.";

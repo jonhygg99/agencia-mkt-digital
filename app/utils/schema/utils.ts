@@ -108,39 +108,23 @@ export const createSchemaService = (params: SchemaParams) => {
 export const getSchemaService = (
   params: SchemaParams
 ): OneServiceSchema | CombinedAgregatedOffer => {
-  const {
-    id,
-    services,
-    serviceType,
-    serviceOutput,
-    expectedDuration,
-    category,
-    name,
-    description,
-    url,
-    image,
-    ratingValue,
-    reviewCount,
-  } = params;
-
   const schemaServices: OneServiceSchema | CombinedAgregatedOffer =
     createSchemaService(params);
 
-  // TODO: errores
   if (params.services.length === 1) {
     return schemaServices;
   } else {
     return {
       "@type": "Service",
-      "@id": `${url}/#service-${id}`,
-      name: name,
-      description: description,
-      serviceType: serviceType,
-      serviceOutput: serviceOutput,
-      expectedDuration: expectedDuration,
-      category: category,
-      image: image,
-      url: url,
+      "@id": `${params.url}/#service-${params.id}`,
+      name: params.name,
+      description: params.description,
+      serviceType: params.serviceType,
+      serviceOutput: params.serviceOutput,
+      expectedDuration: params.expectedDuration,
+      category: params.category,
+      image: params.image,
+      url: params.url,
       provider: {
         "@id": SCHEMA_URL_ORGANIZATION_ID,
       },
@@ -213,9 +197,9 @@ export function getServiceIds(categorySchema: CategorySchema): string[] {
     if ("@id" in service) {
       serviceIds.push(service["@id"]);
     }
-    // Verificar si el servicio es un CombinedAgregatedOffer
+    // Verificar si el servicio es un CombinedAgregatedOffer. build
     else if ("offers" in service) {
-      const offers = service.offers;
+      const offers: CombinedOffer | CombinedOffer[] = service.offers;
 
       // Verificar si offers es un array
       if (Array.isArray(offers)) {
@@ -241,7 +225,7 @@ export function getServiceIds(categorySchema: CategorySchema): string[] {
         offers !== null &&
         "itemOffered" in offers
       ) {
-        const itemOffered = offers.itemOffered;
+        const itemOffered = (offers as CombinedOffer).itemOffered;
 
         // Verificar que itemOffered tenga un @id
         if (

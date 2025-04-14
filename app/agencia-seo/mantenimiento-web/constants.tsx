@@ -16,7 +16,6 @@ import { FaqItem } from "@/app/utils/interface/faq";
 import { BreadCrumb, ServiceDetailsSchema } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO,
-  CATEGORY_SEO_SERVICE_OUTPUT,
   SERVICE_DESCRIPTION_MANTENIMIENTO_WEB,
   SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB,
   SERVICE_ID_MANTENIMIENTO_WEB,
@@ -27,7 +26,7 @@ import {
   SERVICE_TYPE_MANTENIMIENTO_WEB,
 } from "@/app/utils/constants/schema";
 import { IMAGE_SCHEMA_MANTENIMIENTO_WEB } from "@/app/utils/constants/image";
-import { PageServiceData } from "@/app/utils/interface/page";
+import { PageServiceData } from "@/app/utils/interface/page-data";
 
 const SERVICE = "Mantenimiento Web";
 const KEYWORD_PRINCIPAL = SERVICE;

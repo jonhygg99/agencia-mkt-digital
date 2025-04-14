@@ -23,7 +23,7 @@ import {
 } from "@/app/utils/constants/schema";
 import { getSchemaService } from "@/app/utils/schema/utils";
 import { URL_AGENCIA_DISENO_WEB } from "@/app/utils/constants/navigation-links";
-import { PageCategoryData } from "@/app/utils/interface/page";
+import { PageCategoryData } from "@/app/utils/interface/page-data";
 import { IMAGE_SCHEMA_DISENO_WEB } from "@/app/utils/constants/image";
 
 export const SERVICE = "Agencia de Diseño Web a Medida";

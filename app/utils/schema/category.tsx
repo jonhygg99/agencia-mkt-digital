@@ -5,7 +5,6 @@ import {
 import {
   CATEGORY_DESCRIPTION_DIGITAL_MARKETING,
   CATEGORY_DIGITAL_MARKETING,
-  DATE_PUBLISHED,
 } from "@/app/utils/constants/schema";
 import { CategorySchema } from "@/app/utils/interface/schema";
 import { cleanText } from "../format-text";

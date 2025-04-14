@@ -22,12 +22,11 @@ import {
 } from "@/app/utils/constants/schema";
 import {
   URL_AGENCIA_SEO,
-  URL_POSICIONAMIENTO_SEO,
   URL_SEO_LOCAL,
 } from "@/app/utils/constants/navigation-links";
 import { getSchemaService } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_SEO_LOCAL } from "@/app/utils/constants/image";
-import { PageServiceData } from "@/app/utils/interface/page";
+import { PageServiceData } from "@/app/utils/interface/page-data";
 
 export const SERVICE = "SEO Local";
 const KEYWORD_PRINCIPAL = SERVICE_NAME_SEO_LOCAL;
