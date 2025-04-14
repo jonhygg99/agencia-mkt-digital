@@ -24,6 +24,12 @@ export const SCHEMA_SLUG_CATALOG_ID = "/#catalog";
 const SLUG_AGENCIA_SEO = "/agencia-seo";
 export const URL_AGENCIA_SEO = `${DOMINIO}${SLUG_AGENCIA_SEO}`;
 
+const SLUG_CONTACTO = "/contacto";
+export const URL_CONTACTO = `${DOMINIO}${SLUG_CONTACTO}`;
+
+const SLUG_SOBRE_NOSOTROS = "/sobre-nosotros";
+export const URL_SOBRE_NOSOTROS = `${DOMINIO}${SLUG_SOBRE_NOSOTROS}`;
+
 const SLUG_AUDITORIA_SEO = "/auditoria-seo";
 export const URL_AUDITORIA_SEO = `${URL_AGENCIA_SEO}${SLUG_AUDITORIA_SEO}`;
 
@@ -53,7 +59,6 @@ export const navigationLinks: NavLink[] = [
       { href: URL_AUDITORIA_SEO, text: "Auditoría SEO" },
       { href: URL_POSICIONAMIENTO_SEO, text: "Posicionamiento SEO" },
       { href: URL_SEO_LOCAL, text: "Posicionamiento SEO Local" },
-      // { href: URL_AGENCIA_DISENO_WEB, text: "Diseño Web con SEO" },
       { href: URL_CONSULTORIA_SEO, text: "Consultoría SEO" },
       { href: URL_MANTENIMIENTO_WEB, text: "Mantenimiento Web" },
     ],
@@ -67,10 +72,10 @@ export const navigationLinks: NavLink[] = [
  */
 
 export const EMPRESA_FOOTER: FooterSectionItem[] = [
-  { name: "Sobre nosotros", href: "/sobre-nosotros" },
+  { name: "Sobre nosotros", href: URL_SOBRE_NOSOTROS },
   { name: "Consultor SEO", href: URL_CONSULTOR_SEO },
-  { name: "Contacto", href: "/contacto" },
-  { name: "Portfolio", href: "/portfolio" },
+  { name: "Contacto", href: URL_CONTACTO },
+  // { name: "Portfolio", href: "/portfolio" },
 ];
 
 export const AGENCIA_MARKETING_FOOTER: FooterSectionItem[] = [
@@ -110,5 +115,5 @@ export const TEXTOS_LEGALES = [
   { name: "Aviso Legal", href: URL_AVISO_LEGAL },
   { name: "Política de Privacidad", href: URL_POLITICA_PRIVACIDAD },
   { name: "Política de Cookies", href: URL_POLITICA_COOKIE },
-  { name: "Mapa Web", href: URL_MAPA_WEB },
+  // { name: "Mapa Web", href: URL_MAPA_WEB },
 ];

@@ -1,16 +1,10 @@
-import BubbleInfo from "@/app/ui/elements/bubble-info";
-import { ServiceItem } from "@/app/utils/interface/service";
 import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
+import { Metadata } from "next";
+import { METADATA } from "./metadata";
 
-export default function Services({
-  title,
-  description,
-  service,
-}: {
-  title: string;
-  description: string;
-  service: ServiceItem[];
-}) {
+export const metadata: Metadata = METADATA;
+
+export default function SobreNosotros() {
   return (
     <div className="min-h-screen">
       <section className="section-class-1320">
@@ -43,7 +37,7 @@ export default function Services({
             pasión por la personalización y la creación de soluciones que se
             adaptan a las necesidades de sus clientes. Su objetivo es conectar
             con cada cliente de manera única, asegurando que cada proyecto
-            refleje su visión y objetivos.{" "}
+            refleje su visión y objetivos.
           </p>
         </div>
         <div className="max-w-[900px] mx-auto">
