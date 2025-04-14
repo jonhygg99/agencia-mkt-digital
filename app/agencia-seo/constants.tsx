@@ -14,91 +14,22 @@ import {
   BreadCrumb,
   CategorySchema,
   CombinedAgregatedOffer,
-  CombinedServiceSchema,
   OneServiceSchema,
 } from "@/app/utils/interface/schema";
 import {
   CATEGORY_SEO_DESCRIPTION,
   CATEGORY_SEO,
-  SERVICE_TYPE_AUDITORIA_SEO,
-  SERVICE_TYPE_CONSULTORIA_SEO,
-  SERVICE_TYPE_MANTENIMIENTO_WEB,
-  SERVICE_TYPE_POSICIONAMIENTO_SEO,
-  SERVICE_TYPE_SEO_LOCAL,
-  SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE,
-  SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT,
-  SERVICE_SEO_LOCAL_RATING_VALUE,
-  SERVICE_SEO_LOCAL_RATING_COUNT,
-  SERVICE_AUDITORIA_SEO_RATING_VALUE,
-  SERVICE_AUDITORIA_SEO_RATING_COUNT,
-  SERVICE_CONSULTORIA_SEO_RATING_VALUE,
-  SERVICE_CONSULTORIA_SEO_RATING_COUNT,
-  SERVICE_MANTENIMIENTO_WEB_RATING_COUNT,
-  SERVICE_MANTENIMIENTO_WEB_RATING_VALUE,
-  SERVICE_OUTPUT_POSICIONAMIENTO_SEO,
-  SERVICE_ID_POSICIONAMIENTO_SEO,
-  SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
-  SERVICE_NAME_POSICIONAMIENTO_SEO,
-  SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
-  SERVICE_ID_SEO_LOCAL,
-  SERVICE_NAME_SEO_LOCAL,
-  SERVICE_DESCRIPTION_SEO_LOCAL,
-  SERVICE_OUTPUT_SEO_LOCAL,
-  SERVICE_EXPECTED_DURATION_SEO_LOCAL,
-  SERVICE_ID_AUDITORIA_SEO,
-  SERVICE_OUTPUT_AUDITORIA_SEO,
-  SERVICE_EXPECTED_DURATION_AUDITORIA_SEO,
-  SERVICE_NAME_AUDITORIA_SEO,
-  SERVICE_DESCRIPTION_AUDITORIA_SEO,
-  SERVICE_DESCRIPTION_CONSULTORIA_SEO,
-  SERVICE_NAME_CONSULTORIA_SEO,
-  SERVICE_ID_CONSULTORIA_SEO,
-  SERVICE_OUTPUT_CONSULTORIA_SEO,
-  SERVICE_EXPECTED_DURATION_CONSULTORIA_SEO,
-  SERVICE_NAME_MANTENIMIENTO_WEB,
-  SERVICE_ID_MANTENIMIENTO_WEB,
-  SERVICE_DESCRIPTION_MANTENIMIENTO_WEB,
-  SERVICE_OUTPUT_MANTENIMIENTO_WEB,
-  SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB,
 } from "@/app/utils/constants/schema";
-import {
-  PRICE_CARD_SERVICE as PRICE_CARD_SEO,
-  serviceSchema as SERVICE_SCHEMA_SEO,
-} from "@/app/agencia-seo/posicionamiento-seo/constants";
-import {
-  PRICE_CARD_SERVICE as PRICE_CARD_SEO_LOCAL,
-  serviceSchema as SERVICE_SCHEMA_SEO_LOCAL,
-} from "@/app/agencia-seo/seo-local/constants";
-import {
-  PRICE_CARD_SERVICE as PRICE_CARD_AUDITORIA_SEO,
-  serviceSchema as SERVICE_SCHEMA_AUDITORIA_SEO,
-} from "@/app/agencia-seo/auditoria-seo/constants";
-import {
-  PRICE_CARD_SERVICE as PRICE_CARD_MANTENIMIENTO_WEB,
-  serviceSchema as SERVICE_SCHEMA_MANTENIMIENTO_WEB,
-} from "@/app/agencia-seo/mantenimiento-web/constants";
-import {
-  PRICE_CARD_SERVICE as PRICE_CARD_CONSULTORIA_SEO,
-  serviceSchema as SERVICE_SCHEMA_CONSULTORIA_SEO,
-} from "@/app/agencia-seo/consultoria-seo/constants";
-import {
-  URL_AUDITORIA_SEO,
-  URL_POSICIONAMIENTO_SEO,
-  URL_MANTENIMIENTO_WEB,
-  URL_CONSULTORIA_SEO,
-  URL_AGENCIA_SEO,
-} from "@/app/utils/constants/navigation-links";
-import { getSchemaService } from "@/app/utils/schema/utils";
+import { serviceSchema as SERVICE_SCHEMA_SEO } from "@/app/agencia-seo/posicionamiento-seo/constants";
+import { serviceSchema as SERVICE_SCHEMA_SEO_LOCAL } from "@/app/agencia-seo/seo-local/constants";
+import { serviceSchema as SERVICE_SCHEMA_AUDITORIA_SEO } from "@/app/agencia-seo/auditoria-seo/constants";
+import { serviceSchema as SERVICE_SCHEMA_MANTENIMIENTO_WEB } from "@/app/agencia-seo/mantenimiento-web/constants";
+import { serviceSchema as SERVICE_SCHEMA_CONSULTORIA_SEO } from "@/app/agencia-seo/consultoria-seo/constants";
+import { URL_AGENCIA_SEO } from "@/app/utils/constants/navigation-links";
 import { PageCategoryData } from "@/app/utils/interface/page";
-import {
-  IMAGE_SCHEMA_AUDITORIA_SEO,
-  IMAGE_SCHEMA_CONSULTORIA_SEO,
-  IMAGE_SCHEMA_MANTENIMIENTO_WEB,
-  IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
-  IMAGE_SCHEMA_SEO_LOCAL,
-} from "@/app/utils/constants/image";
 
 const SERVICE = "Agencia SEO";
+const KEYWORD_PRINCIPAL = SERVICE;
 
 const TITLE_HERO = (
   <p>
@@ -363,6 +294,7 @@ const SCHEMA: CategorySchema = {
   serviceDetailsSchema: combinedSchemas,
   slogan: "Estrategias SEO que despiertan tu presencia online",
   breadcrumb: breadcrumb,
+  keyword: KEYWORD_PRINCIPAL,
 };
 
 /*

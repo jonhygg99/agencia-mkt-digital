@@ -35,6 +35,7 @@ export interface ServiceDetailsSchema {
   serviceSchema: OneServiceSchema | CombinedAgregatedOffer;
   breadcrumb: Array<BreadCrumb>;
   faq: FaqItem[];
+  keyword: string;
 }
 
 export interface CombinedOffer {
@@ -101,4 +102,5 @@ export interface CategorySchema {
   serviceDetailsSchema: Array<OneServiceSchema | CombinedAgregatedOffer>;
   slogan: string;
   breadcrumb: Array<BreadCrumb>;
+  keyword: string;
 }

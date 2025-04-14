@@ -30,6 +30,7 @@ import { IMAGE_SCHEMA_SEO_LOCAL } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
 export const SERVICE = "SEO Local";
+const KEYWORD_PRINCIPAL = SERVICE_NAME_SEO_LOCAL;
 
 const TITLE_HERO = (
   <p>
@@ -384,6 +385,7 @@ const SCHEMA: ServiceDetailsSchema = {
   serviceSchema: serviceSchema,
   breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
+  keyword: KEYWORD_PRINCIPAL,
 };
 
 /*

@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import { URL_SEO_LOCAL } from "@/app/utils/constants/navigation-links";
-import { IMAGE_AGENCIA_SEO } from "@/app/utils/constants/image";
+import { IMAGE_AGENCIA } from "@/app/utils/constants/image";
 
 const URL = URL_SEO_LOCAL;
-const URL_IMAGE = IMAGE_AGENCIA_SEO;
+const URL_IMAGE = IMAGE_AGENCIA;
 
 export const METADATA: Metadata = {
   title: "📍 Posicionamiento SEO Local | Aumenta tu Visibilidad en tu Área",
   description:
     "✓ Servicio de posicionamiento SEO local. Mejora tu presencia en búsquedas locales y atrae más clientes a tu negocio. ¡Contáctanos para un análisis!",
-  keywords:
-    "posicionamiento SEO local, SEO local, marketing local, visibilidad local",
+  keywords: "agencia seo local",
   openGraph: {
     title: "Posicionamiento SEO Local | Conquista tu Mercado Local 🌍",
     description:

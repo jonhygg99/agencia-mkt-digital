@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { URL_CONSULTORIA_SEO } from "@/app/utils/constants/navigation-links";
-import { IMAGE_AGENCIA_SEO } from "@/app/utils/constants/image";
+import { IMAGE_AGENCIA } from "@/app/utils/constants/image";
 
 const URL = URL_CONSULTORIA_SEO;
-const URL_IMAGE = IMAGE_AGENCIA_SEO;
+const URL_IMAGE = IMAGE_AGENCIA;
 
 export const METADATA: Metadata = {
   title: "📈 Consultoría SEO | Mejora tu Posicionamiento en Google",
   description:
     "✓ Servicio de consultoría SEO profesional. Aumentamos tu visibilidad online y mejoramos tu posicionamiento en buscadores. ¡Contáctanos para un análisis!",
-  keywords: "consultoría SEO, posicionamiento web, estrategias SEO",
+  keywords: "consultoría SEO",
   openGraph: {
     title: "Consultoría SEO | ¡Optimiza tu Estrategia Digital! 🚀",
     description:

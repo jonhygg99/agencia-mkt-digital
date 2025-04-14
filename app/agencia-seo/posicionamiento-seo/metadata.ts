@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { URL_POSICIONAMIENTO_SEO } from "@/app/utils/constants/navigation-links";
-import { IMAGE_AGENCIA_SEO } from "@/app/utils/constants/image";
+import { IMAGE_AGENCIA } from "@/app/utils/constants/image";
 
 const URL = URL_POSICIONAMIENTO_SEO;
-const URL_IMAGE = IMAGE_AGENCIA_SEO;
+const URL_IMAGE = IMAGE_AGENCIA;
 
 export const METADATA: Metadata = {
   title: "🚀 Posicionamiento SEO | Aumenta tu Visibilidad en Google",

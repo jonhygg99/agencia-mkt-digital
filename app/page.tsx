@@ -10,6 +10,9 @@ import QuestionSection from "@/app/ui/components/question";
 import * as Constants from "./constants";
 import type { Metadata } from "next";
 import { MainSchema } from "./utils/schema/main";
+import { METADATA } from "./metadata";
+
+export const metadata: Metadata = METADATA;
 
 export default function Home() {
   return (

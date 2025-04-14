@@ -24,7 +24,7 @@ export default function PageService({
       <ServiceSchema schema={data.SCHEMA} />
       <HeroBig
         HeroTitle={data.TITLE_HERO}
-        title={title == undefined ? data.SCHEMA.name : title}
+        title={title == undefined ? data.SCHEMA.keyword : title}
       />
       <QuestionSection question={data.QUESTION_SERVICE} />
       <Reasons

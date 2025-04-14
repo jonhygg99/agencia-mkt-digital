@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { URL_AUDITORIA_SEO } from "@/app/utils/constants/navigation-links";
-import { IMAGE_AGENCIA_SEO } from "@/app/utils/constants/image";
+import { IMAGE_AGENCIA } from "@/app/utils/constants/image";
 
 const URL = URL_AUDITORIA_SEO;
-const URL_IMAGE = IMAGE_AGENCIA_SEO;
+const URL_IMAGE = IMAGE_AGENCIA;
 
 export const METADATA: Metadata = {
   title: "🔍 Auditoría SEO | Optimiza tu Estrategia Digital",
   description:
     "✓ Servicio de auditoría SEO profesional. Analizamos tu sitio web para identificar oportunidades de mejora y optimización. ¡Solicita tu auditoría gratuita!",
-  keywords: "auditoría SEO, análisis web, optimización SEO",
+  keywords: "auditoría SEO",
   openGraph: {
     title: "Auditoría SEO | Mejora tu Posicionamiento en Google 📈",
     description:

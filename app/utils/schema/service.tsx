@@ -103,8 +103,6 @@ export const ServiceSchema = ({ schema }: { schema: ServiceDetailsSchema }) => {
       : (schema.serviceSchema.offers as CombinedOffer).itemOffered.provider[
           "@id"
         ]; // Accediendo al ID del proveedor
-  console.log(url);
-
   const name =
     "name" in schema.serviceSchema
       ? schema.serviceSchema.name

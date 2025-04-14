@@ -30,6 +30,7 @@ import { IMAGE_SCHEMA_MANTENIMIENTO_WEB } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
 const SERVICE = "Mantenimiento Web";
+const KEYWORD_PRINCIPAL = SERVICE;
 
 const TITLE_HERO = (
   <p>
@@ -305,6 +306,7 @@ const SCHEMA: ServiceDetailsSchema = {
   serviceSchema: serviceSchema,
   breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
+  keyword: KEYWORD_PRINCIPAL,
 };
 
 /*

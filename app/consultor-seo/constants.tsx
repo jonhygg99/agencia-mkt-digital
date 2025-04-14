@@ -5,6 +5,7 @@ import UIDesignIcon from "@/app/ui/icons/bubble/ui-design";
 import WebDevIcon from "@/app/ui/icons/bubble/web-dev";
 import WebSEOIcon from "@/app/ui/icons/bubble/web-seo";
 import Image from "next/image";
+import { IMAGE_JONATHAN_GOMEZ } from "@/app/utils/constants/image";
 
 /*
  *
@@ -17,8 +18,9 @@ export const STICKY_IMAGE = (
     <div className="sticky top-24">
       <div className="relative h-[calc(100vh-8rem)] w-full py-12">
         <Image
-          src="/portrait.webp"
-          alt="Consultor SEO"
+          src={IMAGE_JONATHAN_GOMEZ}
+          alt="Consultor SEO - Jonathan Gómez"
+          title="Consultor SEO - Jonathan Gómez"
           fill
           className="object-cover rounded-2xl"
           priority

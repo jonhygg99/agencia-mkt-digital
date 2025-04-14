@@ -24,9 +24,10 @@ import {
 import { getSchemaService } from "@/app/utils/schema/utils";
 import { URL_AGENCIA_DISENO_WEB } from "@/app/utils/constants/navigation-links";
 import { PageCategoryData } from "@/app/utils/interface/page";
-import { IMAGE_SCHEMA_DISEÑO_WEB } from "@/app/utils/constants/image";
+import { IMAGE_SCHEMA_DISENO_WEB } from "@/app/utils/constants/image";
 
 export const SERVICE = "Agencia de Diseño Web a Medida";
+const KEYWORD_PRINCIPAL = SERVICE;
 
 export const TITLE_HERO = (
   <p>
@@ -378,7 +379,7 @@ export const schema_diseno_web = getSchemaService({
   name: SERVICE_NAME_DISENO_WEB,
   description: SERVICE_DESCRIPTION_DISENO_WEB,
   url: URL_AGENCIA_DISENO_WEB,
-  image: IMAGE_SCHEMA_DISEÑO_WEB,
+  image: IMAGE_SCHEMA_DISENO_WEB,
   ratingValue: SERVICE_DISENO_WEB_RATING_VALUE,
   reviewCount: SERVICE_DISENO_WEB_RATING_COUNT,
 });
@@ -396,6 +397,7 @@ const SCHEMA: CategorySchema = {
       item: URL_AGENCIA_DISENO_WEB,
     },
   ],
+  keyword: KEYWORD_PRINCIPAL,
 };
 
 /*

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { URL_MANTENIMIENTO_WEB } from "@/app/utils/constants/navigation-links";
-import { IMAGE_AGENCIA_SEO } from "@/app/utils/constants/image";
+import { IMAGE_AGENCIA } from "@/app/utils/constants/image";
 
 const URL = URL_MANTENIMIENTO_WEB;
-const URL_IMAGE = IMAGE_AGENCIA_SEO;
+const URL_IMAGE = IMAGE_AGENCIA;
 
 export const METADATA: Metadata = {
   title: "🔧 Servicio de Mantenimiento Web | Mantén tu Sitio Siempre Activo",
   description:
     "✓ Servicio de mantenimiento web profesional. Aseguramos el rendimiento, la seguridad y la actualización de tu sitio. ¡Contáctanos para más información!",
-  keywords: "mantenimiento web, soporte técnico, actualización de sitios",
+  keywords: "mantenimiento web",
   openGraph: {
     title: "Mantenimiento Web | ¡Optimiza y Protege tu Sitio! 🔒",
     description:

@@ -1,5 +1,10 @@
 import Pricing from "@/app/ui/components/pricing";
 import * as Constants from "./constants";
+import Contact from "../ui/components/contact/contact";
+import { Metadata } from "next";
+import { METADATA } from "./metadata";
+
+export const metadata: Metadata = METADATA;
 
 export default function ConsultorSEO() {
   return (
@@ -33,6 +38,7 @@ export default function ConsultorSEO() {
           </div>
         </div>
       </div>
+      <Contact service="Consultoría" />
     </div>
   );
 }

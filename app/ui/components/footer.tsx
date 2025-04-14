@@ -97,7 +97,7 @@ export default function Footer() {
               <span className="text-red-500">❤</span>
               <span> por </span>
               <Link href={URL_CONSULTOR_SEO} className="link-text-dark">
-                ${FOUNDER_NAME}
+                {FOUNDER_NAME}
               </Link>
             </div>
           </div>

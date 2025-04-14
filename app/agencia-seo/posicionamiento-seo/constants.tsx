@@ -28,6 +28,7 @@ import { getSchemaService } from "@/app/utils/schema/utils";
 import { IMAGE_SCHEMA_POSICIONAMIENTO_SEO } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
+const KEYWORD_PRINCIPAL = "Posicionamiento Web Profesional con SEO";
 const SERVICE = "Posicionamiento SEO";
 
 const TITLE_HERO = (
@@ -378,7 +379,7 @@ export const serviceSchema = getSchemaService({
   serviceOutput: SERVICE_OUTPUT_POSICIONAMIENTO_SEO,
   expectedDuration: SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO,
   category: CATEGORY_SEO,
-  name: "Posicionamiento Web Profesional con SEO",
+  name: KEYWORD_PRINCIPAL,
   description: SERVICE_DESCRIPTION_POSICIONAMIENTO_SEO,
   url: URL_POSICIONAMIENTO_SEO,
   image: IMAGE_SCHEMA_POSICIONAMIENTO_SEO,
@@ -390,6 +391,7 @@ const SCHEMA: ServiceDetailsSchema = {
   serviceSchema: serviceSchema,
   breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
+  keyword: KEYWORD_PRINCIPAL,
 };
 
 /*

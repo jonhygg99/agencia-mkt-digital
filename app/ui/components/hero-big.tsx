@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ButtonScroll from "../elements/button-scroll";
+import { IMAGE_SLUG_AGENCIA } from "@/app/utils/constants/image";
 
 interface HeroBigProps {
   HeroTitle: React.ReactNode;
@@ -7,6 +8,8 @@ interface HeroBigProps {
 }
 
 export default function HeroBig({ HeroTitle, title }: HeroBigProps) {
+  const imageTitle = "Agencia de Marketing Digital";
+
   return (
     <section className="section-class-1320">
       <h1 className="text-center">{title}</h1>
@@ -21,8 +24,9 @@ export default function HeroBig({ HeroTitle, title }: HeroBigProps) {
         />
       </div>
       <Image
-        src="/agencia.webp"
-        alt="Agencia SEO"
+        src={IMAGE_SLUG_AGENCIA}
+        alt={imageTitle}
+        title={imageTitle}
         width={1600}
         height={731}
         className="w-full h-auto"

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import personajesSEO from "@/app/utils/constants/placeholders-forms";
+import Link from "next/link";
+import { URL_POLITICA_PRIVACIDAD } from "@/app/utils/constants/navigation-links";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -206,7 +208,10 @@ export default function ContactForm() {
             htmlFor="privacyPolicy"
             className="text-sm text-gray-with-dark"
           >
-            Acepto las Políticas de Privacidad
+            Acepto las{" "}
+            <Link href={URL_POLITICA_PRIVACIDAD} className="text-orange-400">
+              Políticas de Privacidad
+            </Link>
           </label>
         </div>
 

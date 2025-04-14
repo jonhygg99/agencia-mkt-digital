@@ -29,6 +29,7 @@ import { IMAGE_SCHEMA_AUDITORIA_SEO } from "@/app/utils/constants/image";
 import { PageServiceData } from "@/app/utils/interface/page";
 
 const SERVICE = "Auditoría SEO";
+const KEYWORD_PRINCIPAL = SERVICE;
 
 const TITLE_HERO = (
   <p>
@@ -321,6 +322,7 @@ const SCHEMA: ServiceDetailsSchema = {
   serviceSchema: serviceSchema,
   breadcrumb: breadcrumb,
   faq: FAQ_ITEMS_SERVICE,
+  keyword: KEYWORD_PRINCIPAL,
 };
 
 /*
