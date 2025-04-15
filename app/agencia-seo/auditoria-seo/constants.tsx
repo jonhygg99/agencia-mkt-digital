@@ -108,7 +108,7 @@ const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
+const IMAGE_PARALLAX_URL = "/parallax-image/posicionamiento-seo.webp";
 
 const TITLE_PARALLAX = "DESCUBRE OPORTUNIDADES OCULTAS CON UNA AUDITORÍA SEO";
 

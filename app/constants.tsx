@@ -74,7 +74,7 @@ export const SERVICE_LIST: ServiceItem[] = [
  *
  */
 
-export const IMAGE_PARALLAX_URL = "parallax-image/agencia-seo.webp";
+export const IMAGE_PARALLAX_URL = "/parallax-image/agencia-seo.webp";
 
 export const TITLE_PARALLAX = "AUMENTA TU IMPACTO DIGITAL";
 

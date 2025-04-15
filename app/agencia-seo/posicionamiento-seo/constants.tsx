@@ -110,7 +110,7 @@ const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-const IMAGE_PARALLAX_URL = "../parallax-image/posicionamiento-seo.webp";
+const IMAGE_PARALLAX_URL = "/parallax-image/posicionamiento-seo.webp";
 
 const TITLE_PARALLAX = "LA VISIBILIDAD ES LA CLAVE DEL ÉXITO DIGITAL";
 

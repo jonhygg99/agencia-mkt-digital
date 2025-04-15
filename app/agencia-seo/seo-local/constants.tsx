@@ -112,7 +112,7 @@ const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-const IMAGE_PARALLAX_URL = "../parallax-image/agencia-seo.webp";
+const IMAGE_PARALLAX_URL = "/parallax-image/agencia-seo.webp";
 
 const TITLE_PARALLAX =
   "LA VISIBILIDAD LOCAL ES FUNDAMENTAL PARA EL ÉXITO TU NEGOCIO";

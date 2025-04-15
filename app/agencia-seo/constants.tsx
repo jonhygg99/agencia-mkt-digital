@@ -89,7 +89,7 @@ const SERVICE_LIST: ServiceItem[] = [
  *
  */
 
-const IMAGE_PARALLAX_URL = "parallax-image/agencia-seo.webp";
+const IMAGE_PARALLAX_URL = "/parallax-image/agencia-seo.webp";
 
 const TITLE_PARALLAX = "TRANSFORMA CLICS EN CLIENTES";
 

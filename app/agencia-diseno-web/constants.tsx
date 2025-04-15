@@ -113,7 +113,7 @@ export const REASON_ITEMS_SERVICE: ReasonItem[] = [
  *
  */
 
-export const IMAGE_PARALLAX_URL = "parallax-image/diseno-web.webp";
+export const IMAGE_PARALLAX_URL = "/parallax-image/diseno-web.webp";
 
 export const TITLE_PARALLAX = "COMUNICA TU MENSAJE SIN PALABRAS";
 
