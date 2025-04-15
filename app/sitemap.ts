@@ -2,12 +2,8 @@ import { MetadataRoute } from "next";
 import {
   AGENCIA_MARKETING_FOOTER,
   AGENCIA_SEO_FOOTER,
-  DOMINIO,
   EMPRESA_FOOTER,
   TEXTOS_LEGALES,
-  URL_AGENCIA_SEO,
-  URL_CONTACTO,
-  URL_SOBRE_NOSOTROS,
 } from "@/app/utils/constants/navigation-links";
 
 const getFooterPages = (): { url: string; lastModified: Date }[] => {
