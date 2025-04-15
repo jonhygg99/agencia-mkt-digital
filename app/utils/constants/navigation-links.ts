@@ -6,7 +6,7 @@ interface NavLink {
   dropdown?: NavLink[];
 }
 
-export const DOMINIO = "https://despiertatuwbeb.com";
+export const DOMINIO = "https://despiertatuweb.com";
 
 export const SCHEMA_URL_WEBPAGE_ID = `${DOMINIO}/#webpage`;
 export const SCHEMA_URL_WEBSITE_ID = `${DOMINIO}/#website`;
