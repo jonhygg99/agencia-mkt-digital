@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { URL_CONTACTO } from "@/app/utils/constants/navigation-links";
+import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
 
 const URL = URL_CONTACTO;
 
@@ -39,7 +40,7 @@ export const METADATA: Metadata = {
   alternates: {
     canonical: URL,
   },
-  applicationName: "Contacto- Agencia Marketing Digital",
+  applicationName: NOMBRE_EMPRESA,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { METADATA } from "./metadata";
 import PageCategory from "@/app/ui/pages/page-category";
 import { DATA } from "./constants";

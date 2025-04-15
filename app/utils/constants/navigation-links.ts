@@ -17,18 +17,18 @@ export const SCHEMA_URL_OFFERING_ID = `${DOMINIO}/#offering`;
 export const SCHEMA_URL_LOGO_ID = `${DOMINIO}/#logo`;
 export const SCHEMA_SLUG_CATALOG_ID = "/#catalog";
 
+const SLUG_CONTACTO = "/contacto";
+export const URL_CONTACTO = `${DOMINIO}${SLUG_CONTACTO}`;
+
+const SLUG_SOBRE_NOSOTROS = "/sobre-nosotros";
+export const URL_SOBRE_NOSOTROS = `${DOMINIO}${SLUG_SOBRE_NOSOTROS}`;
+
 /*
  *  AGENCIA SEO
  */
 
 const SLUG_AGENCIA_SEO = "/agencia-seo";
 export const URL_AGENCIA_SEO = `${DOMINIO}${SLUG_AGENCIA_SEO}`;
-
-const SLUG_CONTACTO = "/contacto";
-export const URL_CONTACTO = `${DOMINIO}${SLUG_CONTACTO}`;
-
-const SLUG_SOBRE_NOSOTROS = "/sobre-nosotros";
-export const URL_SOBRE_NOSOTROS = `${DOMINIO}${SLUG_SOBRE_NOSOTROS}`;
 
 const SLUG_AUDITORIA_SEO = "/auditoria-seo";
 export const URL_AUDITORIA_SEO = `${URL_AGENCIA_SEO}${SLUG_AUDITORIA_SEO}`;
@@ -105,8 +105,8 @@ export const URL_AVISO_LEGAL = `${URL_TEXTOS_LEGALES}${SLUG_AVISO_LEGAL}`;
 const SLUG_POLITICA_PRIVACIDAD = "/politica-privacidad";
 export const URL_POLITICA_PRIVACIDAD = `${URL_TEXTOS_LEGALES}${SLUG_POLITICA_PRIVACIDAD}`;
 
-const SLUG_POLITICA_COOKIE = "/politica-cookies";
-export const URL_POLITICA_COOKIE = `${URL_TEXTOS_LEGALES}${SLUG_POLITICA_COOKIE}`;
+const SLUG_POLITICA_COOKIES = "/politica-cookies";
+export const URL_POLITICA_COOKIES = `${URL_TEXTOS_LEGALES}${SLUG_POLITICA_COOKIES}`;
 
 const SLUG_MAPA_WEB = "/mapa-web";
 export const URL_MAPA_WEB = `${DOMINIO}${SLUG_MAPA_WEB}`;
@@ -114,6 +114,6 @@ export const URL_MAPA_WEB = `${DOMINIO}${SLUG_MAPA_WEB}`;
 export const TEXTOS_LEGALES = [
   { name: "Aviso Legal", href: URL_AVISO_LEGAL },
   { name: "Política de Privacidad", href: URL_POLITICA_PRIVACIDAD },
-  { name: "Política de Cookies", href: URL_POLITICA_COOKIE },
+  { name: "Política de Cookies", href: URL_POLITICA_COOKIES },
   // { name: "Mapa Web", href: URL_MAPA_WEB },
 ];

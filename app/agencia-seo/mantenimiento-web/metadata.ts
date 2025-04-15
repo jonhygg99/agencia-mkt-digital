@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { URL_MANTENIMIENTO_WEB } from "@/app/utils/constants/navigation-links";
 import { IMAGE_AGENCIA } from "@/app/utils/constants/image";
+import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
 
 const URL = URL_MANTENIMIENTO_WEB;
 const URL_IMAGE = IMAGE_AGENCIA;
@@ -50,7 +51,7 @@ export const METADATA: Metadata = {
   alternates: {
     canonical: URL,
   },
-  applicationName: "Servicio de Mantenimiento Web",
+  applicationName: NOMBRE_EMPRESA,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

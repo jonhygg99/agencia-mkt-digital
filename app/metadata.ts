@@ -1,20 +1,21 @@
-import type { Metadata } from "next";
-import { DOMINIO } from "./utils/constants/navigation-links";
+import { Metadata } from "next";
+import { DOMINIO } from "@/app/utils/constants/navigation-links";
+import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
 
 const URL = DOMINIO;
 // const URL_IMAGE = IMAGE_SCHEMA_MARKETING_DIGITAL;
 
 export const METADATA: Metadata = {
-  title: "🥇 Agencia Marketing Digital | SEO y Diseño Web",
+  title: `🥇 Agencia Marketing Digital | ${NOMBRE_EMPRESA}`,
   description:
     "✓ Agencia de Marketing Digital especializada en SEO y diseño web. Mejora tu visibilidad online con estrategias personalizadas.",
   keywords: "agencia marketing digital",
   openGraph: {
-    title: "Agencia Marketing Digital | SEO y Diseño Web 🚀",
+    title: `Agencia Marketing Digital | ${NOMBRE_EMPRESA} 🚀`,
     description:
       "✓ Expertos en SEO y diseño web. Mejora tu visibilidad online y consigue más tráfico orgánico con nuestras estrategias personalizadas.",
     url: URL,
-    siteName: "Agencia Marketing Digital",
+    siteName: NOMBRE_EMPRESA,
     // images: [
     //   {
     //     url: URL_IMAGE,
@@ -49,7 +50,7 @@ export const METADATA: Metadata = {
   alternates: {
     canonical: URL,
   },
-  applicationName: "Agencia Marketing Digital",
+  applicationName: NOMBRE_EMPRESA,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

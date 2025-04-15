@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { URL_AGENCIA_DISENO_WEB } from "@/app/utils/constants/navigation-links";
 import { IMAGE_SCHEMA_DISENO_WEB } from "@/app/utils/constants/image";
+import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
 
 const URL = URL_AGENCIA_DISENO_WEB;
 const URL_IMAGE = IMAGE_SCHEMA_DISENO_WEB;
 
 export const METADATA: Metadata = {
-  title: "🥇 Agencia de Diseño Web | Crea tu sitio web profesional",
+  title: "🥇 Agencia de Diseño Web | Creamos tu sitio web profesional",
   description:
     "✓ Agencia de diseño web líder en España. Creamos sitios web personalizados y funcionales para empresas de todos los tamaños. ¡Haz crecer tu negocio online!",
   keywords: "agencia diseño web",
@@ -50,7 +51,7 @@ export const METADATA: Metadata = {
   alternates: {
     canonical: URL,
   },
-  applicationName: "Agencia Diseño Web",
+  applicationName: NOMBRE_EMPRESA,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

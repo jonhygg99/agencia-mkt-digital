@@ -8,7 +8,7 @@ import HeroBig from "@/app/ui/components/hero-big";
 import BannerCta from "@/app/ui/components/banner-cta";
 import QuestionSection from "@/app/ui/components/question";
 import * as Constants from "./constants";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { MainSchema } from "./utils/schema/main";
 import { METADATA } from "./metadata";
 

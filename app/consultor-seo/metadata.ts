@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { URL_CONSULTOR_SEO } from "@/app/utils/constants/navigation-links";
 import { IMAGE_SCHEMA_CONSULTORIA_SEO } from "@/app/utils/constants/image";
+import { NOMBRE_EMPRESA } from "@/app/utils/constants/empresa";
 
 const URL = URL_CONSULTOR_SEO;
 const URL_IMAGE = IMAGE_SCHEMA_CONSULTORIA_SEO;
@@ -51,7 +52,7 @@ export const METADATA: Metadata = {
   alternates: {
     canonical: URL,
   },
-  applicationName: "Consultor SEO",
+  applicationName: NOMBRE_EMPRESA,
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

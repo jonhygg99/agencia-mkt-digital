@@ -6,6 +6,10 @@ import {
   CIF_EMPRESA,
 } from "@/app/utils/constants/empresa";
 import { DOMINIO } from "@/app/utils/constants/navigation-links";
+import { Metadata } from "next";
+import { METADATA } from "./metadata";
+
+export const metadata: Metadata = METADATA;
 
 export default function AvisoLegal() {
   return (
@@ -75,7 +79,9 @@ export default function AvisoLegal() {
       </section>
 
       <section>
-        <h2 className="text-xl font-semibold mb-4">6. Ley Aplicable y Jurisdicción</h2>
+        <h2 className="text-xl font-semibold mb-4">
+          6. Ley Aplicable y Jurisdicción
+        </h2>
         <p className="mb-4">
           Para la resolución de todas las controversias o cuestiones
           relacionadas con el presente sitio web o de las actividades en él
