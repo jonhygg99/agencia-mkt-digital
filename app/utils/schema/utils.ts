@@ -48,24 +48,24 @@ export const createSchemaService = (params: SchemaParams) => {
           provider: {
             "@id": SCHEMA_URL_ORGANIZATION_ID,
           },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: Array.isArray(params.ratingValue)
-              ? params.ratingValue.join(", ")
-              : params.ratingValue,
-            reviewCount: Array.isArray(params.reviewCount)
-              ? params.reviewCount.join(", ")
-              : params.reviewCount,
-            bestRating: "5",
-            worstRating: "1",
-          },
+          // aggregateRating: {
+          //   "@type": "AggregateRating",
+          //   ratingValue: Array.isArray(params.ratingValue)
+          //     ? params.ratingValue.join(", ")
+          //     : params.ratingValue,
+          //   reviewCount: Array.isArray(params.reviewCount)
+          //     ? params.reviewCount.join(", ")
+          //     : params.reviewCount,
+          //   bestRating: "5",
+          //   worstRating: "1",
+          // },
         },
       },
     };
     return schema;
   } else {
     // Si hay más de un servicio, devuelve un array de objetos
-    const offers: CombinedOffer[] = params.services.map((service, index) => ({
+    const offers: CombinedOffer[] = params.services.map((service) => ({
       "@type": "Offer",
       name: service.title,
       description: service.description,
@@ -84,13 +84,13 @@ export const createSchemaService = (params: SchemaParams) => {
           "@id": SCHEMA_URL_ORGANIZATION_ID,
         },
         image: params.image,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: params.ratingValue[index],
-          reviewCount: params.reviewCount[index],
-          bestRating: "5",
-          worstRating: "1",
-        },
+        // aggregateRating: {
+        //   "@type": "AggregateRating",
+        //   ratingValue: params.ratingValue[index],
+        //   reviewCount: params.reviewCount[index],
+        //   bestRating: "5",
+        //   worstRating: "1",
+        // },
       },
     }));
     const schema: CombinedAgregatedOffer = {

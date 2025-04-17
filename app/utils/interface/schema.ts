@@ -57,13 +57,13 @@ export interface CombinedOffer {
       "@id": string;
     };
     image: string;
-    aggregateRating: {
-      "@type": "AggregateRating";
-      ratingValue: string;
-      reviewCount: string;
-      bestRating: "5";
-      worstRating: "1";
-    };
+    // aggregateRating: {
+    //   "@type": "AggregateRating";
+    //   ratingValue: string;
+    //   reviewCount: string;
+    //   bestRating: "5";
+    //   worstRating: "1";
+    // };
   };
 }
 
