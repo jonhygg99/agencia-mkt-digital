@@ -24,7 +24,7 @@ export const SERVICE_OUTPUT_POSICIONAMIENTO_SEO =
   "Incremento del tráfico orgánico y mejora de posiciones en Google para palabras clave relevantes.";
 export const SERVICE_EXPECTED_DURATION_POSICIONAMIENTO_SEO = "P1M";
 export const SERVICE_POSICIONAMIENTO_SEO_RATING_VALUE = ["4.8", "4.9", "4.7"];
-export const SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT = ["95", "100", "90"];
+export const SERVICE_POSICIONAMIENTO_SEO_RATING_COUNT = ["5", "3", "2"];
 
 // POSICIONAMIENTO SEO LOCAL
 export const SERVICE_NAME_SEO_LOCAL = "Servicios de Posicionamiento SEO Local";
@@ -36,7 +36,7 @@ export const SERVICE_OUTPUT_SEO_LOCAL =
   "Incremento del tráfico orgánico y mejora de posiciones en Google para palabras clave relevantes.";
 export const SERVICE_EXPECTED_DURATION_SEO_LOCAL = "P1M";
 export const SERVICE_SEO_LOCAL_RATING_VALUE = ["4.8", "4.9", "4.7"];
-export const SERVICE_SEO_LOCAL_RATING_COUNT = ["95", "100", "90"];
+export const SERVICE_SEO_LOCAL_RATING_COUNT = ["4", "2", "1"];
 
 // AUDITORIA SEO
 export const SERVICE_NAME_AUDITORIA_SEO = "Servicio de Auditoría SEO";
@@ -48,7 +48,7 @@ export const SERVICE_OUTPUT_AUDITORIA_SEO =
 export const SERVICE_EXPECTED_DURATION_AUDITORIA_SEO = "P15D";
 export const SERVICE_TYPE_AUDITORIA_SEO = "SEO Audit";
 export const SERVICE_AUDITORIA_SEO_RATING_VALUE = "4.8";
-export const SERVICE_AUDITORIA_SEO_RATING_COUNT = "95";
+export const SERVICE_AUDITORIA_SEO_RATING_COUNT = "3";
 
 // CONSULTORIA SEO
 export const SERVICE_NAME_CONSULTORIA_SEO = "Servicio de Consultoría SEO";
@@ -60,7 +60,7 @@ export const SERVICE_OUTPUT_CONSULTORIA_SEO =
 export const SERVICE_EXPECTED_DURATION_CONSULTORIA_SEO = "PT2H";
 export const SERVICE_TYPE_CONSULTORIA_SEO = "SEO Consulting";
 export const SERVICE_CONSULTORIA_SEO_RATING_VALUE = "4.8";
-export const SERVICE_CONSULTORIA_SEO_RATING_COUNT = "95";
+export const SERVICE_CONSULTORIA_SEO_RATING_COUNT = "2";
 
 // MANTENIMIENTO WEB
 export const SERVICE_NAME_MANTENIMIENTO_WEB = "Servicio de Mantenimiento Web";
@@ -72,7 +72,7 @@ export const SERVICE_OUTPUT_MANTENIMIENTO_WEB =
 export const SERVICE_EXPECTED_DURATION_MANTENIMIENTO_WEB = "P1M";
 export const SERVICE_TYPE_MANTENIMIENTO_WEB = "Web Maintenance";
 export const SERVICE_MANTENIMIENTO_WEB_RATING_VALUE = "4.8";
-export const SERVICE_MANTENIMIENTO_WEB_RATING_COUNT = "95";
+export const SERVICE_MANTENIMIENTO_WEB_RATING_COUNT = "1";
 
 // Diseño Web Services
 export const CATEGORY_DESIGN = "Web Design Services";
@@ -90,6 +90,6 @@ export const SERVICE_OUTPUT_DISENO_WEB =
   "Página web moderna, rápida y optimizada desde el inicio para el posicionamiento en buscadores.";
 export const SERVICE_TYPE_DISENO_WEB = "Web Design";
 export const SERVICE_DISENO_WEB_RATING_VALUE = ["4.8", "4.9", "4.7"];
-export const SERVICE_DISENO_WEB_RATING_COUNT = ["95", "100", "90"];
+export const SERVICE_DISENO_WEB_RATING_COUNT = ["3", "2", "1"];
 
 export const LAST_REVIEWED = "2025-03-10";
